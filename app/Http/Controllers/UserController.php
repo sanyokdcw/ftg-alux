@@ -19,12 +19,13 @@ class UserController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-
+	if(Hash::check($request->password_old, Auth::user()->password)) {
         if($request->password == $request->password_again){
             $user = User::find(Auth::user()->id);
             $user->update(['password'=> Hash::make($request->password)]);
             return redirect('/logout');
         }
+}
         return redirect('/office')->with(['password' => 'password']);
 
     }

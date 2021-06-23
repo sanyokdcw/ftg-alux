@@ -84,9 +84,8 @@
           @csrf
           <div class="office__order-password_wrapper">
             <div class="office__order-password_input">
-              <input type="password" placeholder="Введите старый пароль" required>
-              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-            </div>
+              <input type="password" name="password_old"  placeholder="Введите старый пароль" required>
+                         </div>
             <div class="office__order-password_input">
               <input type="password" name="password" placeholder="Введите новый пароль" required>
             </div>
