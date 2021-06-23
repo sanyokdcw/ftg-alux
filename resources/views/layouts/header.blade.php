@@ -5,20 +5,19 @@
       <button class="form__close">
         <img src="../images/pather-close.png" alt="">
       </button>
-
-      <form action="/request" method="POST">
+      <form action="/callback" method="POST">
         @csrf
       <div class="form__input">
-        <input type="text" placeholder="{{ __('index.fullname') }}*" required>
+        <input name="name" type="text" placeholder="{{ __('index.fullname') }}*" required>
       </div>
       <div class="form__input">
-        <input type="text" placeholder="{{ __('index.email') }}*" required>
+        <input name="email" type="text" placeholder="{{ __('index.email') }}*" required>
       </div>
       <div class="form__input">
-        <input id="number_tel" type="tel" placeholder="{{ __('index.number') }}*" required>
+        <input name="phone" id="number_tel" type="tel" placeholder="{{ __('index.number') }}*" required>
       </div>
       <div class="form__input">
-        <textarea required>{{ __('index.question') }}</textarea> 
+        <textarea name="question" required>{{ __('index.question') }}</textarea> 
       </div>
       <div class="form__input">
         <input type="submit" value="{{ __('index.send') }}" >

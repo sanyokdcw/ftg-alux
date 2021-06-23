@@ -164,7 +164,7 @@
       <button type="submit" class="cart__wrapper-right_btn">ОФОРМИТЬ ЗАКАЗ</button>
     </form>
 
-    <form action="/request" method="POST" id="number-form">
+    <form action="/consultation" method="POST" id="number-form">
       @csrf
       <div class="cart__wrapper-right_consultation">
         <div class="cart__wrapper-right_input">
