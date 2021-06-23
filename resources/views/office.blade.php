@@ -118,6 +118,7 @@
       
       <div class="office__order-item_bottom">
         @foreach ($orders as $order)
+        
         <div class="office__order-item_row">
           <div class="office__order-item_top">
             <div class="office__order-item_tbody">
@@ -134,7 +135,7 @@
             </div>
           </div>
           <div class="office__order-item_row_bottom">
-            @foreach(App\Models\OrderProduct::where('order_id', $order->id) as $product)
+            @foreach(App\Models\OrderProduct::where('order_id', $order->id)->get() as $product)
             
             <div class="office__order-item_order">
               <div class="office__order-item_name">
