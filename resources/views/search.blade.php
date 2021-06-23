@@ -27,7 +27,7 @@
   @if($products->count() == 0)
     <div class="project__title subtitle" style="font-size: 25px">По запросу {{ $q }} ничего не найдено</div>
   @elseif($q != null)
-  <div class="project__title subtitle" style="font-size: 25px">Проекты по запросу: {{ $q }}</div>
+  <div class="project__title subtitle" style="font-size: 25px">Товары по запросу: {{ $q }}</div>
 
   @else 
   <div class="project__title subtitle">НАШИ ПРОДУКТЫ</div>

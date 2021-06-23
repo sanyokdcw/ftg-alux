@@ -22,7 +22,7 @@
   <div class="card__wrapper">
     <div class="card__wrapper-top">
       <div class="card__wrapper-number">
-        <span>{{ $products->count() }}</span> товаров
+        Товаров - <span>{{ $products->count() }}</span> 
       </div>
       <div class="card__wrapper-filter dropdown">
           <span>
