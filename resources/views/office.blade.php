@@ -135,7 +135,7 @@
             </div>
           </div>
           <div class="office__order-item_row_bottom">
-            @foreach(App\Models\OrderProduct::where('product_id', $order->id) as $product)
+            @foreach(App\Models\OrderProduct::where('order_id', $order->id) as $product)
             
             <div class="office__order-item_order">
               <div class="office__order-item_name">
