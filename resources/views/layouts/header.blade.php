@@ -5,6 +5,7 @@
       <button class="form__close">
         <img src="../images/pather-close.png" alt="">
       </button>
+
       <form action="/request" method="POST">
         @csrf
       <div class="form__input">
@@ -23,12 +24,14 @@
         <input type="submit" value="{{ __('index.send') }}" >
       </div>
     </form>
-    </div>
+    
+  </div>
     <div class="form__wrapper" style="display: none">
       <div class="form__title">{{ __('index.system') }}</div>
       <button class="form__close">
         <img src="../images/pather-close.png" alt="">
       </button>
+
       <form action="/request" method="POST">
         @csrf
       <div class="form__input">

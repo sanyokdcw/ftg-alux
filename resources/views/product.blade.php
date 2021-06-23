@@ -11,7 +11,7 @@
     <div class="url__text">Подобрать продукцию</div>
 </section>
 
-<section class="product">
+<section class="product" style="min-height: 1180px">
     <div class="product__title subtitle">ПОДОБРАТЬ ПРОДУКЦИЮ</div>
     <div class="product__wrapper">
         <div class="product__wrapper-left">
