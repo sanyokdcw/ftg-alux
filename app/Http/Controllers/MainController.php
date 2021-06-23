@@ -223,7 +223,7 @@ class MainController extends Controller
             'question'=>$request->question,
             'type'=>'Обратный звонок',
         ]);
-        return redirect()->back();
+        return redirect()->back()->with(['contact'=> 'contact']);
     }
 
     public function consultation(Request $request){
