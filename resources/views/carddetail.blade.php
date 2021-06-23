@@ -84,7 +84,7 @@
           <button class="card-detail__wrapper-right_btn" type="submit">заказать</button>
         </form>
       </div>
-    <form action="/request" method="POST" id="number-form">
+    <form action="/consultation" method="POST" id="number-form">
       <div class="card-detail__wrapper-right_consultation">
         <div class="card-detail__wrapper-right_phone">
           <input type="phone" name="phone" required="required" id="number">

@@ -16,6 +16,7 @@ use App\Models\AboutCompany;
 use App\Models\Guarantee;
 use App\Models\Product;
 use App\Models\Employee;
+use App\Models\ContactUs;
 use App;
 use App\Blog;
 
@@ -212,5 +213,25 @@ class MainController extends Controller
     }
 
     public function calculation(Request $request){
+    }
+
+    public function callback(Request $request){
+        ContactUs::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'question'=>$request->question,
+            'type'=>'Обратный звонок',
+        ]);
+        return redirect()->back();
+    }
+
+    public function consultation(Request $request){
+        // dd($request->all());
+        ContactUs::create([
+            'phone'=>$request->phone,
+            'type'=>'консультация',
+        ]);
+        return redirect()->back()->with(['contact'=> 'contact']);
     }
 }
