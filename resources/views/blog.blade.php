@@ -25,7 +25,7 @@
         </div>
         <div class="blog__button">
           <a href="/blog/{{ $blog->id }}" class="blog__button-link">Читать далее</a>
-          <div class="blog__button-time">{{ date('d-m-Y', strtotime($blog->created_at)) }}</div>
+          <div class="blog__button-time">{{ date('d.m.Y', strtotime($blog->created_at)) }}</div>
         </div>
       </div>
     </div>
