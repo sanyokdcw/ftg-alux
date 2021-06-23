@@ -82,7 +82,7 @@ else $sub_link = '#'
         </div>
         <div class="news__wrapper-item_button">
           <a href="/blog/{{ $blog->id }}" class="news__wrapper-item_next">Читать далее</a>
-          <div class="news__wrapper-item_date">{{ $blog->created_at->format('d-m-Y') }}</div>
+          <div class="news__wrapper-item_date">{{ $blog->created_at->format('d.m.Y') }}</div>
         </div>
       </div>
     </div>
