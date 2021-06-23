@@ -84,9 +84,8 @@
           @csrf
           <div class="office__order-password_wrapper">
             <div class="office__order-password_input">
-              <input type="password" placeholder="Введите старый пароль" required>
-              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-            </div>
+              <input type="password" name="password_old"  placeholder="Введите старый пароль" required>
+                         </div>
             <div class="office__order-password_input">
               <input type="password" name="password" placeholder="Введите новый пароль" required>
             </div>
@@ -119,6 +118,7 @@
       
       <div class="office__order-item_bottom">
         @foreach ($orders as $order)
+        
         <div class="office__order-item_row">
           <div class="office__order-item_top">
             <div class="office__order-item_tbody">
@@ -135,7 +135,7 @@
             </div>
           </div>
           <div class="office__order-item_row_bottom">
-            @foreach(App\Models\OrderProduct::where('product_id', $order->id) as $product)
+            @foreach(App\Models\OrderProduct::where('order_id', $order->id)->get() as $product)
             
             <div class="office__order-item_order">
               <div class="office__order-item_name">

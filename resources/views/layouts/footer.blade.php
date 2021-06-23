@@ -53,7 +53,7 @@
         </div>
         <img src="/images/alux.png" alt="">
       </div>
-      <a href="#" class="footer__bottom-link">Политика конфиденциальности</a>
+      <a href="/conf.pdf" target="_blank" class="footer__bottom-link">Политика конфиденциальности</a>
     </div>
   </footer>
 </div>
