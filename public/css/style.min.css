@@ -2217,8 +2217,8 @@ font-size: 18px !important;
     color: #5e5d6c
 }
 .card__wrapper-img {
-    width: 100%;
-    height: 100%
+    width: 90%;
+    height: 90%
 }
 .card__wrapper-filter {
     color: #112468;
@@ -2247,7 +2247,7 @@ font-size: 18px !important;
     margin-right: 0
 }
 .card__wrapper-img {
-    height: 570px;
+    height: 90%;
     background-size: cover
 }
 .card__wrapper-bottom {
@@ -5675,6 +5675,11 @@ padding-top: 10px;
 
 .card-detail__wrapper-right_text span{
     text-align: left;
+}
+
+.card__wrapper-img {
+    width: 90%;
+    height: 90%;
 }
 
 @media (max-width: 600px){
