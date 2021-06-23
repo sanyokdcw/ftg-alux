@@ -1426,7 +1426,7 @@ button {
     font-size: 20px;
     line-height: 24px;
     color: #474747;
-    font-family: "MuseoSansCyrl-900";
+    font-family: "MuseoSansCyrl-700";
     margin-bottom: 40px;
     margin-top: 25px
 }
@@ -2217,8 +2217,9 @@ font-size: 18px !important;
     color: #5e5d6c
 }
 .card__wrapper-img {
-    width: 90%;
-    height: 90%
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
 }
 .card__wrapper-filter {
     color: #112468;
@@ -3500,6 +3501,7 @@ font-size: 18px !important;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: left;
+    margin-right: 20px;
 }
 .product__wrapper-right_text {
     font-weight: 300;
@@ -3772,9 +3774,9 @@ display:none;
         margin: 10px
     }
     .card__wrapper-bottom {
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
     }
     .card__wrapper-item {
         margin: 20px 10px
@@ -5750,4 +5752,26 @@ padding-top: 10px;
 
 .bottom-text {
     font-weight: bold;
+}
+
+.methods__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.methods__wrapper-item + .methods__wrapper-item{
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 1553px) and (min-width: 1251px) {
+    .methods__wrapper-item + .methods__wrapper-item{
+        margin-left: 5px;
+    }
+}
+
+@media(max-width: 700px){
+    .methods__wrapper-item + .methods__wrapper-item{
+        margin-left: 5px;
+    }
 }

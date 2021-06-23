@@ -38,7 +38,7 @@
         <input type="tel" placeholder="{{ __('index.email') }}*" required>
       </div>
       <div class="form__input">
-        <input type="tel" placeholder="{{ __('index.number') }}*" required>
+        <input id="number_mask_h" type="tel" placeholder="{{ __('index.number') }}*" required>
       </div>
       <div class="form__input">
         <input type="submit" value="{{ __('index.send') }}">
@@ -143,5 +143,13 @@
             mask: '+{7}(000)000-00-00'
             };
         var mask = IMask(registerPhoneNumHeader, maskPhoneOptionsHeader);
+
+        var registerPhoneNumHeaderH = document.getElementById('number_mask_h');
+
+        var maskPhoneOptionsHeaderH = {
+          mask: '+{7}(000)000-00-00'
+        };
+        var mask = IMask(registerPhoneNumHeaderH, maskPhoneOptionsHeaderH);
     </script>
+    
     </header>
