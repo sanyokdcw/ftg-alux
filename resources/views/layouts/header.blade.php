@@ -14,7 +14,7 @@
         <input type="text" placeholder="{{ __('index.email') }}*" required>
       </div>
       <div class="form__input">
-        <input type="tel" placeholder="{{ __('index.number') }}*" required>
+        <input id="number_tel" type="tel" placeholder="{{ __('index.number') }}*" required>
       </div>
       <div class="form__input">
         <textarea required>{{ __('index.question') }}</textarea> 
@@ -46,6 +46,8 @@
       </form>
     </div>
   </div>
+
+
 
 
     <header class="header">
@@ -132,4 +134,14 @@
           <img src="/images/menu.png" alt="" class="bar_img">
         </button> --}}
       </div>
+
+      <script src="https://unpkg.com/imask"></script>
+    <script>
+        var registerPhoneNumHeader = document.getElementById('number_tel');
+
+        var maskPhoneOptionsHeader = {
+            mask: '+{7}(000)000-00-00'
+            };
+        var mask = IMask(registerPhoneNumHeader, maskPhoneOptionsHeader);
+    </script>
     </header>

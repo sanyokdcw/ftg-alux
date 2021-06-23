@@ -1697,10 +1697,10 @@ button {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    text-align: center
+    text-align: left;
 }
 .sertificate__wrapper-text {
-    display: inline-block
+    display: block;
 }
 .sertificate__wrapper img {
     width: 100%
@@ -1710,7 +1710,6 @@ button {
     line-height: 30px;
     color: #474747;
     font-family: "MuseoSansCyrl-900";
-    margin: 30px auto 0
 }
 .sertificate__title {
     margin-bottom: 35px
@@ -3840,7 +3839,7 @@ display:none;
         width: 100%
     }
     .sertificate__wrapper-item {
-        text-align: center
+        text-align: left;
     }
     .company__wrapper-item:nth-child(2) {
         width: 420px;
@@ -4772,7 +4771,8 @@ width:100% !important;
     }
     .team__wrapper-card {
         width: 70%;
-        margin: 20px auto
+        margin: 20px auto 0;
+        margin-left: 0;
     }
     .team__wrapper-card:nth-child(2) {
         margin: 0 auto
@@ -4922,9 +4922,6 @@ width:100% !important;
     .url {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap
-    }
-    .blog__wrapper-top {
-        display: none
     }
     .blog__wrapper-bottom {
         padding: 20px
@@ -5637,5 +5634,59 @@ padding-top: 10px;
 
     .calc__text {
         margin-bottom: 20px;
+    }
+}
+
+.client__wrapper-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news__wrapper-item_date{
+    font-size: 12px;
+}
+
+.property__wrapper{
+    padding: 80px 75px;
+}
+
+.property__wrapper{
+    text-emphasis: left;
+}
+
+.company__subtitle--first{
+    margin-top: 75px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.16px;
+    color: #474747;
+}
+
+.methods__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact__wrapper-right iframe {
+    width: 100%;
+}
+
+.card-detail__wrapper-right_text span{
+    text-align: left;
+}
+
+@media (max-width: 600px){
+    .cart__wrapper-form_input, .cart__wrapper-left_select, .cart__wrapper-right_btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 700px){
+
+    .card__wrapper-text{
+        min-height: 0;
     }
 }

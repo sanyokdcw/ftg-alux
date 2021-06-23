@@ -18,6 +18,13 @@ window.addEventListener("load", () => {
         }
     });
 
+    var registerPhoneNum = document.getElementById('number');
+
+    var maskPhoneOptions = {
+        mask: '+{7}(000)000-00-00'
+      };
+    var mask = IMask(registerPhoneNum, maskPhoneOptions);
+
     const projectMySwiper = document.querySelectorAll('.project .mySwiper'),
         projectMySwiper2 = document.querySelectorAll('.project .mySwiper2');
 

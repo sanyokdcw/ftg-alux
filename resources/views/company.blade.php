@@ -14,7 +14,7 @@
 <section class="company">
   <div class="company__title subtitle">ПРО КОМПАНИЮ</div>
   <img src="../images/main-bg-2.jpg" alt="">
-  <div class="company__subtitle title">ТОО FTG COMPANY</div>
+  <div class="company__subtitle--first title">ТОО FTG COMPANY</div>
   <div class="company__block">
     <div class="company__block-item">
       <div class="company__block-title title">{{ $c->col1 }}</div>

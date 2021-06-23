@@ -60,6 +60,7 @@
 </div>
 </div>
 
+<script src="https://unpkg.com/imask"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if(session('contact'))

@@ -74,4 +74,13 @@
             </div>
         </form>
     </x-auth-card>
+    <script src="https://unpkg.com/imask"></script>
+    <script>
+        var registerPhoneNum = document.getElementById('number');
+
+        var maskPhoneOptions = {
+            mask: '+{7}(000)000-00-00'
+            };
+        var mask = IMask(registerPhoneNum, maskPhoneOptions);
+    </script>
 </x-guest-layout>
