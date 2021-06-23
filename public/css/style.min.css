@@ -2248,7 +2248,7 @@ font-size: 18px !important;
 }
 .card__wrapper-img {
     height: 90%;
-    background-size: cover
+    background-size: cover;
 }
 .card__wrapper-bottom {
     text-align: center;
@@ -5677,11 +5677,6 @@ padding-top: 10px;
     text-align: left;
 }
 
-.card__wrapper-img {
-    width: 90%;
-    height: 90%;
-}
-
 @media (max-width: 600px){
     .cart__wrapper-form_input, .cart__wrapper-left_select, .cart__wrapper-right_btn {
         width: 100%;
@@ -5695,3 +5690,9 @@ padding-top: 10px;
         min-height: 0;
     }
 }
+
+@media (max-width: 1750px){
+    .card__wrapper-img {
+        height: 300px;
+    }
+} 
