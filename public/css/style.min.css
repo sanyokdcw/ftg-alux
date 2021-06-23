@@ -5677,6 +5677,18 @@ padding-top: 10px;
     text-align: left;
 }
 
+.system__wrapper {
+    margin-top: 0;
+}
+
+.system__wrapper  .swiper-wrapper{
+    margin-top: 70px;
+}
+
+/*.system__wrapper-item.swiper-slide{
+    box-shadow: 0px 5px 70px rgba(122, 122, 122, 0.1);
+} */
+
 @media (max-width: 600px){
     .cart__wrapper-form_input, .cart__wrapper-left_select, .cart__wrapper-right_btn {
         width: 100%;
