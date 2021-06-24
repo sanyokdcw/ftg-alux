@@ -51,12 +51,6 @@
     </div>
     <div class="footer__bottom">
       <div class="footer__bottom-text">© ТОО “FTG Company”, 2017 г. Все права защищены.</div>
-      <div class="alux">
-        <div class="alux-text">
-          Разработано в 
-        </div>
-        <img src="/images/alux.png" alt="">
-      </div>
       <a href="/conf.pdf" target="_blank" class="footer__bottom-link">Политика конфиденциальности</a>
     </div>
   </footer>

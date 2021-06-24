@@ -52,7 +52,7 @@
                             <a href="tel:{{ setting('contacts.telephone') }}">
                                 <img src="../images/phone-1.png" alt="">
                                 <div class="sitebar__wrapper-item_right">
-                                    <a href="tel:{{ setting('contacts.telephone') }}" style="font-size:11px">
+                                    <a href="tel:{{ setting('contacts.telephone') }}" style="font-size:13px">
                                         {{ setting('contacts.telephone') }}
                                     </a>
                                 </div>
