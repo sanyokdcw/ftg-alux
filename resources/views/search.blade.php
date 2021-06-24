@@ -95,7 +95,8 @@
       background: #ffffff;
       border: 1px solid #112468;
       border-radius: 100px;
-      margin-top: 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       padding: 20px;
       outline: none;
   }

@@ -1274,7 +1274,7 @@ button {
     padding-right: 42px;
     color: #112468;
     font-size: 14px;
-    font-family: "MuseoSansCyrl-700"
+    font-family: "MuseoSansCyrl-500"
 }
 .news__wrapper-item_next:before {
     content: "";
@@ -2248,8 +2248,10 @@ font-size: 18px !important;
     margin-right: 0
 }
 .card__wrapper-img {
-    height: 90%;
-    background-size: cover;
+    height: 450px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .card__wrapper-bottom {
     text-align: center;
@@ -3814,7 +3816,8 @@ display:none;
     }
     .delivery__wrapper-item,
     .methods__wrapper-item {
-        margin: 5px
+        margin: 5px;
+        width: 48%;
     }
 }
 @media(max-width: 1550px) {
@@ -3827,13 +3830,17 @@ display:none;
     }
     .property__wrapper {
         padding: 81px 30px;
+        flex-wrap: wrap;
     }
     .header .menu__list {
         margin-right: 65px
     }
     .property__wrapper-item {
-        width: 19%;
-        max-width: 100%
+        width: 40%;
+        max-width: 100%;
+        height: 200px;
+        margin-bottom: 36px;
+        flex-wrap: wrap;
     }
     .contact__wrapper {
   
@@ -5075,7 +5082,7 @@ padding-top: 10px;
         margin-top: 20px;
     }
     .search {
-        width: 90% !important;
+        width: 85% !important;
     }
     .sertificate__wrapper-text {
         font-size: 16px;
@@ -5760,8 +5767,10 @@ padding-top: 10px;
     flex-wrap: wrap;
 }
 
-.methods__wrapper-item + .methods__wrapper-item{
-    margin-left: 30px;
+@media screen and (min-width: 1700px) {
+    .methods__wrapper-item + .methods__wrapper-item{
+        margin-left: 30px;
+    }
 }
 
 @media screen and (max-width: 1553px) and (min-width: 1251px) {
@@ -5774,4 +5783,36 @@ padding-top: 10px;
     .methods__wrapper-item + .methods__wrapper-item{
         margin-left: 5px;
     }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1550px) {
+    .calc__right input {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .product__wrapper-right_column {
+        width: 33%;
+        padding: 0 3%;
+    }
+    .product__wrapper-right_performance .product__wrapper-right_column {
+        width: 33%;
+        padding: 0 3%;
+    }
+    .product__wrapper-right_column.last-stage {
+        width: 60%;
+    }
+}
+
+.product__wrapper-right_column.last-stage {
+    margin-right: 40px;
+}
+
+.detail-page__right_img {
+    margin-top: 0;
+}
+
+section.team {
+    padding: 0 12px;
 }
