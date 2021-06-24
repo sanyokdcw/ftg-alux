@@ -102,7 +102,7 @@
     <div class="swiper-wrapper">
       @foreach ($certificates as $certificate)
       <div class="sertificate__wrapper-item swiper-slide">
-         <img src="/storage/{{ $certificate->image }}" alt="">
+         <img class="sertificate_toggle" src="/storage/{{ $certificate->image }}" alt="">
         <div class="sertificate__wrapper-text">{{ $certificate->name }}</div>
       </div>
       @endforeach
