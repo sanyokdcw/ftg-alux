@@ -38,7 +38,7 @@
               <img src="../images/phone-3.png" alt=""> {{ setting('contacts.telephone') }}</a>
               
             <a href="tel:+7987654321" class="footer__wrapper-link footer__wrapper-phone" style="padding-left: 0 !important">
-              <img src="../images/phone-3.png" alt=""> {{ setting('contacts.footer-phone') }}
+              {{ setting('contacts.footer-phone') }}
             </a>
             
             <a href="mailto:Info@ftgcompany.kz" class="footer__wrapper-link">
