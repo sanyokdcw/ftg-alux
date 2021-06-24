@@ -37,7 +37,7 @@
             <a href="tel:+7987654321" class="footer__wrapper-link footer__wrapper-phone">
               <img src="../images/phone-3.png" alt=""> {{ setting('contacts.telephone') }}</a>
               
-            <a href="tel:+7987654321" class="footer__wrapper-link footer__wrapper-phone" style="padding-left: 0 !important">
+            <a href="tel:+7987654321" class="footer__wrapper-link footer__wrapper-phone" style="padding-left: 0 !important; margin-left: 30px;" >
               {{ setting('contacts.footer-phone') }}
             </a>
             

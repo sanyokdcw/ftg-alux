@@ -5806,7 +5806,7 @@ padding-top: 10px;
 }
 
 .product__wrapper-right_column.last-stage {
-    margin-right: 40px;
+    margin-right: 0;
 }
 
 .detail-page__right_img {
