@@ -164,16 +164,16 @@
       <button type="submit" class="cart__wrapper-right_btn">ОФОРМИТЬ ЗАКАЗ</button>
     </form>
 
-    <form action="/request" method="POST" id="number-form">
+    <form action="/consultation" method="POST" id="number-form">
       @csrf
       <div class="cart__wrapper-right_consultation">
         <div class="cart__wrapper-right_input">
           <input type="text" name="phone" id="number">
         </div>
-
         <button type="button"  onclick="sendNumber()" class="card-detail__wrapper-right_order">Заказать консультацию</button>
       </div>
-    </form>  
+    </form>
+      
     </div>
   </div>
 </section>
