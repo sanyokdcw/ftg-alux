@@ -10,7 +10,7 @@
   <div class="url__text">Блог</div>
 </section>
 
-<section class="blog">
+<section class="blog" style="min-height: 1195px;">
   <div class="blog__title subtitle">БЛОГ</div>
   <div class="blog__wrapper">
     @foreach ($blogs as $blog)

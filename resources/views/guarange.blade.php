@@ -10,7 +10,7 @@
   <div class="url__text"><a href="/">Главная</a></div>
   <div class="url__text">Гарантия и сервис</div>
 </section>
-
+<section style="    min-height: 1194px;">
 <div class="guarange">
   <div class="guarange__title subtitle">ГАРАНТИЯ И СЕРВИС</div>
   <div class="guarange__wrapper">
@@ -34,6 +34,6 @@
   <button class="estimation__btn btn-contact" onclick="openModelRight('contact2')">Связаться с нами</button>
 </section>
 
-
+</section>
 @include('layouts.footer')
 </html>

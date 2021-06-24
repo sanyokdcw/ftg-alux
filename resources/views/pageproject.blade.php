@@ -77,7 +77,7 @@
   </div>
 </section>
 
-<section class="specifications">
+<section class="specifications" style="    min-height: 657px;">
   <div class="specifications__top">
     <div class="specifications__top-item" style="cursor:pointer; color: #78b9eb;" id="Link1" onclick="changeTab(1)">
       Задача
