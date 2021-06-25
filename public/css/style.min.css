@@ -3830,7 +3830,6 @@ display:none;
     }
     .property__wrapper {
         padding: 81px 30px;
-        flex-wrap: wrap;
     }
     .header .menu__list {
         margin-right: 65px
