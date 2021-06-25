@@ -952,11 +952,11 @@ button {
 }
 .sitebar__drowdown-item_active:before {
     content: "";
-    background-image: url('../images/arrow-bottom.png');
-    width: 7px;
-    height: 4px;
+    background-image: url('../images/arrow-bottom.svg');
+    width: 16px;
+    height: 16px;
     position: absolute;
-    top: 10px;
+    top: 4px;
     right: 0;
     background-size: cover
 }
@@ -3831,7 +3831,6 @@ display:none;
     }
     .property__wrapper {
         padding: 81px 30px;
-        flex-wrap: wrap;
     }
     .header .menu__list {
         margin-right: 65px
@@ -5742,7 +5741,7 @@ padding-top: 10px;
 
 @media (max-width: 1750px){
     .card__wrapper-img {
-        height: 300px;
+        height: 240px;
     }
 }
 
@@ -5790,6 +5789,9 @@ padding-top: 10px;
     .calc__right input {
         width: 30%;
     }
+    .property__wrapper{
+        padding: 80px 18px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -5818,6 +5820,32 @@ section.team {
     padding: 0 12px;
 }
 
+.card__wrapper-text {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 12px auto 0;
+    min-height: 72px;
+}
+
+.card__wrapper-price {
+    margin: 0 0 24px;
+}
+
+.card__title {
+    font-size: 32px;
+    margin: 12px 0 12px;
+}
+
+.card__wrapper-bottom {
+    margin-top: 18px;
+}
+.footer__wrapper-text {
+    margin-top: 12px;
+}
+
+.footer__wrapper-title {
+    margin-bottom: 24px;
+}
 .sertificate_toggle{
     cursor: pointer;
 }

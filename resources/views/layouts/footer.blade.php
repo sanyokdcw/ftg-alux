@@ -1,11 +1,11 @@
 <footer class="footer">
     <div class="footer__top">
       <div class="footer__wrapper">
-        <div class="footer__wrapper-item">
+        <div class="footer__wrapper-item" style="width: 30%; padding-left: 30px;">
           <div class="footer__wrapper-logo">
             <img src="../images/logo.png" alt="">
           </div>
-          <div class="footer__wrapper-text">
+          <div class="footer__wrapper-text" style="font-size: 14px;">
             {{ setting('index.footer_description') }}
           </div>
         </div>
@@ -28,7 +28,7 @@
             <a href="/calc" class="footer__wrapper-link">Калькулятор объема</a>
           </div>
         </div>
-        <div class="footer__wrapper-item" style="width: 20%">
+        <div class="footer__wrapper-item" style="width: 30%">
           <div class="footer__wrapper-title">Контакты</div>
           <div class="footer__wrapper-block">
             <div href="#" class="footer__wrapper-link">
