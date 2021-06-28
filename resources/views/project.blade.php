@@ -127,20 +127,20 @@
         document.getElementById('result{{ $loop->index }}').style.display = "none";
         document.getElementById('solution{{ $loop->index }}').style.display = "none";
         
-        evt.currentTarget.style = "border: 1px solid #112468;";
+        evt.currentTarget.style = "border: 1px solid #112468; background-color: #fff;";
       }
       if(type == 'solution{{ $loop->index }}') {
         document.getElementById('solution{{ $loop->index }}').style.display = "block";
         document.getElementById('task{{ $loop->index }}').style.display = "none";
         document.getElementById('result{{ $loop->index }}').style.display = "none";
-        evt.currentTarget.style = "border: 1px solid #112468;";
+        evt.currentTarget.style = "border: 1px solid #112468; background-color: #fff;";
 
       }
       if(type == 'result{{ $loop->index }}') {
         document.getElementById('result{{ $loop->index }}').style.display = "block";
         document.getElementById('task{{ $loop->index }}').style.display = "none";
         document.getElementById('solution{{ $loop->index }}').style.display = "none";
-        evt.currentTarget.style = "border: 1px solid #112468;";
+        evt.currentTarget.style = "border: 1px solid #112468; background-color: #fff;";
       }
       @endforeach
   }
