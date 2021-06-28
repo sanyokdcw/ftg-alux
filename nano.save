@@ -1,0 +1,429 @@
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg) $ git 
+status
+On branch frontendg
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   public/css/style.min.css
+        modified:   public/images/card-icon.png
+        modified:   public/images/icon-cart.png
+        modified:   public/images/language-icon.png
+        modified:   public/images/phone-1.png
+        modified:   public/images/phone-2.png
+        modified:   public/images/search-icon.png
+        modified:   public/images/time-icon.png
+        modified:   public/images/user-icon.png
+        modified:   resources/views/contact.blade.php
+        modified:   resources/views/layouts/app.blade.php
+        modified:   resources/views/layouts/catalog.blade.php
+        modified:   resources/views/layouts/guest.blade.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        public/css/hamburgers.css
+        public/images/burger-btn.png
+        public/images/close-adaptive-modal.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git add .
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git commit -m "create adaptive menu"
+[frontendg 257b9fe] create adaptive menu
+ 16 files changed, 1083 insertions(+), 7 deletions(-)
+ create mode 100644 public/css/hamburgers.css
+ create mode 100644 public/images/burger-btn.png
+ create mode 100644 public/images/close-adaptive-modal.png
+ rewrite public/images/icon-cart.png (97%)
+ rewrite public/images/language-icon.png (97%)
+ rewrite public/images/phone-1.png (97%)
+ rewrite public/images/phone-2.png (97%)
+ rewrite public/images/search-icon.png (96%)
+ rewrite public/images/time-icon.png (97%)
+ rewrite public/images/user-icon.png (97%)
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git push origin frontendg
+To https://github.com/Sasha787/ftg-alux.git
+ ! [rejected]        frontendg -> frontendg (fetch first)
+error: failed to push some refs to 'https://github.com/Sasha787/ftg-alux.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git pull origin master
+remote: Enumerating objects: 77, done.
+remote: Counting objects: 100% (75/75), done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 51 (delta 38), reused 38 (delta 25), pack-reused 0
+Unpacking objects: 100% (51/51), 18.60 KiB | 4.00 KiB/s, done.
+From https://github.com/Sasha787/ftg-alux
+ * branch            master     -> FETCH_HEAD
+   adf7db1..7400a1f  master     -> origin/master
+Auto-merging resources/views/layouts/catalog.blade.php
+CONFLICT (content): Merge conflict in resources/views/layouts/catalog.blade.php
+Auto-merging public/css/style.min.css
+Automatic merge failed; fix conflicts and then commit the result.
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git push origin frontendg
+To https://github.com/Sasha787/ftg-alux.git
+ ! [rejected]        frontendg -> frontendg (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Sasha787/ftg-alux.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git log
+commit 257b9fec8393ba83d051c53cf6d2829ab1d342e8 (HEAD -> frontendg)
+Author: gremliiin <rekufo@gmail.com>
+Date:   Fri Jun 25 18:06:48 2021 +0600
+
+    create adaptive menu
+
+commit 1ba39e643a0df98212cd690b430d43fce5246898 (origin/frontendg)
+Author: gremliiin <rekufo@gmail.com>
+Date:   Thu Jun 24 16:49:18 2021 +0600
+
+    add new corrections
+
+commit adf7db15106b87ba3f29fc3b72bf70e80d24e517
+Author: root <carrymartes@gmail.com>
+Date:   Thu Jun 24 08:38:57 2021 +0000
+
+    new
+
+commit 4f0550e9591520d7970876b243e2af5519dd736c (master)
+Author: gremliiin <rekufo@gmail.com>
+Date:   Thu Jun 24 09:54:58 2021 +0600
+
+    spasite changes
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git status
+On branch frontendg
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   composer.lock
+        modified:   public/css/style.min.css
+        new file:   public/images/arrow-bottom.svg
+        modified:   public/images/logo.png
+        modified:   resources/views/company.blade.php
+        modified:   resources/views/layouts/footer.blade.php
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   resources/views/layouts/catalog.blade.php
+
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git add .
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git push
+fatal: The current branch frontendg has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin frontendg
+
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git push -u origin frontendg
+To https://github.com/Sasha787/ftg-alux.git
+ ! [rejected]        frontendg -> frontendg (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Sasha787/ftg-alux.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg|MERGING)
+$ git commit -m "adaptive menu"
+[frontendg f775d2b] adaptive menu
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git pull
+From https://github.com/Sasha787/ftg-alux
+ * [new branch]      front_vladizs -> origin/front_vladizs
+   1ba39e6..7469551  frontendg     -> origin/frontendg
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> frontendg
+
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git pull origin frontendg
+From https://github.com/Sasha787/ftg-alux
+ * branch            frontendg  -> FETCH_HEAD
+Already up to date.
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git status
+On branch frontendg
+nothing to commit, working tree clean
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git push
+fatal: The current branch frontendg has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin frontendg
+
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git push origin frontendg
+Enumerating objects: 74, done.
+Counting objects: 100% (63/63), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (34/34), 13.82 KiB | 1.38 MiB/s, done.
+Total 34 (delta 18), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (18/18), completed with 10 local objects.
+To https://github.com/Sasha787/ftg-alux.git
+   7469551..f775d2b  frontendg -> frontendg
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ git log
+commit f775d2b6856cae731d55a927d7dc93553c1dc80a (HEAD -> frontendg, origin/frontendg)
+Merge: 257b9fe 7400a1f
+Author: gremliiin <rekufo@gmail.com>
+Date:   Fri Jun 25 18:15:35 2021 +0600
+
+    adaptive menu
+
+commit 257b9fec8393ba83d051c53cf6d2829ab1d342e8
+Author: gremliiin <rekufo@gmail.com>
+Date:   Fri Jun 25 18:06:48 2021 +0600
+
+    create adaptive menu
+
+commit 7400a1f2043319db0d93623b140a0b03ceb2d9ef (origin/master, origin/HEAD)
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 10:01:27 2021 +0600
+
+    logo cropped
+
+commit 1a4422e9fa49389d1e8a8c7485d1d75124f838f5
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 09:56:47 2021 +0600
+
+Григорий@▒▒▒▒▒▒▒▒-▒▒ MINGW64 ~/Desktop/a-lux/ftg-alux (frontendg)
+$ ssh root@95.179.164.81
+root@95.179.164.81's password:
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-106-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Jun 25 12:18:06 UTC 2021
+
+  System load:  0.19                Processes:           167
+  Usage of /:   72.4% of 157.48GB   Users logged in:     1
+  Memory usage: 46%                 IP address for ens3: 95.179.164.81
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+375 packages can be updated.
+149 updates are security updates.
+
+New release '20.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Fri Jun 25 11:56:49 2021 from 95.46.233.86
+root@a-lux:~# cd ..
+root@a-lux:/# cd home/admin/web
+root@a-lux:/home/admin/web# cd ftgdcw.a-lux.dev/
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev# cd public_html/
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git log
+commit 7400a1f2043319db0d93623b140a0b03ceb2d9ef (HEAD -> master, origin/master)
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 10:01:27 2021 +0600
+
+    logo cropped
+
+commit 1a4422e9fa49389d1e8a8c7485d1d75124f838f5
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 09:56:47 2021 +0600
+
+    property blocks fixes
+
+commit 4669f02d501f5008118309e723587f6c81d1e282
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 09:54:13 2021 +0600
+
+    24/06 fixes
+
+commit 471e077f5344d7671df652dc5e4bcf0f7c14c5c5
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Thu Jun 24 17:04:49 2021 +0600
+
+    certs work logic added
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html#
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git pull
+remote: Enumerating objects: 74, done.
+remote: Counting objects: 100% (63/63), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 34 (delta 18), reused 34 (delta 18), pack-reused 0
+Unpacking objects: 100% (34/34), done.
+From https://github.com/Sasha787/ftg-alux
+   7469551..f775d2b  frontendg  -> origin/frontendg
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git branch
+* master
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git merge frontendg
+merge: frontendg - not something we can merge
+
+Did you mean this?
+        origin/frontendg
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git merge origin frontendg
+merge: origin - not something we can merge
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git pull origin master
+From https://github.com/Sasha787/ftg-alux
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git log
+commit 7400a1f2043319db0d93623b140a0b03ceb2d9ef (HEAD -> master, origin/master)
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 10:01:27 2021 +0600
+
+    logo cropped
+
+commit 1a4422e9fa49389d1e8a8c7485d1d75124f838f5
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 09:56:47 2021 +0600
+
+    property blocks fixes
+
+commit 4669f02d501f5008118309e723587f6c81d1e282
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Fri Jun 25 09:54:13 2021 +0600
+
+    24/06 fixes
+
+commit 471e077f5344d7671df652dc5e4bcf0f7c14c5c5
+Author: Vladislav Moiseev <vladmoiseevmail@gmail.com>
+Date:   Thu Jun 24 17:04:49 2021 +0600
+
+    certs work logic added
+
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# ^C
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git pull origin master
+From https://github.com/Sasha787/ftg-alux
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git status
+On branch master
+nothing to commit, working tree clean
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git pull
+From https://github.com/Sasha787/ftg-alux
+   7400a1f..f775d2b  master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git pull origin master
+From https://github.com/Sasha787/ftg-alux
+ * branch            master     -> FETCH_HEAD
+Updating 7400a1f..f775d2b
+Fast-forward
+ public/css/hamburgers.css                 | 706 ++++++++++++++++++++++++++++++
+ public/css/style.min.css                  | 187 +++++++-
+ public/images/burger-btn.png              | Bin 0 -> 205 bytes
+ public/images/card-icon.png               | Bin 199 -> 324 bytes
+ public/images/close-adaptive-modal.png    | Bin 0 -> 211 bytes
+ public/images/icon-cart.png               | Bin 311 -> 474 bytes
+ public/images/language-icon.png           | Bin 345 -> 747 bytes
+ public/images/phone-1.png                 | Bin 285 -> 621 bytes
+ public/images/phone-2.png                 | Bin 319 -> 697 bytes
+ public/images/search-icon.png             | Bin 263 -> 526 bytes
+ public/images/time-icon.png               | Bin 354 -> 727 bytes
+ public/images/user-icon.png               | Bin 291 -> 597 bytes
+ resources/views/contact.blade.php         |   5 +-
+ resources/views/layouts/app.blade.php     |   2 +
+ resources/views/layouts/catalog.blade.php | 191 ++++++++
+ 
+resources/views/layouts/guest.blade.php   |   1 +
+ 16 files changed, 1086 insertions(+), 6 deletions(-)
+ create mode 100644 public/css/hamburgers.css
+ create mode 100644 public/images/burger-btn.png
+ create mode 100644 public/images/close-adaptive-modal.png
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public_html# git status
+On branch master
+nothing to commit, working tree clean
+root@a-lux:/home/admin/web/ftgdcw.a-lux.dev/public
