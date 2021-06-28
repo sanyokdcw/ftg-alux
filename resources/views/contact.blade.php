@@ -1,11 +1,12 @@
-<!D<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 
 @include('layouts.catalog')
 @include('layouts.header')
 @section('content')
 
-        
+        <div class="content_wrapper">
+<div class="content_wrapper__content">
 <section class="url">
   <div class="url__text"><a href="/">Главная</a></div>
   <div class="url__text">Контакты</div>
@@ -37,7 +38,9 @@
     </div>
   </div>
 </section>
-
-
+</div>
+<div class="content_wrapper__footer">
 @include('layouts.footer')
+</div>
+</div>
 </html>

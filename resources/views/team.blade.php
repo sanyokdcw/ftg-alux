@@ -5,7 +5,7 @@
 @include('layouts.header')
 @section('content')
 
-<section class="url" style="margin-left:12px">
+<section class="url" style="margin-left:62px">
   <div class="url__text"><a href="/">Главная</a></div>
   <div class="url__text">Команда</div>
 </section>
