@@ -6036,7 +6036,7 @@ section.team {
     }
 
     .delivery__wrapper .delivery__wrapper-item{
-        max-width: 640px;
+        width: 60%;
     }
 }
 
