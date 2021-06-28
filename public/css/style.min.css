@@ -1771,9 +1771,6 @@ button {
     -ms-flex-align: center;
     align-items: center
 }
-.team {
-margin-left:50px;
-}
 .team__wrapper-link img {
     margin-right: 17px
 }
@@ -5803,9 +5800,7 @@ padding-top: 10px;
         width: 33%;
         padding: 0 3%;
     }
-    .product__wrapper-right_column.last-stage {
-        width: 60%;
-    }
+    
 }
 
 .product__wrapper-right_column.last-stage {
@@ -5814,10 +5809,6 @@ padding-top: 10px;
 
 .detail-page__right_img {
     margin-top: 0;
-}
-
-section.team {
-    padding: 0 12px;
 }
 
 .card__wrapper-text {
@@ -5929,7 +5920,7 @@ section.team {
     top: 0;
     left: 0;
     background-color: #fff;
-    z-index: 99;
+    z-index: 150;
     width: 100%;
     height: 100%;
     padding-top: 60px;
@@ -6082,4 +6073,10 @@ section.team {
     }
 
 
+}
+
+@media(max-width: 700px){
+    .system__wrapper  .swiper-wrapper{
+        margin-top: 0;
+    }
 }
