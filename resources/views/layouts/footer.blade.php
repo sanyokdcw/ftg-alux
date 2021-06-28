@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer__top">
       <div class="footer__wrapper">
-        <div class="footer__wrapper-item" style="width: 30%; padding-left: 30px;">
+        <div class="footer__wrapper-item" style="width: 30%; ">
           <div class="footer__wrapper-logo">
             <img src="../images/logo.png" alt="">
           </div>

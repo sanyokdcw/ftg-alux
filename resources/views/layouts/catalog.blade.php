@@ -197,7 +197,7 @@
 
                 <div class="modal-adaptive-sidebar">
                     <div class="sidebar-adaprive__logo">
-                        <img class="sidebar-adaprive__logo--img" src="../images/logo.png" alt="">
+                        <a class="sidebar-adaprive__logo--img-link" href="/"><img class="sidebar-adaprive__logo--img" src="../images/logo.png" alt=""></a>
                         <img src="../images/close-adaptive-modal.png" class="close-adaptive-modal-btn">
                     </div>
 
