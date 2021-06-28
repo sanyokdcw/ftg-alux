@@ -12,7 +12,9 @@
   <div class="url__text">Контакты</div>
 </section>
 
-<section class="contact">
+<section class="contact" style="
+    min-height: 1200px;
+">
   <div class="contact__title subtitle">Контакты</div>
   <div class="contact__wrapper">
     <div class="contact__wrapper-left">
