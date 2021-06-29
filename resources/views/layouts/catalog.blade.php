@@ -66,7 +66,7 @@
                         <div class="sitebar__wrapper-item sitebar__wrapper-times">
                             <a href="#">
                                 <img src="../images/time-icon.png" alt="">
-                                <div class="sitebar__wrapper-item_right">
+                                <div class="sitebar__wrapper-item_right sitebar_text_nowrap">
                                     <div>
                                         {{ setting('contacts.schedule') }}
                                     </div>
