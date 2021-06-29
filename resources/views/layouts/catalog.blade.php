@@ -56,7 +56,7 @@
                             <a href="tel:{{ setting('contacts.telephone') }}">
                                 <img src="../images/phone-1.png" alt="">
                                 <div class="sitebar__wrapper-item_right">
-                                    <a href="tel:{{ setting('contacts.telephone') }}" style="font-size:13px">
+                                    <a href="tel:{{ setting('contacts.telephone') }}">
                                         {{ setting('contacts.telephone') }}
                                     </a>
                                 </div>
@@ -66,7 +66,7 @@
                         <div class="sitebar__wrapper-item sitebar__wrapper-times">
                             <a href="#">
                                 <img src="../images/time-icon.png" alt="">
-                                <div class="sitebar__wrapper-item_right" style="font-size:12px">
+                                <div class="sitebar__wrapper-item_right">
                                     <div>
                                         {{ setting('contacts.schedule') }}
                                     </div>

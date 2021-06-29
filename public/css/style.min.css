@@ -859,7 +859,7 @@ button {
     align-items: center
 }
 .sitebar__wrapper-item_right {
-    margin-left: 19px
+    margin-left: 7px
 }
 .sitebar__wrapper-times a {
     -webkit-box-align: start;
@@ -6023,6 +6023,10 @@ padding-top: 10px;
 
 .content{
     height: 100%;
+}
+
+.sitebar__wrapper-item_right a{
+    font-size: 15px;
 }
 
 @media(max-width: 1600px){
