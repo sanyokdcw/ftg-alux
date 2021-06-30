@@ -17,7 +17,7 @@
   <div class="url__text">{{ $subcategory->name }}</div>
 </section>
 
-<section class="card">
+<section class="card" style="min-height: 1230px;">
   <div class="card__title subtitle">{{ $subcategory->name }}</div>
   <div class="card__wrapper">
     <div class="card__wrapper-top">

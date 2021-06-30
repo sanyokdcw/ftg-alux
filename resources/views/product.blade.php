@@ -11,7 +11,7 @@
     <div class="url__text">Подобрать продукцию</div>
 </section>
 
-<section class="product">
+<section class="product" style="min-height: 1180px">
     <div class="product__title subtitle">ПОДОБРАТЬ ПРОДУКЦИЮ</div>
     <div class="product__wrapper">
         <div class="product__wrapper-left">
@@ -606,12 +606,12 @@
 
             <div class="product__wrapper-right_performance" style="margin-top: 0; margin-right: 70px;">
                 <div class="product__wrapper-right_title title">УКАЖИТЕ ПРОИЗВОДИТЕЛЬНОСТЬ:</div>
-                <div class="product__wrapper-right_block" style="    display: -webkit-box; flex-wrap: nowrap">
-                    <div class="product__wrapper-right_column">
+                <div class="product__wrapper-right_block" style="display: flex; flex-wrap: nowrap; justify-content: space-between; width: 85%;">
+                    <div class="product__wrapper-right_column last-stage">
                         <div class="product__wrapper-right_text">Суточная м3 / сутки</div>
                         <input type="number" value="0">
                     </div>
-                    <div class="product__wrapper-right_column">
+                    <div class="product__wrapper-right_column last-stage">
                         <div class="product__wrapper-right_text">Часовая М3 / час</div>
                         <input type="number" value="0">
                     </div>

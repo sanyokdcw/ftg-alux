@@ -17,7 +17,7 @@
   
 </section>
 
-<section class="card">
+<section class="card" style="min-height:1230px">
   <div class="card__title subtitle">{{ strip_tags($category->name) }}</div>
   <div class="card__wrapper">
     <div class="card__wrapper-top">

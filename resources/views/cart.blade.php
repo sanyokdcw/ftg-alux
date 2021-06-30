@@ -170,10 +170,10 @@
         <div class="cart__wrapper-right_input">
           <input type="text" name="phone" id="number">
         </div>
-
         <button type="button"  onclick="sendNumber()" class="card-detail__wrapper-right_order">Заказать консультацию</button>
       </div>
-    </form>  
+    </form>
+      
     </div>
   </div>
 </section>

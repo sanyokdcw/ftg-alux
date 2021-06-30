@@ -8,7 +8,7 @@
   <div class="url__text"><a href="/">Главная</a></div>
   <div class="url__text">Партнерам</div>
 </section>
-
+<section style="min-height: 1215px">
 <section class="pather">
   <div class="pather__title subtitle">ПАРТНЕРАМ</div>
   <div class="pather__wrapper-item_title title">ЧТО ЗНАЧИТ БЫТЬ ДИЛЕРОМ FTG COMPANY?</div>
@@ -46,7 +46,7 @@
   <div class="estimation__text">Присоединяйся</div>
   <button class="estimation__btn btn-fill" onclick="openModelRight('contact2')">Заполнить форму</button>
 </section>
-
+</section>
         
 @include('layouts.footer')
 </html>

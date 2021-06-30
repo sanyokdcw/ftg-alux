@@ -102,16 +102,46 @@
     <div class="swiper-wrapper">
       @foreach ($certificates as $certificate)
       <div class="sertificate__wrapper-item swiper-slide">
-        <img src="/storage/{{ $certificate->image }}" alt="">
+         <img class="sertificate_toggle" src="/storage/{{ $certificate->image }}" alt="">
         <div class="sertificate__wrapper-text">{{ $certificate->name }}</div>
       </div>
       @endforeach
+      
     </div>
+
+    
 
     <div class="swiper-pagination" style="top: inherit !important;"></div>
   </div>
 </section>
 
 
+
 @include('layouts.footer')
+
+<div id="modal_for_pic" class="modal_for_pic inactive">
+  <img id="modal-close-btn" src="/images/close.svg" class="modal_for_pic-close-btn" alt="">
+  <div class="modal_for_pic-pic">
+    <img id="modal-image" src="123" alt="" class="pic_img">
+  </div>
+</div>
+
+<script>
+  const certificates = document.querySelectorAll('.sertificate_toggle');
+  const modal = document.getElementById('modal_for_pic');
+  const modalClose = document.getElementById('modal-close-btn');
+  const modalImage = document.getElementById('modal-image');
+  certificates.forEach(cert => {
+    cert.addEventListener('click', (e) => {
+      modalImage.src = cert.src;
+      modal.classList.toggle('inactive');
+    });
+  });
+  modal.addEventListener('click', (e) => {
+    event.target.classList.toggle('inactive')
+  });
+  modalClose.addEventListener('click', (e) => {
+    modal.classList.toggle('inactive')
+  });
+</script>
 </html>

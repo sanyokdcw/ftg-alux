@@ -1,11 +1,11 @@
 <footer class="footer">
     <div class="footer__top">
       <div class="footer__wrapper">
-        <div class="footer__wrapper-item">
+        <div class="footer__wrapper-item" style="width: 30%; ">
           <div class="footer__wrapper-logo">
             <img src="../images/logo.png" alt="">
           </div>
-          <div class="footer__wrapper-text">
+          <div class="footer__wrapper-text" style="font-size: 14px;">
             {{ setting('index.footer_description') }}
           </div>
         </div>
@@ -28,7 +28,7 @@
             <a href="/calc" class="footer__wrapper-link">Калькулятор объема</a>
           </div>
         </div>
-        <div class="footer__wrapper-item" style="width: 20%">
+        <div class="footer__wrapper-item" style="width: 30%">
           <div class="footer__wrapper-title">Контакты</div>
           <div class="footer__wrapper-block">
             <div href="#" class="footer__wrapper-link">
@@ -36,7 +36,11 @@
             </div>
             <a href="tel:+7987654321" class="footer__wrapper-link footer__wrapper-phone">
               <img src="../images/phone-3.png" alt=""> {{ setting('contacts.telephone') }}</a>
-            <a href="tel:+7987654321" class="footer__wrapper-link footer__wrapper-phone"></a>
+              
+            <a href="tel:+7987654321" class="footer__wrapper-link footer__wrapper-phone" style="padding-left: 0 !important; margin-left: 30px;" >
+              {{ setting('contacts.footer-phone') }}
+            </a>
+            
             <a href="mailto:Info@ftgcompany.kz" class="footer__wrapper-link">
               <img src="../images/mail-icon.png" alt="">
               {{ setting('contacts.email') }}
@@ -47,12 +51,6 @@
     </div>
     <div class="footer__bottom">
       <div class="footer__bottom-text">© ТОО “FTG Company”, 2017 г. Все права защищены.</div>
-      <div class="alux">
-        <div class="alux-text">
-          Разработано в 
-        </div>
-        <img src="/images/alux.png" alt="">
-      </div>
       <a href="/conf.pdf" target="_blank" class="footer__bottom-link">Политика конфиденциальности</a>
     </div>
   </footer>
