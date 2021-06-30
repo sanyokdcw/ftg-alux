@@ -22,38 +22,34 @@
   <div class="card__wrapper">
     <div class="card__wrapper-top">
       <div class="card__wrapper-number">
-        <span>{{ 0 }}</span> товаров
+        <span>{{ $products->count() }}</span> товаров
       </div>
       <div class="card__wrapper-filter dropdown">
           <span>
-            @if(1)
+            @if($sort == 'down')
             По уменьшению цены
             @else
             По увеличению цены
             @endif
           </span>
           <div class="dropdown-content">
-            @if(1)
+            @if($sort == 'down')
             <p style="font-size: 14px;">
-              <a href="/subcategoryp">
+              <a href="/category/{{ $category->id }}?sort=up">
                 По увеличению цены
             </a>
-          
             @else 
             <p style="font-size: 14px;">
-              <a href="/subcategory?sort=down">
+              <a href="/category/{{ $category->id }}?sort=down">
                 По уменьшению цены
             </a>
-            
-            
-
             @endif
             </p>
           </div>
       </div>
     </div>
     <div class="card__wrapper-bottom">
-      @foreach ([] as $product)
+      @foreach ($products as $product)
       <div class="card__wrapper-item">
         <a href="/product/{{ $product->id }}" class="card__wrapper-img" style="background-image: url(/storage/{{ $product->image }});"></a>
         <div class="card__wrapper-text">

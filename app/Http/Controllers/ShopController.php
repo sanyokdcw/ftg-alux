@@ -18,7 +18,6 @@ class ShopController extends Controller
     
     public function card($id, Request $request){
         if(session()->has('locale')) {
-
             $locale = session('locale');
             App::setLocale($locale);
         }
@@ -40,6 +39,31 @@ class ShopController extends Controller
         }
         $sort = 'up';
         return view('card', compact('subcategory', 'products', 'sort'));
+    }
+
+    public function category_show($id, Request $request){
+        if(session()->has('locale')) {
+            $locale = session('locale');
+            App::setLocale($locale);
+        }
+        else {
+            $locale = session(['locale' => 'ru']);
+            App::setLocale('ru');
+        }
+
+        $category = Category::find($id);
+        $products = Product::where('available', 1)->where('category_id', $category->id)->orderBy('price_kz', 'asc')->get()->translate(session('locale'));
+        if($request->has('sort')) {
+            $sort = $request->sort;
+            if($sort == 'down')
+                $products = Product::where('available', 1)->where('subcategory_id', $subcategory->id)->orderBy('price_kz', 'desc')->get()->translate(session('locale'));
+            if($sort == 'up')
+                $products = Product::where('available', 1)->where('subcategory_id', $subcategory->id)->orderBy('price_kz', 'asc')->get()->translate(session('locale'));
+
+                return view('category', compact('category', 'products', 'sort'));
+        }
+        $sort = 'up';
+        return view('category', compact('category', 'products', 'sort'));
     }
 
 
