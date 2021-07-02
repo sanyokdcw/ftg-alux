@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+@section('title', 'Проект')
 @include('layouts.catalog')
 @include('layouts.header')
 @section('content')

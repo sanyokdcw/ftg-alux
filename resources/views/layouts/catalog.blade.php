@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="msapplication-TileColor" content="#112468">
     <meta name="theme-color" content="#112468">
-    <title>FTG</title>
+    <title>@yield('title')</title>
     <link href="../css/hamburgers.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.min.css" />
 </head>
