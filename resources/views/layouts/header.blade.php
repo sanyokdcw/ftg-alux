@@ -105,6 +105,9 @@
           </li>
         </ul>
       </nav>
+      <div class="logo_adaptive">
+        <a class="sidebar-adaprive__logo--img-link" href="/"><img class="sidebar-adaprive__logo--img" src="../images/logo.png" alt=""></a>
+      </div>
       <div class="header__button">
         @if(Auth::check())
           <a href="/logout" style="margin:0">{{ __('index.logout') }}</a>
@@ -132,11 +135,11 @@
         <a href="#" class="header__button-search bar">
           <img src="../images/menu.png" alt="" style="height: 19px; width: 18px">
         </a>
+        
         {{-- <button href="#" class="bar">
           <img src="/images/menu.png" alt="" class="bar_img">
         </button> --}}
       </div>
-
       <script src="https://unpkg.com/imask"></script>
     <script>
         var registerPhoneNumHeader = document.getElementById('number_tel');

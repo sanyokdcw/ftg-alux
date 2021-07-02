@@ -66,6 +66,44 @@ max-width: 200px;
     padding: 0;
     z-index: 1
 }
+a{
+    transition: 300ms;
+}
+a:hover{
+    transition: 300ms;
+    text-decoration: underline;
+}
+
+element.style {
+}
+a:hover {
+    transition: 300ms;
+    text-decoration: underline;
+}
+.sitebar__btn,
+.help__wrapper-btn,
+.blog__btn{
+    transition: 300ms;
+}
+.sitebar__btn:hover,
+.blog__btn:hover
+{
+    transition: 300ms;
+    background: linear-gradient(165.71deg, #1a6fb0 10.15%, #112468 196.77%);
+    color: #fff;
+    text-decoration: none;
+}
+.help__wrapper-btn:hover{
+    transition: 300ms;
+    background: #fff;
+    text-decoration: none;
+    color: #112468;
+    border:solid 1px #112468;
+}
+.footer__wrapper-link:hover,
+.menu__list-submenu .menu__list-link:hover{
+    text-decoration: none;
+}
 .swiper-container-vertical > .swiper-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -858,6 +896,14 @@ button {
     -ms-flex-align: center;
     align-items: center
 }
+.sitebar__wrapper-item span{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
 .sitebar__wrapper-item_right {
     margin-left: 7px
 }
@@ -1000,6 +1046,7 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    position: relative;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between
@@ -1032,7 +1079,7 @@ button {
     box-shadow: 0 5px 90px rgba(52, 52, 52, 0.1);
     border-radius: 10px;
     padding: 22px 15px;
-    z-index: 20;
+    z-index: 99;
     left: -30px;
     width: 260px;
     display: none;
@@ -1069,7 +1116,7 @@ button {
     color: #474747;
     padding-right: 15px;
     position: relative;
-    font-weight: 500
+    font-weight: 600
 }
 .header .menu__list-link_active:before {
     content: "";
@@ -6036,7 +6083,9 @@ padding-top: 10px;
     font-size: 15px;
 }
 
-
+.logo_adaptive{
+    display: none;
+}
 
 @media(max-width: 1600px){
     .delivery__wrapper{
@@ -6103,6 +6152,24 @@ padding-top: 10px;
         display: none;
     }
 
+    .menu_adaptive{
+        display: block;
+        position: relative;
+    }
+
+    .logo_adaptive{
+        display: block;
+        position: absolute;
+        width: 120px;
+        top: -20px;
+        left: -15px;
+    }
+
+    .logo_adaptive img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
 }
 

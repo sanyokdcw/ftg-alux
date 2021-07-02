@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="sitebar__wrapper-item sitebar__wrapper-times">
-                            <a href="#">
+                            <span>
                                 <img src="../images/time-icon.png" alt="">
                                 <div class="sitebar__wrapper-item_right sitebar_text_nowrap">
                                     <div>
@@ -74,7 +74,7 @@
                                         {{ setting('contacts.schedule1') }}
                                     </div>
                                 </div>
-                            </a>
+                            </span>
                         </div>
                     </div>
                     <div class="sitebar__wrapper-right arrow">
@@ -186,7 +186,7 @@
                         onclick="openModelRight('contact2')">{{ __('index.write_us') }}</a>
                     <div class="sitebar__social">
                         @foreach ($socials as $social)
-                            <a href="{{ $social->link }}" class="sitebar__social-link">
+                            <a target="_blank" href="{{ $social->link }}" class="sitebar__social-link">
                                 <img src="/storage/{{ $social->image }}" alt="">
                             </a>
                         @endforeach
@@ -335,7 +335,7 @@
                         onclick="openModelRight('contact2')">{{ __('index.write_us') }}</a>
                     <div class="sitebar__social">
                         @foreach ($socials as $social)
-                            <a href="{{ $social->link }}" class="sitebar__social-link">
+                            <a target="_blank" href="{{ $social->link }}" class="sitebar__social-link">
                                 <img src="/storage/{{ $social->image }}" alt="">
                             </a>
                         @endforeach

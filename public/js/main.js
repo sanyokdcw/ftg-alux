@@ -8,16 +8,19 @@ window.addEventListener("load", () => {
         breakpoints: {
             1550: {
                 slidesPerView: 4,
+                loadPrevNextAmount: 4,
             },
             760: {
                 slidesPerView: 2,
+                loadPrevNextAmount: 2,
             },
             320: {
                 slidesPerView: 1,
+                loadPrevNextAmount: 1,
             }
         }
     });
-
+    console.log("555555");
     var registerPhoneNum = document.getElementById('number');
 
     var maskPhoneOptions = {

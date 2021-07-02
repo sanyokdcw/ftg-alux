@@ -47,7 +47,7 @@
   <div class="blog__button-time">{{ date('d-m-Y', strtotime($blog->created_at)) }}</div>
   <div class="socials">
     @foreach ($socials as $social)
-      <a href="{{ $social->link }}" class="sitebar__social-link" style="margin-right: 5px;">
+      <a href="{{ $social->link }}" class="sitebar__social-link" target="_blank" style="margin-right: 5px;">
         <img src="/storage/{{ $social->image }}" alt="">
       </a>
     @endforeach
