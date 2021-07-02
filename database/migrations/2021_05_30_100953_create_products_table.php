@@ -17,7 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('image')->nullable();
-            $table->foreignId('subcategory_id')->constrained()->onDelete('cascade');
+            $table->foreignId('subcategory_id')->constrained();
+            $table->foreignId('category_id')->constrained();
             $table->string('article');
             $table->boolean('available');
             $table->string('existence');

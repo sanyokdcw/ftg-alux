@@ -26,10 +26,7 @@ Route::get('/setlocale/{locale}', function($locale) {
 });
 
 Route::get('/cart', [ShopController::class, 'cart'])->middleware('auth'); 
-Route::get('/category/{id}', function($id) {
-	$category = Category::find($id);
-	return view('category', compact('category'));
-}); 
+Route::get('/category/{id}', [ShopController::class, 'category_show']);
 
 Route::get('/contact', function () {
     if(session()->has('locale')) {

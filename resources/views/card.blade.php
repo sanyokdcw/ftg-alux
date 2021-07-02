@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+@section('title', 'Товары')
 @include('layouts.catalog')
 @include('layouts.header')
 @section('content')
@@ -38,15 +38,11 @@
               <a href="/subcategory/{{ $subcategory->id }}?sort=up">
                 По увеличению цены
             </a>
-          
             @else 
             <p style="font-size: 14px;">
               <a href="/subcategory/{{ $subcategory->id }}?sort=down">
                 По уменьшению цены
             </a>
-            
-            
-
             @endif
             </p>
           </div>
