@@ -74,26 +74,39 @@ a:hover{
     text-decoration: underline;
 }
 
-element.style {
-}
 a:hover {
     transition: 300ms;
     text-decoration: underline;
 }
 .sitebar__btn,
 .help__wrapper-btn,
-.blog__btn{
+.blog__btn,
+.sitebar__drowdown-btn,
+.card-detail__wrapper-right_btn,
+.card__wrapper-btn,
+.estimation__btn,
+.cart__wrapper-right_btn,
+.office__order-btn{
     transition: 300ms;
 }
+.sitebar__drowdown-btn:hover{
+    transition: 300ms;
+    color: #112468;
+}
 .sitebar__btn:hover,
-.blog__btn:hover
+.blog__btn:hover,
+.card__wrapper-btn:hover
 {
     transition: 300ms;
-    background: linear-gradient(165.71deg, #1a6fb0 10.15%, #112468 196.77%);
+    background: #112468;
     color: #fff;
     text-decoration: none;
 }
-.help__wrapper-btn:hover{
+.help__wrapper-btn:hover,
+.card-detail__wrapper-right_btn:hover,
+.estimation__btn:hover,
+.cart__wrapper-right_btn:hover,
+.office__order-btn:hover{
     transition: 300ms;
     background: #fff;
     text-decoration: none;
@@ -6085,6 +6098,32 @@ padding-top: 10px;
 
 .logo_adaptive{
     display: none;
+}
+
+.swal2-styled.swal2-confirm{
+    background: linear-gradient(
+165.71deg
+, #1a6fb0 10.15%, #112468 196.77%) !important;
+    border-radius: 100px !important;
+    color: #fff !important;
+    border: 1px solid #0575e6 !important;
+    transition: 300ms !important;
+}
+
+.swal2-styled.swal2-confirm:hover{
+    transition: 300ms !important;
+    background-color: #fff !important;
+    color: #0575e6 !important;
+    border: 1px solid #0575e6 !important;
+}
+
+.card-detail__wrapper-right_order{
+    transition: 300ms;
+}
+
+.card-detail__wrapper-right_order:hover{
+    transition: 300ms;
+    color: #0575e6;
 }
 
 @media(max-width: 1600px){
