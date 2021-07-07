@@ -10,6 +10,8 @@ use App\Models\Product;
 use App\Models\Cart;
 use App\Models\OrderProduct;
 use App\Models\Order;
+use App\Models\DeliveryType;
+use App\Models\DeliveryMethod;
 use Auth;
 use App;
 
@@ -134,6 +136,11 @@ class ShopController extends Controller
             App::setLocale('ru');
         }
 
+        $deliveries = DeliveryType::all();
+        foreach($deliveries as $delivery){
+            $delivery->methods = $delivery->DeliveryMethods;
+        }
+
         $cart_items = Cart::where('user_id', Auth::user()->id)->get();
         $sum = 0;
         $discount = 0;
@@ -153,8 +160,7 @@ class ShopController extends Controller
         }
 
         $popular = Product::where('available', 1)->inRandomOrder()->take(3)->get()->translate(session('locale'));
-
-        return view('cart', compact('cart_items', 'sum', 'popular', 'discount', 'discountSum'));
+        return view('cart', compact('cart_items', 'sum', 'popular', 'discount', 'discountSum', 'deliveries'));
     }
     public function add_order(Request $request){
         if(session()->has('locale')) {

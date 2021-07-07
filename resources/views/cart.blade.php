@@ -38,30 +38,16 @@
       </div>
       <div class="cart__wrapper-left_title">СПОСОБ ДОСТАВКИ</div>
       <div class="cart__wrapper-form">
-      <div class="cart__wrapper-left_select">
-          <select class="cart__wrapper-left_output">
-            <option value="">Город</option>
-            <option value="">Алматы</option>
-            <option value="">Алматы</option>
-            <option value="">Алматы</option>
-          </select>
-        </div>
-
-        <div class="cart__wrapper-left_select">
-          <select class="cart__wrapper-left_output">
-            <option value="">Отделение</option>
-            <option value="">Отделение</option>
-            <option value="">Отделение</option>
-            <option value="">Отделение</option>
-          </select>
-        </div>
-
-        <div class="cart__wrapper-left_select">
-          <select class="cart__wrapper-left_output">
-            <option value="">Доставка почтой</option>
-            <option value="">Самовывоз</option>
-          </select>
-        </div>
+        @foreach ($deliveries as $delivery)
+          <div class="cart__wrapper-left_select">
+            <select class="cart__wrapper-left_output">
+              <option value="">{{ $delivery->name }}</option>
+              @foreach ($delivery->methods as $method)
+              <option value="">{{ $method->name }}</option>
+              @endforeach
+            </select>
+          </div>
+        @endforeach
       </div>
 
 
