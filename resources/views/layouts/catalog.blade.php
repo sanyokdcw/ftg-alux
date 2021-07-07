@@ -5,6 +5,7 @@
     <meta name="msapplication-TileColor" content="#112468">
     <meta name="theme-color" content="#112468">
     <title>@yield('title')</title>
+	<meta name="description" content="@yield('desc')">
     <link href="../css/hamburgers.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.min.css" />
 </head>

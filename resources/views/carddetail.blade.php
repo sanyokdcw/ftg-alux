@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
-@section('title', 'Товар')
+@section('title', $product->name)
+@section('desc', strip_tags($product->description))
 @include('layouts.catalog')
 @include('layouts.header')
 @php

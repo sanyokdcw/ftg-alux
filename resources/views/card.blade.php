@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 @section('title', 'Товары')
+@section('desc', $subcategory->name)
 @include('layouts.catalog')
 @include('layouts.header')
 @section('content')
