@@ -58,9 +58,9 @@ class ShopController extends Controller
         if($request->has('sort')) {
             $sort = $request->sort;
             if($sort == 'down')
-                $products = Product::where('available', 1)->where('subcategory_id', $subcategory->id)->orderBy('price_kz', 'desc')->get()->translate(session('locale'));
+                $products = Product::where('available', 1)->where('category_id', $subcategory->id)->orderBy('price_kz', 'desc')->get()->translate(session('locale'));
             if($sort == 'up')
-                $products = Product::where('available', 1)->where('subcategory_id', $subcategory->id)->orderBy('price_kz', 'asc')->get()->translate(session('locale'));
+                $products = Product::where('available', 1)->where('category_id', $subcategory->id)->orderBy('price_kz', 'asc')->get()->translate(session('locale'));
 
                 return view('category', compact('category', 'products', 'sort'));
         }
