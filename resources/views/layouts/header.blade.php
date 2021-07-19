@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="form">
+  <div id="need-focus-block" class="form">
     <div class="form__wrapper" style="display: none">
       <div class="form__title">{{ __('index.callback') }}</div>
       <button class="form__close">
@@ -16,7 +16,7 @@
       <div class="form__input">
         <input name="phone" id="number_tel" type="tel" placeholder="{{ __('index.number') }}*" required>
       </div>
-      <div id="need-focus-block" class="form__input">
+      <div class="form__input">
         <textarea id="need-focus" placeholder="{{__('index.question')}}" name="question" required></textarea> 
       </div>
       <div class="form__input">
