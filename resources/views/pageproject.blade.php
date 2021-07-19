@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-@section('title', 'Проект')
+@section('title', $project->title)
 @include('layouts.catalog')
 @include('layouts.header')
 @section('content')

@@ -38,9 +38,9 @@
 
             <a href="tel:{{setting('contacts.footer-phone')}}" class="footer__wrapper-link footer__wrapper-phone" style="padding-left: 0 !important; margin-left: 30px;" >
               {{ setting('contacts.footer-phone') }}
-            </a>
+            </a>            
+            <a href="mailto:{{ setting('contacts.email') }}" class="footer__wrapper-link">
 
-            <a href="mailto:Info@ftgcompany.kz" class="footer__wrapper-link">
               <img src="../images/mail-icon.png" alt="">
               {{ setting('contacts.email') }}
             </a>

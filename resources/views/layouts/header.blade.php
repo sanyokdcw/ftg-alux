@@ -11,7 +11,7 @@
         <input name="name" type="text" placeholder="{{ __('index.fullname') }}*" required>
       </div>
       <div class="form__input">
-        <input name="email" type="text" placeholder="{{ __('index.email') }}*" required>
+        <input name="email" type="email" placeholder="{{ __('index.email') }}*" required>
       </div>
       <div class="form__input">
         <input name="phone" id="number_tel" type="tel" placeholder="{{ __('index.number') }}*" required>
