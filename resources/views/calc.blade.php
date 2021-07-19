@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="inhibitor_dosage" id="" placeholder="0 мг/л ( г/м3 )" required>
+                <input type="number" name="inhibitor_dosage" id="" placeholder="0 мг/л ( г/м3 )" required>
             </div>
         </div>
         <div class="calc__row">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="water_consumption" id="" placeholder="0 мг/ч" required>
+                <input type="number" name="water_consumption" id="" placeholder="0 мг/ч" required>
             </div>
         </div>
         <div class="calc__row">
@@ -42,9 +42,9 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="inhibitors_amount_1" id="" placeholder="г/ч" required>
-                <input type="text" name="inhibitors_amount_2" id="" placeholder="кг/сутки" class="calc__margin" required>
-                <input type="text" name="inhibitors_amount_3" id="" placeholder="кг/месяц" required>
+                <input type="number" name="inhibitors_amount_1" id="" placeholder="г/ч" required>
+                <input type="number" name="inhibitors_amount_2" id="" placeholder="кг/сутки" class="calc__margin" required>
+                <input type="number" name="inhibitors_amount_3" id="" placeholder="кг/месяц" required>
             </div>
         </div>
         <div class="calc__row">
@@ -54,8 +54,8 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="tank_volume_1" id="" placeholder="0 литров" required>
-                <input type="text" name="tank_volume_2" id="" placeholder="0% раствор" class="calc__margin" required>
+                <input type="number" name="tank_volume_1" id="" placeholder="0 литров" required>
+                <input type="number" name="tank_volume_2" id="" placeholder="0% раствор" class="calc__margin" required>
             </div>
         </div>
         <div class="calc__row">
@@ -65,11 +65,11 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="liquor_calculation_1" id="" placeholder="кг продажного" required>
+                <input type="number" name="liquor_calculation_1" id="" placeholder="кг продажного" required>
                 <div class="calc__symbol">
                     +
                 </div>
-                <input type="text" name="liquor_calculation_2" id="" placeholder="кг/сутки" required>
+                <input type="number" name="liquor_calculation_2" id="" placeholder="кг/сутки" required>
             </div>
         </div>
         <div class="calc__row">
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="dosing_pump_1" id="" placeholder="мл/ч разбавлены" required>
+                <input type="number" name="dosing_pump_1" id="" placeholder="мл/ч разбавлены" required>
             </div>
         </div>
         <div class="calc__row">
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="dosing_pump_2" id="" placeholder="импульсов в мин" required>
+                <input type="number" name="dosing_pump_2" id="" placeholder="импульсов в мин" required>
             </div>
         </div>
         <div class="calc__row">
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="dosing_pump_3" id="" placeholder="0 мг/л ( г/м3 )" required>
+                <input type="number" name="dosing_pump_3" id="" placeholder="0 мг/л ( г/м3 )" required>
             </div>
         </div>
         <div class="calc__row">
@@ -109,11 +109,11 @@
                 </div>
             </div>
             <div class="calc__right">
-                <input type="text" name="tank_resource_1" id="" placeholder="Часов" required>
+                <input type="number" name="tank_resource_1" id="" placeholder="Часов" required>
                 <div class="calc__symbol">
                     =
                 </div>
-                <input type="text" name="tank_resource_2" id="" placeholder="Суток работы" required>
+                <input type="number" name="tank_resource_2" id="" placeholder="Суток работы" required>
             </div>
         </div>
     </section>

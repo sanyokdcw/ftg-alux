@@ -78,9 +78,9 @@
           }
           @endphp
         <input type="hidden" name="products[]" value="{{ $product->id }}">
-      <div class="cart__wrapper-right_title title">
+      <a href="/product/{{$product->id}}" class="cart__wrapper-right_title title">
         {{ $product->name }}
-      </div>
+      </a>
       <div class="cart__wrapper-right_product">
         <div class="cart__wrapper-right_img">
           <img src="/storage/{{ $product->image }}" alt="">
