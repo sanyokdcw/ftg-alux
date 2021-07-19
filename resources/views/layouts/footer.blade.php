@@ -16,7 +16,6 @@
             <a href="/blog" class="footer__wrapper-link">Блог</a>
             <a href="/projects" class="footer__wrapper-link">Наши проекты</a>
             <a href="/team" class="footer__wrapper-link">Команда</a>
-
           </div>
         </div>
         <div class="footer__wrapper-item">
@@ -36,11 +35,11 @@
             </div>
             <a href="tel:{{setting('contacts.telephone')}}" class="footer__wrapper-link footer__wrapper-phone">
               <img src="../images/phone-3.png" alt=""> {{ setting('contacts.telephone') }}</a>
-              
+
             <a href="tel:{{setting('contacts.footer-phone')}}" class="footer__wrapper-link footer__wrapper-phone" style="padding-left: 0 !important; margin-left: 30px;" >
               {{ setting('contacts.footer-phone') }}
             </a>
-            
+
             <a href="mailto:Info@ftgcompany.kz" class="footer__wrapper-link">
               <img src="../images/mail-icon.png" alt="">
               {{ setting('contacts.email') }}
@@ -63,7 +62,7 @@
 
 @if(session('contact'))
 <script>
-	
+
 Swal.fire(
   'Ваша заявка принята',
   'Мы вам перезвоним',

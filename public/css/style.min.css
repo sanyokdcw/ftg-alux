@@ -6212,9 +6212,23 @@ padding-top: 10px;
 
 }
 
+@media(max-width: 1300px){
+    .product__wrapper-right_performance{
+        margin-right: 0 !important;
+    }
+
+    .product__wrapper-right_block{
+        width: 100% !important;
+    }
+}
+
 @media(max-width: 700px){
     .system__wrapper  .swiper-wrapper{
         margin-top: 0;
+    }
+
+    .delivery__wrapper .delivery__wrapper-item{
+        width: 100%;
     }
 }
 
