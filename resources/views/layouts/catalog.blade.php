@@ -8,6 +8,7 @@
 	<meta name="description" content="@yield('desc')">
     <link href="../css/hamburgers.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.min.css" />
+    <link rel="icon" href="/favicon.png" type="image/png">
 </head>
 
 <body>

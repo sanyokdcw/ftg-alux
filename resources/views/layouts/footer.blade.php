@@ -41,7 +41,7 @@
               {{ setting('contacts.footer-phone') }}
             </a>
             
-            <a href="mailto:Info@ftgcompany.kz" class="footer__wrapper-link">
+            <a href="mailto:{{ setting('contacts.email') }}" class="footer__wrapper-link">
               <img src="../images/mail-icon.png" alt="">
               {{ setting('contacts.email') }}
             </a>
