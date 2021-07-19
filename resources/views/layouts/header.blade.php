@@ -17,7 +17,7 @@
         <input name="phone" id="number_tel" type="tel" placeholder="{{ __('index.number') }}*" required>
       </div>
       <div class="form__input">
-        <textarea name="question" required>{{ __('index.question') }}</textarea> 
+        <textarea placeholder="{{__('index.question')}}" name="question" required></textarea> 
       </div>
       <div class="form__input">
         <input type="submit" value="{{ __('index.send') }}" >
