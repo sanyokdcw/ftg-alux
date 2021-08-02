@@ -23,8 +23,8 @@
           <div class="footer__wrapper-block">
             <a href="/guarange" class="footer__wrapper-link">Гарантия и сервис</a>
             {{-- <a href="#" class="footer__wrapper-link">Калькулятор объема</a> --}}
-            <a href="/subcategory/3" class="footer__wrapper-link">КАТАЛОГ</a>
-            <a href="/calc" class="footer__wrapper-link">Калькулятор объема</a>
+{{--            <a href="/subcategory/3" class="footer__wrapper-link">КАТАЛОГ</a>--}}
+{{--            <a href="/calc" class="footer__wrapper-link">Калькулятор объема</a>--}}
           </div>
         </div>
         <div class="footer__wrapper-item" style="width: 30%">
@@ -38,7 +38,7 @@
 
             <a href="tel:{{setting('contacts.footer-phone')}}" class="footer__wrapper-link footer__wrapper-phone" style="padding-left: 0 !important; margin-left: 30px;" >
               {{ setting('contacts.footer-phone') }}
-            </a>            
+            </a>
             <a href="mailto:{{ setting('contacts.email') }}" class="footer__wrapper-link">
 
               <img src="../images/mail-icon.png" alt="">
