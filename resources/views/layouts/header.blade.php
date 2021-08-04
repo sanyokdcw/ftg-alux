@@ -47,13 +47,13 @@
       <form action="/request" method="POST">
         @csrf
       <div class="form__input">
-        <input type="text" placeholder="{{ __('index.fullname') }}*" required>
+        <input name="fullname" type="text" placeholder="{{ __('index.fullname') }}*" required>
       </div>
       <div class="form__input">
-        <input type="tel" placeholder="{{ __('index.email') }}*" required>
+        <input name="email" type="email" placeholder="{{ __('index.email') }}*" required>
       </div>
       <div class="form__input">
-        <input id="number_mask_h" type="tel" placeholder="{{ __('index.number') }}*" required>
+        <input name="number" id="number_mask_h" type="tel" placeholder="{{ __('index.number') }}*" required>
       </div>
       <div class="form__input">
         <input type="submit" value="{{ __('index.send') }}">

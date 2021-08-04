@@ -117,7 +117,19 @@ Route::post('/request', function(Request $request) {
     else {
         $locale = session(['locale' => 'ru']);
         App::setLocale('ru');
-}
+    }
+
+    $data = $request->validate([
+        'fullname' => ['required', 'filled', 'string'],
+        'number'   => ['required', 'filled', 'string'],
+        'email'    => ['required', 'filled', 'email']
+    ]);
+
+    Mail::send(['text' => 'email'], compact('data'), function ($m) {
+        $m->subject('Заявка на "ПОДОБРАТЬ СИСТЕМУ"');
+        $m->from('john@johndoe.com', 'Laravel App');
+        $m->to('info@ftgco.kz');
+    });
 
     return redirect()->back()->with('contact', 'contact');
 });
