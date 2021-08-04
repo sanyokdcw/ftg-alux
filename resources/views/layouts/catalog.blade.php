@@ -22,7 +22,7 @@
         <div class="container">
             <section class="sitebar">
                 <a href="/" class="sitebar__logo">
-                    <img src="../images/logo.png" alt="">
+                    <img src="../images/logo.png" alt="" class="logotype">
                 </a>
                 <button id="hamburger" class="hamburger-modal-open-btn" type="button">
                     <img src="../images/burger-btn.png" alt="" class="hamburger-modal-open-btn-img">
@@ -127,7 +127,7 @@
                             <a href="tel:{{ setting('contacts.telephone') }}">
                                 <img src="../images/phone-2.png" alt="">
                                 <div class="sitebar__wrapper-item_right" style="">
-                                    {{ __('index.call') }}
+                                    {{/*setting('contacts.telephone2')*/ "Позвонить" }}
                                 </div>
                             </a>
                         </div>
@@ -139,7 +139,7 @@
 
 
 
-                
+
 
 
 
@@ -308,7 +308,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <a href="/product" class="sitebar__btn sitebar__btn-adaptive">{{ __('index.products') }}</a>
 
                     <div id="sitebar_dropdown" class="sitebar__drowdown-title adaptive__show">
@@ -332,7 +332,7 @@
                             </li>
                         </ul>
                     </nav>
-                    
+
                     <a href="#" class="sitebar__link btn-contact2" style="margin-top: 24px;"
                         onclick="openModelRight('contact2')">{{ __('index.write_us') }}</a>
                     <div class="sitebar__social">
@@ -366,6 +366,6 @@
 
                     sidebarDropdown.addEventListener('click', (e) => {
                         sidebarOpen.classList.toggle('sitebar-open');
-                    }) 
+                    })
                 </script>
             </section>
