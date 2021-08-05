@@ -44,19 +44,18 @@
         <img src="../images/pather-close.png" alt="">
       </button>
 
-      <form action="/request" method="POST">
-        @csrf
+      <form>
       <div class="form__input">
-        <input name="fullname" type="text" placeholder="{{ __('index.fullname') }}*" required>
+        <input name="fullname" type="text" placeholder="{{ __('index.fullname') }}*" id="formName" required>
       </div>
       <div class="form__input">
-        <input name="email" type="email" placeholder="{{ __('index.email') }}*" required>
+        <input name="email" type="email" placeholder="{{ __('index.email') }}*" id="formEmail" required>
       </div>
       <div class="form__input">
         <input name="number" id="number_mask_h" type="tel" placeholder="{{ __('index.number') }}*" required>
       </div>
       <div class="form__input">
-        <input type="submit" value="{{ __('index.send') }}">
+        <input type="submit" value="{{ __('index.send') }}" onclick="sendForm(event)">
       </div>
       </form>
     </div>

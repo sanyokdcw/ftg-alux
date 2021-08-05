@@ -166,6 +166,9 @@ Route::post('/search', function(Request $request) {
     return view('search', compact('products', 'q'));
 });
 
+Route::post('/send-product-email', function(Request $request) {
+    dd($request->all());
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
