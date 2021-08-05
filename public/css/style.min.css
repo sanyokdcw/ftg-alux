@@ -6099,6 +6099,11 @@ width:100% !important;
     max-width: 247px;
 }
 
+.icon-images{
+    display: block;
+    max-width: 18px;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

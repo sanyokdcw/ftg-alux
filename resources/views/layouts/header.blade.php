@@ -116,15 +116,15 @@
         @if(Auth::check())
           <a href="/logout" style="margin:0">{{ __('index.logout') }}</a>
           <a href="/office" class="header__button-user">
-            <img src="../images/user-icon.png" alt="" style="">
+            <img class="icon-images" src="../images/user-icon.png" alt="" style="">
           </a>
         @else 
           <a href="/office" class="header__button-user">
-            <img src="../images/user-icon.png" alt="" style="">
+            <img class="icon-images" src="../images/user-icon.png" alt="" style="">
           </a>
         @endif
         <a href="/search" class="header__button-search">
-          <img src="../images/search-icon.png" alt="">
+          <img class="icon-images" src="../images/search-icon.png" alt="">
         </a>
         <a href="/cart" class="header__button-cart">
           <div class="header__button-cart_count">
@@ -134,7 +134,7 @@
             0
             @endif
           </div>
-          <img src="../images/icon-cart.png" alt="">
+          <img class="icon-images" src="../images/icon-cart.png" alt="">
         </a>
         <a href="#" class="header__button-search bar">
           <img src="../images/menu.png" alt="" style="height: 19px; width: 18px">
