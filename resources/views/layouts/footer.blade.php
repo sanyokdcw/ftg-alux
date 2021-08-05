@@ -3,7 +3,7 @@
       <div class="footer__wrapper">
         <div class="footer__wrapper-item" style="width: 30%; ">
           <div class="footer__wrapper-logo">
-            <img src="../images/logo.png" alt="">
+            <img class="logotype" src="../images/logo.png" alt="">
           </div>
           <div class="footer__wrapper-text" style="font-size: 14px;">
             {{ setting('index.footer_description') }}
