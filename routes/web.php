@@ -1,15 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\ShopController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
-
-use App\Models\Project;
-use App\Models\Product;
-use App\Models\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -108,32 +106,7 @@ Route::get('/calc', [MainController::class, 'calculator']);
 Route::post('/calculator/calculation', [MainController::class, 'calculation']);
 
 
-Route::post('/request', function(Request $request) {
-    if(session()->has('locale')) {
-    
-        $locale = session('locale');
-        App::setLocale($locale);
-    }
-    else {
-        $locale = session(['locale' => 'ru']);
-        App::setLocale('ru');
-    }
-
-    $data = $request->validate([
-        'fullname' => ['required', 'filled', 'string'],
-        'number'   => ['required', 'filled', 'string'],
-        'email'    => ['required', 'filled', 'email']
-    ]);
-
-    Mail::send(['text' => 'email'], compact('data'), function ($m) {
-        $m->subject('Заявка на "ПОДОБРАТЬ СИСТЕМУ"');
-        $m->from('john@johndoe.com', 'Laravel App');
-        $m->to('info@ftgco.kz');
-    });
-
-    return redirect()->back()->with('contact', 'contact');
-});
-
+Route::post('/request', [MailController::class, 'send']);
 
 Route::get('/search', function() {
     if(session()->has('locale')) {
