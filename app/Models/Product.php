@@ -9,6 +9,8 @@ class Product extends Model
 {
     use HasFactory;
     use Translatable;
-    
+
     protected $translatable = ['name', 'existense', 'description', 'characteristics', 'documentation'];
+
+    protected $fillable = ['price_ru', 'price_uah'];
 }
