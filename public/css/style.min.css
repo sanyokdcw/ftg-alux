@@ -6190,7 +6190,11 @@ input[type=number] {
 
     .header__button{
         position: absolute;
-        bottom: -14px;
+        bottom: -5px;
+    }
+
+    .main{
+        margin-top: 15px;
     }
 
     .hamburger-header{
@@ -6229,8 +6233,8 @@ input[type=number] {
     .logo_adaptive{
         display: block;
         position: absolute;
-        width: 120px;
-        top: -20px;
+        width: 150px;
+        top: -17px;
         left: -15px;
     }
 

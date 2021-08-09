@@ -25,7 +25,54 @@
                     <img src="../images/logo.png" alt="" class="logotype">
                 </a>
                 <button id="hamburger" class="hamburger-modal-open-btn" type="button">
-                    <img src="../images/burger-btn.png" alt="" class="hamburger-modal-open-btn-img">
+                    <?xml version="1.0"?>
+                    <svg class="hamburger-modal-open-btn-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M501.333,96H10.667C4.779,96,0,100.779,0,106.667s4.779,10.667,10.667,10.667h490.667c5.888,0,10.667-4.779,10.667-10.667    S507.221,96,501.333,96z" fill="#112468" data-original="#000000" style=""/>
+                        </g>
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M501.333,245.333H10.667C4.779,245.333,0,250.112,0,256s4.779,10.667,10.667,10.667h490.667    c5.888,0,10.667-4.779,10.667-10.667S507.221,245.333,501.333,245.333z" fill="#112468" data-original="#000000" style=""/>
+                        </g>
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M501.333,394.667H10.667C4.779,394.667,0,399.445,0,405.333C0,411.221,4.779,416,10.667,416h490.667    c5.888,0,10.667-4.779,10.667-10.667C512,399.445,507.221,394.667,501.333,394.667z" fill="#112468" data-original="#000000" style=""/>
+                        </g>
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                    </g>
+                    </g></svg>
                 </button>
                 <div class="sitebar__wrapper">
                     <div class="sitebar__wrapper-left">
@@ -61,6 +108,15 @@
                                     <a href="tel:{{ setting('contacts.telephone') }}">
                                         {{ setting('contacts.telephone') }}
                                     </a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="sitebar__wrapper-item sitebar__wrapper-ball">
+                            <a href="tel:{{ setting('contacts.telephone') }}">
+                                <img src="../images/phone-2.png" alt="">
+                                <div class="sitebar__wrapper-item_right" style="">
+                                    {{/*setting('contacts.telephone2')*/ "Перезвонить" }}
                                 </div>
                             </a>
                         </div>
@@ -123,14 +179,6 @@
                             </div>
                         </div>
 
-                        <div class="sitebar__wrapper-item sitebar__wrapper-ball">
-                            <a href="tel:{{ setting('contacts.telephone') }}">
-                                <img src="../images/phone-2.png" alt="">
-                                <div class="sitebar__wrapper-item_right" style="">
-                                    {{/*setting('contacts.telephone2')*/ "Позвонить" }}
-                                </div>
-                            </a>
-                        </div>
 
                     </div>
                 </div>

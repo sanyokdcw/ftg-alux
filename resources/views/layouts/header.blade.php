@@ -1,5 +1,5 @@
 <div class="content">
-  <div id="need-focus-block" class="form">
+  <div id="need-focus-block" class="form" style="overflow-y: scroll">
     <div class="form__wrapper" style="display: none">
       <div class="form__title">{{ __('index.callback') }}</div>
       <button class="form__close">
