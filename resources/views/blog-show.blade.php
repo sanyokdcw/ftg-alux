@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 @section('title', 'Блог')
+@section('desc', setting('blog-show.index_description'))
 @include('layouts.catalog')
 @include('layouts.header')
 @section('content')
