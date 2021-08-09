@@ -1,43 +1,34 @@
 <?php
 
-namespace App\Console\Commands;
 
+namespace App\Services;
+
+
+use App\Models\ExchangeRate;
 use App\Models\Product;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
-use Illuminate\Console\Command;
 
-class CurrencyParseCommand extends Command
+class CurrencyService
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'currency-parse';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Parses currencies from index.minfin.com.ua and converts product prices in you db';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function updateCurrencies()
     {
-        parent::__construct();
+        $currencies = ExchangeRate::query()->first();
+
+        if ($currencies) {
+            if (Carbon::make($currencies->updated_at)->subDay() > Carbon::now()) {
+                $currencies = $this->parse($currencies->id);
+
+                $this->updatePrices($currencies);
+            }
+        } else {
+            $currencies = $this->parse();
+
+            $this->updatePrices($currencies);
+        }
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
+    private function parse($exchangeId = null)
     {
         $client = new Client();
 
@@ -67,6 +58,20 @@ class CurrencyParseCommand extends Command
             }
         }
 
+        if ($exchangeId) {
+            $currencies = ExchangeRate::query()->where('id', $exchangeId)->update(['rub' => $rub, 'uah' => $uah]);
+        } else {
+            $currencies = ExchangeRate::query()->create(['rub' => $rub, 'uah' => $uah]);
+        }
+
+        return $currencies;
+    }
+
+    private function updatePrices($currencies)
+    {
+        $rub = $currencies->rub;
+        $uah = $currencies->uah;
+
         $products = Product::all();
 
         foreach ($products as $product) {
@@ -74,7 +79,5 @@ class CurrencyParseCommand extends Command
 
             $product->update(['price_ru' => (int) round($kz / $rub), 'price_uah' => (int) round($kz / $uah)]);
         }
-
-        return 0;
     }
 }
