@@ -321,7 +321,7 @@
                     </div>
 
                     <div class="sidebar-adaptive__icons">
-                        <div class="sitebar__wrapper-item sidebar-adaptive__icons--item" onclick="openModelRight('contact2')">
+                        <div class="sitebar__wrapper-item sidebar-adaptive__icons--item">
                             <a href="tel:{{ setting('contacts.telephone') }}">
                                 <img src="../images/phone-1.png" alt="">
                                 <div class="sitebar__wrapper-item_right">
@@ -332,11 +332,11 @@
                             </a>
                         </div>
 
-                        <div class="sitebar__wrapper-item sidebar-adaptive__icons--item">
-                            <a href="tel:{{ setting('contacts.telephone') }}">
+                        <div class="sitebar__wrapper-item sidebar-adaptive__icons--item" onclick="openModelRight('contact2')">
+                            <a href="#">
                                 <img src="../images/phone-2.png" alt="">
                                 <div class="sitebar__wrapper-item_right" style="">
-                                    {{ __('index.call') }}
+                                    Перезвонить
                                 </div>
                             </a>
                         </div>
