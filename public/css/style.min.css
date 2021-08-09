@@ -6273,3 +6273,28 @@ input[type=number] {
         padding-left: 15px;
     }
 }
+
+.form-data_error {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e2e3e5;
+    color: #474747;
+    font-family: "MuseoSansCyrl-900";
+}
+
+.form-data_error .form-data_error-body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+  
+.form-data_error .closebtn {
+    margin-left: 15px;
+    color: #474747;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}

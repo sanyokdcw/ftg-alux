@@ -12,6 +12,12 @@
 </section>
 
 <section class="product" style="min-height: 1180px">
+    @if (Session::has('message'))
+    <div class="form-data_error">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <p class="form-data_error-body">{{ Session::get('message') }}</p>
+    </div>
+    @endif
     <div class="product__title subtitle">ПОДОБРАТЬ ПРОДУКЦИЮ</div>
     <div class="product__wrapper">
         <div class="product__wrapper-left">
@@ -39,26 +45,28 @@
             </div>
         </div>
         <div class="product__wrapper-right">
+    <form action="/request" id="formSystem" method="POST">
+        @csrf
         <span class="tab-content" id="Tab0">
             <div class="product__wrapper-right_title title">Выберите источник воды</div>
             <div class="product__wrapper-right_checkbox">
                 <div class="product__wrapper-right_radio">
-                    <input type="radio" name="radio-1" id="radio-1">
+                    <input type="radio" name="water_source" id="radio-1" value="Городской водопровод" checked>
                     <label for="radio-1">Городской водопровод</label>
                 </div>
-                <div class="product__wrapper-right_radio">
-                    <input type="radio" name="radio-1" id="radio-2">
+                <div class="product__wrapper-right_radio" >
+                    <input type="radio" name="water_source" id="radio-2" value="Колодец">
                     <label for="radio-2">Колодец</label>
                 </div>
                 <div class="product__wrapper-right_radio">
-                    <input type="radio" name="radio-1" id="radio-3">
+                    <input type="radio"id="radio-3"  name="water_source"  value="Скважина">
                     <label for="radio-3">Скважина</label>
                 </div>
                 <div class="product__wrapper-right_radio">
-                    <input type="radio" name="radio-1" id="radio-4">
+                    <input type="radio" name="water_source" id="radio-4" value="Речка, открытый водоем">
                     <label for="radio-4">Речка, открытый водоем</label>
                 </div>
-                <button class="product__wrapper-right_btn" onclick="changeTab('Tab1')">Продолжить</button>
+                <a class="product__wrapper-right_btn" onclick="changeTab('Tab1')">Продолжить</a>
             </div>
         </span>
         
@@ -86,87 +94,10 @@
                         Мутность, НОК
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[mutnost_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Перманганатная окисляемость (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общая жесткость (мг-экв / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общее железо (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сероводород (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Нитраты (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сухой остаток (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Мутность, НОК
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[mutnost_standart]" value="0">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -174,87 +105,10 @@
                         Перманганатная окисляемость (мг / л)
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[permangant_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общая жесткость (мг-экв / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общее железо (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сероводород (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Нитраты (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сухой остаток (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Мутность, НОК
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Перманганатная окисляемость (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[permangant_standart]" value="0">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -262,10 +116,10 @@
                         Общая жесткость (мг-экв / л)
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[zhestkost_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[zhestkost_standart]" value="0">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -273,10 +127,10 @@
                         Общее железо (мг / л)
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[zhelezo_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[zhelezo_standart]" value="0">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -284,10 +138,10 @@
                         Сероводород (мг / л)
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[serovodorod_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[serovodorod_standart]" value="0">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -295,10 +149,10 @@
                         Нитраты (мг / л)
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[nitrat_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[nitrat_standart]" value="0">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -306,10 +160,10 @@
                         Сухой остаток (мг / л)
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[ostatok_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                        <input type="number" name="input_water[ostatok_standart]" value="0">
                     </div>
                 </div>
             </div>
@@ -324,29 +178,29 @@
 
 
                     <div class="product__wrapper-right_radio">
-                        <input type="radio" id="radio-11" name="radio">
+                        <input type="radio" id="radio-11" name="purified_water" value="Техническая вода (душ, туалет)">
                         <label for="radio-11">Техническая вода (душ, туалет)</label>
                     </div>
 
 
                     <div class="product__wrapper-right_radio">
-                        <input type="radio" id="radio-22" name="radio">
+                        <input type="radio" id="radio-22" name="water_request" value="Дистиллированная вода">
                         <label for="radio-22">Дистиллированная вода</label>
                     </div>
                     <div class="product__wrapper-right_radio" >
-                        <input type="radio" id="radio-33" name="radio">
+                        <input type="radio" id="radio-33" name="water_request" value="Вода для парового котла">
                         <label for="radio-33">Вода для парового котла</label>
                     </div>
                     <div class="product__wrapper-right_radio">
-                        <input type="radio" id="radio-44" name="radio" >
+                        <input type="radio" id="radio-44" name="water_request" value="Питьевая вода (ГСанПиН 2.2.4-171-10)" >
                         <label for="radio-44">Питьевая вода (ГСанПиН 2.2.4-171-10)</label>
                     </div>
                     <div class="product__wrapper-right_radio">
-                        <input type="radio" id="radio-55" name="radio">
+                        <input type="radio" id="radio-55" name="water_request"  value="Вода для водогрейной котельной">
                         <label for="radio-55">Вода для водогрейной котельной</label>
                     </div>
                     <div class="product__wrapper-right_radio">
-                        <input type="radio" id="radio-6" name="radio">
+                        <input type="radio" id="radio-6" name="water_request"  value="Водопроводная вода (ДСанПиН 2.2.4-171-10)">
                         <label for="radio-6">Водопроводная вода (ДСанПиН 2.2.4-171-10)</label>
                     </div>
                 </div>
@@ -355,250 +209,96 @@
         </span>
         <span class="tab-content" id="Tab3">
             <div class="product__wrapper-right_performance">
-            <div class="product__wrapper-right_table" style="margin-top: 0">
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Показатель
+                <div class="product__wrapper-right_table" style="margin-top: 0">
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Показатель
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            Ваше значение
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            Стандартное значение
+                        </div>
                     </div>
-                    <div class="product__wrapper-right_column">
-                        Ваше значение
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Мутность, НОК
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[mutnost_user]" value="0">
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[mutnost_standart]" value="0">
+                        </div>
                     </div>
-                    <div class="product__wrapper-right_column">
-                        Стандартное значение
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Перманганатная окисляемость (мг / л)
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[permangant_user]" value="0">
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[permangant_standart]" value="0">
+                        </div>
                     </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Мутность, НОК
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Общая жесткость (мг-экв / л)
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[zhestkost_user]" value="0">
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[zhestkost_standart]" value="0">
+                        </div>
                     </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Общее железо (мг / л)
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[zhelezo_user]" value="0">
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[zhelezo_standart]" value="0">
+                        </div>
                     </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Сероводород (мг / л)
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[serovodorod_user]" value="0">
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[serovodorod_standart]" value="0">
+                        </div>
                     </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Перманганатная окисляемость (мг / л)
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Нитраты (мг / л)
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[nitrat_user]" value="0">
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[nitrat_standart]" value="0">
+                        </div>
                     </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общая жесткость (мг-экв / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общее железо (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сероводород (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Нитраты (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сухой остаток (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Мутность, НОК
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
+                    <div class="product__wrapper-right_row">
+                        <div class="product__wrapper-right_column">
+                            Сухой остаток (мг / л)
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[ostatok_user]" value="0">
+                        </div>
+                        <div class="product__wrapper-right_column">
+                            <input type="number" name="purified_water[ostatok_standart]" value="0">
+                        </div>
                     </div>
                 </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Перманганатная окисляемость (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общая жесткость (мг-экв / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общее железо (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сероводород (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Нитраты (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сухой остаток (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Мутность, НОК
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Перманганатная окисляемость (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общая жесткость (мг-экв / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Общее железо (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сероводород (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Нитраты (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-                <div class="product__wrapper-right_row">
-                    <div class="product__wrapper-right_column">
-                        Сухой остаток (мг / л)
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                    <div class="product__wrapper-right_column">
-                        <input type="number" value="0">
-                    </div>
-                </div>
-            </div>
             <button class="product__wrapper-right_btn" onclick="changeTab('Tab4')">Продолжить</button>
             </div>
         </span>
@@ -609,22 +309,35 @@
                 <div class="product__wrapper-right_block" style="display: flex; flex-wrap: nowrap; justify-content: space-between; width: 85%">
                     <div class="product__wrapper-right_column last-stage">
                         <div class="product__wrapper-right_text">Суточная м3 / сутки</div>
-                        <input type="number" value="0">
+                        <input type="number" name="performance[day]"  value="0">
                     </div>
                     <div class="product__wrapper-right_column last-stage">
                         <div class="product__wrapper-right_text">Часовая М3 / час</div>
-                        <input type="number" value="0">
+                        <input type="number" name="performance[month]"  value="0">
                     </div>
                 </div>
-                <a href="#" class="product__wrapper-right_btn" onclick="openModelRight('product')">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</a>
+                <input type="hidden" name="fullname" value="" id="name">
+                <input type="hidden" name="email" value="" id="email">
+                <input type="hidden" name="number" value="" id="number">
+
+                <a href="#" type="submit" class="product__wrapper-right_btn" onclick="openModelRight('product')">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</a>
+                
             </div>
-    </span>
-        
+        </span>
+    </form>
     </div>
 </section>
 
 <script src="/js/product.js">
-
+</script>
+<script>
+    function sendForm(evt) {
+        evt.preventDefault();
+        document.getElementById('name').value = document.getElementById('formName').value
+        document.getElementById('email').value = document.getElementById('formEmail').value
+        document.getElementById('number').value = document.getElementById('number_mask_h').value
+        document.getElementById('formSystem').submit()
+    }
 </script>
 @include('layouts.footer')
 </html>
