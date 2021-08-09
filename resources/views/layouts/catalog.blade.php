@@ -25,7 +25,6 @@
                     <img src="../images/logo.png" alt="" class="logotype">
                 </a>
                 <button id="hamburger" class="hamburger-modal-open-btn" type="button">
-                    <?xml version="1.0"?>
                     <svg class="hamburger-modal-open-btn-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
                     <g xmlns="http://www.w3.org/2000/svg">
                         <g>
