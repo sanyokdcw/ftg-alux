@@ -111,7 +111,7 @@
                             </a>
                         </div>
 
-                        <div class="sitebar__wrapper-item sitebar__wrapper-ball">
+                        <div class="sitebar__wrapper-item sitebar__wrapper-ball" onclick="openModelRight('contact2')">
                             <a href="tel:{{ setting('contacts.telephone') }}">
                                 <img src="../images/phone-2.png" alt="">
                                 <div class="sitebar__wrapper-item_right" style="">
