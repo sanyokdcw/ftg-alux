@@ -31,5 +31,26 @@ return [
     'companyAbout' => 'About company',
     'safetyFTG' => '© FTG Company LLP, 2017. All rights reserved.',
     'privacy' => 'Privacy Policy',
-    'read' => 'Read more'
+    'read' => 'Read more',
+    'patherTitle' => 'WHAT DOES IT MEAN TO BE A FTG COMPANY DEALER?',
+    'patherTitle2' => 'You can become a FTG Company dealer!',
+    'patherDescr' => 'Being an FTG Company dealer is about providing clean water to homes and businesses
+    all over the country, making money selling FTG equipment with us.',
+    'patherDescr2' => 'We help dealers become experts in water treatment, sales, installation and
+    maintenance of FTG equipment, as well as bring your business to a new, more
+    professional level.',
+    'partnerEstimationTitle' => 'Evaluate the benefits of partnership!',
+    'partnerEstimationText' => 'Join now',
+    'partnerEstimationBtn' => 'Fill out the form',
+    'exchangeRates' => 'Exchange rates',
+    'basket' => 'Basket',
+    'payment' => 'Payment',
+    'and' => 'and',
+    'main' => 'Main',
+    'search' => 'Search',
+    'contacts2' => 'Сall back',
+    'more' => 'More',
+    'ourProducts' => 'Our Products',
+    'showMore' => 'Show more',
+    'paymentMethods' => 'PAYMENT METHODS'
 ];

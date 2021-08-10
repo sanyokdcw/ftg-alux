@@ -7,7 +7,7 @@
 
         
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
+  <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
   <div class="url__text">{{ __('index.about') }}</div>
 </section>
 

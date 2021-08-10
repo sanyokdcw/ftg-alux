@@ -8,14 +8,14 @@
         <div class="content_wrapper">
 <div class="content_wrapper__content">
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Контакты</div>
+  <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
+  <div class="url__text">{{ __('index.contacts')}}</div>
 </section>
 
 <section class="contact" style="
     min-height: 1200px;
 ">
-  <div class="contact__title subtitle">Контакты</div>
+  <div class="contact__title subtitle">{{ __('index.contacts')}}</div>
   <div class="contact__wrapper">
     <div class="contact__wrapper-left">
       <div class="contact__wrapper-title">АДРЕС:</div>

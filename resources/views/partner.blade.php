@@ -6,29 +6,26 @@
 @section('content')
 
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Партнерам</div>
+  <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
+  <div class="url__text">{{ __('index.partners')}}</div>
 </section>
 <section style="min-height: 1215px">
 <section class="pather">
-  <div class="pather__title subtitle">ПАРТНЕРАМ</div>
-  <div class="pather__wrapper-item_title title">ЧТО ЗНАЧИТ БЫТЬ ДИЛЕРОМ FTG COMPANY?</div>
+  <div class="pather__title subtitle">{{ __('index.partners')}}</div>
+  <div class="pather__wrapper-item_title title">{{ __('index.patherTitle')}}</div>
   <div class="pather__wrapper">
     <div class="pather__wrapper-item">
       <div class="pather__wrapper-item_text">
-        Быть дилером компании FTG Company - это обеспечивать чистой водой дома и предприятия
-        по всей стране, зарабатывая на продаже оборудования FTG вместе с нами.
+        {{ __('index.patherDescr')}}
       </div>
     </div>
     <div class="pather__wrapper-item">
       <div class="pather__wrapper-item_text">
-        Мы помогаем дилерам стать экспертами в области очистки воды, продаже, установке и
-        обслуживанию оборудования FTG, а также вывести свой бизнес на новый, более
-        профессиональный уровень.
+        {{ __('index.patherDescr2')}}
       </div>
     </div>
   </div>
-  <div class="pather__wrapper-item_title title" style="text-transform: uppercase;">Ты можешь стать дилером FTG Company!</div>
+  <div class="pather__wrapper-item_title title" style="text-transform: uppercase;">{{ __('index.patherTitle2')}}</div>
   <div class="pather__wrapper">
     @foreach ($cards as $card)
     <div class="pather__wrapper-item">
@@ -43,9 +40,9 @@
 </section>
 
 <section class="estimation">
-  <div class="estimation__title">Оцените преимущества партнерства!</div>
-  <div class="estimation__text">Присоединяйся</div>
-  <button class="estimation__btn btn-fill" onclick="openModelRight('contact2')">Заполнить форму</button>
+  <div class="estimation__title">{{ __('index.partnerEstimationTitle')}}</div>
+  <div class="estimation__text">{{ __('index.partnerEstimationText')}}</div>
+  <button class="estimation__btn btn-fill" onclick="openModelRight('contact2')">{{ __('index.partnerEstimationBtn')}}</button>
 </section>
 </section>
         

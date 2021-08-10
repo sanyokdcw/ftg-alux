@@ -12,12 +12,12 @@
 @endphp
         
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Корзина</div>
+  <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
+  <div class="url__text">{{__('index.basket')}}</div>
 </section>
 
 <section class="cart">
-  <div class="cart__title subtitle">КОРЗИНА</div>
+  <div class="cart__title subtitle">{{__('index.basket')}}</div>
   <div class="cart__wrapper">
     <div class="cart__wrapper-left">
       <div class="cart__wrapper-left_title">ИНФОРМАЦИЯ ПОКУПАТЕЛЯ</div>

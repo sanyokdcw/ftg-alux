@@ -11,7 +11,7 @@
   $currency = session('currency');
 @endphp
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
+  <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
   @if($product->subcategory_id != null)
     <div class="url__text"><a href="/subcategory/{{ App\Models\Subcategory::find($product->subcategory_id)->id }}">{{ strip_tags(App\Models\Subcategory::find($product->subcategory_id)->name) }}</a></div>
   @elseif($product->category_id != null)

@@ -13,7 +13,7 @@
 @endphp      
 
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
+  <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
   <div class="url__text">{!! strip_tags(App\Models\Category::find($subcategory->category_id)->name) !!}</div>
   <div class="url__text">{{ $subcategory->name }}</div>
 </section>
@@ -65,7 +65,7 @@
             {{ number_format($product->price_ru,0,","," ") }}</span> руб
           @endif
         </div>
-        <a href="/product/{{ $product->id }}" class="card__wrapper-btn">Подробнее</a>
+        <a href="/product/{{ $product->id }}" class="card__wrapper-btn">{{__('index.more')}}</a>
       </div>
       @endforeach
     </div>

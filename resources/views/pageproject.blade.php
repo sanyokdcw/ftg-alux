@@ -12,8 +12,8 @@
 @endphp
 
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text"><a href="/projects">Наши проекты</a></div>
+  <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
+  <div class="url__text"><a href="/projects">{{__('index.projects')}}</a></div>
   <div class="url__text">{{ $project->title }}</div>
 </section>
 

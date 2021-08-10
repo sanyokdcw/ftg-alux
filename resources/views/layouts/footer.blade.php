@@ -5,8 +5,13 @@
           <div class="footer__wrapper-logo">
             <img class="logotype" src="../images/logo.png" alt="">
           </div>
-          <div class="footer__wrapper-text" style="font-size: 14px;">
-{{--            {{ setting('index.footer_description') }}--}}
+          <div class="footer__wrapper-text" style="font-size: 16px; margin-top: 35px">
+           {{-- {{ setting('index.footer_description') }} --}}
+           <p>{{ __('index.exchangeRates')}}</p>
+           <div>&#8376</div>
+           <div>USD: {{$usd}}</div>
+           <div>EUR: {{$uah}}</div>
+           <div>RUB: {{$rub}}</div>
           </div>
         </div>
         <div class="footer__wrapper-item">

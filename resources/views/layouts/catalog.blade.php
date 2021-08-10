@@ -393,13 +393,13 @@
                                 <a href="/company" class="sitebar__adaptive-menu--link">{{ __('index.about') }}</a>
                             </li>
                             <li class="sitebar__adaptive-menu--item">
-                                <a href="/projects" class="sitebar__adaptive-menu--link">Наши проекты</a>
+                                <a href="/projects" class="sitebar__adaptive-menu--link">{{__('projects')}}</a>
                             </li>
                             <li class="sitebar__adaptive-menu--item">
-                                <a href="/delivery" class="sitebar__adaptive-menu--link">Доставка</a>
+                                <a href="/delivery" class="sitebar__adaptive-menu--link">{{__('del')}}</a>
                             </li>
                             <li class="sitebar__adaptive-menu--item">
-                                <a href="/contact" class="sitebar__adaptive-menu--link">Контакты</a>
+                                <a href="/contact" class="sitebar__adaptive-menu--link">{{ __('index.contacts')}}</a>
                             </li>
                         </ul>
                     </nav>

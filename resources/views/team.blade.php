@@ -6,12 +6,12 @@
 @section('content')
 
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Команда</div>
+  <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
+  <div class="url__text">{{ __('index.team')}}</div>
 </section>
 
 <section class="team">
-  <div class="team__title subtitle">КОМАНДА</div>
+  <div class="team__title subtitle">{{ __('index.team')}}</div>
   @foreach ($positions as $position)
       
   

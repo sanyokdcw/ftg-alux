@@ -11,12 +11,12 @@
   $currency = session('currency');
 @endphp
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Наши проекты</div>
+  <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
+  <div class="url__text">{{__('index.projects')}}</div>
 </section>
 
 <section class="project">
-  <div class="project__title subtitle">НАШИ ПРОЕКТЫ</div>
+  <div class="project__title subtitle">{{__('index.projects')}}</div>
   <div class="project__wrapper">
     @foreach ($projects as $project)
     <div class="project__wrapper-card">
@@ -102,7 +102,7 @@
 <div class="project__wrapper-block_bg"></div>
         </div>
         <div class="blog__button">
-          <a href="/project/{{ $project->id }}" class="blog__button-link">Читать далее</a>
+          <a href="/project/{{ $project->id }}" class="blog__button-link">{{__('index.read')}}</a>
         </div>
       </div>
 

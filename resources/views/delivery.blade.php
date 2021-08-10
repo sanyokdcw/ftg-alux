@@ -7,13 +7,13 @@
 
         
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Доставка и оплата</div>
+  <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
+  <div class="url__text">{{__('index.del')}} {{__('index.and')}} {{__('index.payment')}}</div>
 </section>
 
 <section class="delivery">
-  <div class="delivery__title subtitle">ДОСТАВКА И ОПЛАТА</div>
-  <div class="delivery__subtitle title">ДОСТАВКА</div>
+  <div class="delivery__title subtitle">{{__('index.del')}} {{__('index.and')}} {{__('index.payment')}}</div>
+  <div class="delivery__subtitle title">{{__('index.del')}}</div>
   <div class="delivery__wrapper">
     @foreach ($deliveries as $delivery)
     <div class="delivery__wrapper-item">
@@ -32,7 +32,7 @@
 </section>
 
 <section class="methods">
-  <div class="delivery__subtitle title">СПОСОБЫ ОПЛАТЫ</div>
+  <div class="delivery__subtitle title">{{__('index.paymentMethods')}}</div>
   <div class="methods__wrapper">
     @foreach ($payments as $payment)
     <div class="methods__wrapper-item" style="padding:50px">

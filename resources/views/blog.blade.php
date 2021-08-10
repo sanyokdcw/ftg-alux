@@ -6,12 +6,12 @@
 @section('content')
 
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Блог</div>
+  <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
+  <div class="url__text">{{ __('index.blog')}}</div>
 </section>
 
 <section class="blog" style="min-height: 1195px;">
-  <div class="blog__title subtitle">БЛОГ</div>
+  <div class="blog__title subtitle">{{ __('index.blog')}}</div>
   <div class="blog__wrapper">
     @foreach ($blogs as $blog)
     <div class="blog__wrapper-card" @if($loop->index >= 2)  style="display:none" @endif>
@@ -32,7 +32,7 @@
     @endforeach
   </div>
 
-  <button class="blog__btn" onclick="showBlocks()" id="btn-more">Показать ещё</button>
+  <button class="blog__btn" onclick="showBlocks()" id="btn-more">{{__('index.showMore')}}</button>
 </section>
 
 <script>

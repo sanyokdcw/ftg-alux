@@ -12,8 +12,8 @@
 @endphp
 
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Поиск</div>
+  <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
+  <div class="url__text">{{__('index.search')}}</div>
 </section>
 
 <section class="project">
@@ -30,7 +30,7 @@
   <div class="project__title subtitle" style="font-size: 25px">Товары по запросу: {{ $q }}</div>
 
   @else 
-  <div class="project__title subtitle">НАШИ ПРОДУКТЫ</div>
+  <div class="project__title subtitle">{{__('index.ourProducts')}}</div>
 
   @endif
   <div class="card__wrapper-bottom">
