@@ -8,11 +8,11 @@
         
 <section class="url">
   <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Про компанию</div>
+  <div class="url__text">{{ __('index.about') }}</div>
 </section>
 
 <section class="company">
-  <div class="company__title subtitle">ПРО КОМПАНИЮ</div>
+  <div class="company__title subtitle">{{ __('index.about') }}</div>
   <img src="../images/main-bg-2.jpg" alt="">
   <div class="company__subtitle--first title">ТОО FTG COMPANY</div>
   <div class="company__block">

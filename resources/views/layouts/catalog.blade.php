@@ -390,7 +390,7 @@
                         <h4 class="sitebar__adaptive-menu--title">Меню</h4>
                         <ul class="sitebar__adaptive-menu--items">
                             <li class="sitebar__adaptive-menu--item">
-                                <a href="/company" class="sitebar__adaptive-menu--link">Про компанию</a>
+                                <a href="/company" class="sitebar__adaptive-menu--link">{{ __('index.about') }}</a>
                             </li>
                             <li class="sitebar__adaptive-menu--item">
                                 <a href="/projects" class="sitebar__adaptive-menu--link">Наши проекты</a>
