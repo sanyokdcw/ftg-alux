@@ -21,5 +21,15 @@ return [
     'clients' => 'Clients',
     'partners' => 'Partners',
     'contacts' => 'Contacts',
-    'logout' => 'Logout'
+    'logout' => 'Logout',
+    'ourClients' => 'Our clients',
+    'lastNews' => 'Latest news',
+    'allNews' => 'All News',
+    'helpTitle' => 'System selection assistant',
+    'helpText' => 'We will definitely help you!',
+    'helpBtn' => 'Choose a SYSTEM',
+    'companyAbout' => 'About company',
+    'safetyFTG' => '© FTG Company LLP, 2017. All rights reserved.',
+    'privacy' => 'Privacy Policy',
+    'read' => 'Read more'
 ];

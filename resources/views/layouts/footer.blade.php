@@ -10,25 +10,25 @@
           </div>
         </div>
         <div class="footer__wrapper-item">
-          <div class="footer__wrapper-title">О компании</div>
+          <div class="footer__wrapper-title">{{ __('index.companyAbout') }}</div>
           <div class="footer__wrapper-block">
-            <a href="/company" class="footer__wrapper-link">О компании</a>
-            <a href="/blog" class="footer__wrapper-link">Блог</a>
-            <a href="/projects" class="footer__wrapper-link">Наши проекты</a>
-            <a href="/team" class="footer__wrapper-link">Команда</a>
+            <a href="/company" class="footer__wrapper-link">{{ __('index.companyAbout') }}</a>
+            <a href="/blog" class="footer__wrapper-link">{{ __('index.blog') }}</a>
+            <a href="/projects" class="footer__wrapper-link">{{ __('index.projects') }}</a>
+            <a href="/team" class="footer__wrapper-link">{{ __('index.team') }}</a>
           </div>
         </div>
         <div class="footer__wrapper-item">
-          <div class="footer__wrapper-title">Клиентам</div>
+          <div class="footer__wrapper-title">{{ __('index.clients') }}</div>
           <div class="footer__wrapper-block">
-            <a href="/guarange" class="footer__wrapper-link">Гарантия и сервис</a>
+            <a href="/guarange" class="footer__wrapper-link">{{ __('index.warranty') }}</a>
             {{-- <a href="#" class="footer__wrapper-link">Калькулятор объема</a> --}}
 {{--            <a href="/subcategory/3" class="footer__wrapper-link">КАТАЛОГ</a>--}}
 {{--            <a href="/calc" class="footer__wrapper-link">Калькулятор объема</a>--}}
           </div>
         </div>
         <div class="footer__wrapper-item" style="width: 30%">
-          <div class="footer__wrapper-title">Контакты</div>
+          <div class="footer__wrapper-title">{{ __('index.contacts') }}</div>
           <div class="footer__wrapper-block">
             <div href="#" class="footer__wrapper-link">
               <img src="../images/map-icon.png" alt=""> {{  strip_tags(setting('contacts.address')) }}
@@ -49,8 +49,8 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="footer__bottom-text">© ТОО “FTG Company”, 2017 г. Все права защищены.</div>
-      <a href="/conf.pdf" target="_blank" class="footer__bottom-link">Политика конфиденциальности</a>
+      <div class="footer__bottom-text">{{ __('index.safetyFTG') }}</div>
+      <a href="/conf.pdf" target="_blank" class="footer__bottom-link">{{ __('index.privacy')}}</a>
     </div>
   </footer>
 </div>

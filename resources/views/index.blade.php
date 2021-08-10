@@ -51,7 +51,7 @@ else $sub_link = '#'
 
 <section class="client">
   <div class="client__top">
-    <div class="client__title title">НАШИ КЛИЕНТЫ</div>
+    <div class="client__title title">{{ __('index.ourClients') }}</div>
     {{-- <a href="#" class="client__full">Все клиенты</a> --}}
   </div>
   <div class="client__wrapper">
@@ -65,8 +65,8 @@ else $sub_link = '#'
 
 <section class="news">
   <div class="client__top">
-    <div class="client__title title">ПОСЛЕДНИЕ НОВОСТИ</div>
-    <a href="/blog" class="client__full">Все новости</a>
+    <div class="client__title title">{{ __('index.lastNews') }}</div>
+    <a href="/blog" class="client__full">{{ __('index.allNews')}}</a>
   </div>
   <div class="news__wrapper">
     @foreach ($blogs as $blog)
@@ -82,7 +82,7 @@ else $sub_link = '#'
           {{ $blog->description }}
         </div>
         <div class="news__wrapper-item_button">
-          <a href="/blog/{{ $blog->id }}" class="news__wrapper-item_next">Читать далее</a>
+          <a href="/blog/{{ $blog->id }}" class="news__wrapper-item_next">{{ __('index.read') }}</a>
           <div class="news__wrapper-item_date">{{ $blog->created_at->format('d.m.Y') }}</div>
         </div>
       </div>
@@ -97,9 +97,9 @@ else $sub_link = '#'
       <img src="/images/helper.png" alt="">
     </div>
     <div class="help__wrapper-right">
-      <div class="help__wrapper-title">Помощник при выборе систем</div>
-      <div class="help__wrapper-text">Мы обязательно Вам поможем!</div>
-      <a href="/product/" class="help__wrapper-btn">Подобрать СИСТЕМУ</a>
+      <div class="help__wrapper-title">{{ __('index.helpTitle') }}</div>
+      <div class="help__wrapper-text">{{ __('index.helpText') }}</div>
+      <a href="/product/" class="help__wrapper-btn">{{ __('index.helpBtn') }}</a>
     </div>
   </div>
 </section>
@@ -107,7 +107,7 @@ else $sub_link = '#'
 <section class="ftg">
   <div class="client__top">
     <div class="client__title title">ТОО FTG COMPANY</div>
-    <a href="/company" class="client__full">Читать далее</a>
+    <a href="/company" class="client__full">{{ __('index.read') }}</a>
   </div>
   <div class="ftg__text">{{ setting('index.index_description') }}</div>
 </section>

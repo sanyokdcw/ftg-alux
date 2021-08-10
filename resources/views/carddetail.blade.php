@@ -136,9 +136,9 @@
       <img src="../images/help-bg.png" alt="">
     </div>
     <div class="help__wrapper-right">
-      <div class="help__wrapper-title">Помощник при выборе систем</div>
-      <div class="help__wrapper-text">Мы обязательно Вам поможем!</div>
-      <a href="/product" class="help__wrapper-btn">Подобрать СИСТЕМУ</a>
+      <div class="help__wrapper-title">{{ __('index.helpTitle') }}</div>
+      <div class="help__wrapper-text">{{ __('index.helpText') }}</div>
+      <a href="/product" class="help__wrapper-btn">{{ __('index.helpBtn') }}</a>
     </div>
   </div>
 </section>
