@@ -17,6 +17,7 @@ class CreateExchangeRatesTable extends Migration
             $table->id();
             $table->decimal('rub', 8, 2);
             $table->decimal('uah', 8, 2);
+            $table->decimal('usd', 8, 2);
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@
             <img class="logotype" src="../images/logo.png" alt="">
           </div>
           <div class="footer__wrapper-text" style="font-size: 14px;">
-            {{ setting('index.footer_description') }}
+{{--            {{ setting('index.footer_description') }}--}}
           </div>
         </div>
         <div class="footer__wrapper-item">
