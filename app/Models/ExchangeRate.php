@@ -9,5 +9,5 @@ class ExchangeRate extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['rub', 'uah'];
+    protected $fillable = ['rub', 'uah', 'usd'];
 }

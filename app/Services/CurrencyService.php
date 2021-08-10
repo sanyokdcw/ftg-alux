@@ -26,6 +26,8 @@ class CurrencyService
 
             $this->updatePrices($currencies);
         }
+
+        return $currencies;
     }
 
     private function parse($exchangeId = null)
@@ -45,6 +47,7 @@ class CurrencyService
 
         $rub = 5.81;
         $uah = 15.78;
+        $usd = 427.41;
 
         foreach ($tds as $td) {
             if ($td->nodeValue === 'RUB') {
@@ -55,13 +58,17 @@ class CurrencyService
                 if ($td->nextSibling->nodeValue == 1) {
                     $uah = (double) str_replace(',', '.', $td->nextSibling->nextSibling->nextSibling->nodeValue);
                 }
+            } elseif ($td->nodeValue === 'USD') {
+                if ($td->nextSibling->nodeValue == 1) {
+                    $usd = (double) str_replace(',', '.', $td->nextSibling->nextSibling->nextSibling->nodeValue);
+                }
             }
         }
 
         if ($exchangeId) {
-            $currencies = ExchangeRate::query()->where('id', $exchangeId)->update(['rub' => $rub, 'uah' => $uah]);
+            $currencies = ExchangeRate::query()->where('id', $exchangeId)->update(['rub' => $rub, 'uah' => $uah, 'usd' => $usd]);
         } else {
-            $currencies = ExchangeRate::query()->create(['rub' => $rub, 'uah' => $uah]);
+            $currencies = ExchangeRate::query()->create(['rub' => $rub, 'uah' => $uah, 'usd' => $usd]);
         }
 
         return $currencies;

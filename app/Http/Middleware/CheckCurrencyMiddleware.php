@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Services\CurrencyService;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class CheckCurrencyMiddleware
 {
@@ -24,7 +25,13 @@ class CheckCurrencyMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $this->currencyService->updateCurrencies();
+        $currencies = $this->currencyService->updateCurrencies();
+
+        $rub = $currencies->rub;
+        $uah = $currencies->uah;
+        $usd = $currencies->usd;
+
+        View::share(['rub' => $rub, 'uah' => $uah, 'usd' => $usd]);
 
         return $next($request);
     }
