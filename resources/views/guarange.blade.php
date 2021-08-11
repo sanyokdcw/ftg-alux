@@ -8,11 +8,11 @@
 
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
-  <div class="url__text">Гарантия и сервис</div>
+  <div class="url__text">{{__('index.guarangeTitle')}}</div>
 </section>
 <section style="    min-height: 1194px;">
 <div class="guarange">
-  <div class="guarange__title subtitle">ГАРАНТИЯ И СЕРВИС</div>
+  <div class="guarange__title subtitle">{{__('index.guarangeTitle')}}</div>
   <div class="guarange__wrapper">
     @foreach ($guarantees as $guarantee)
       <div class="guarange__wrapper-item">

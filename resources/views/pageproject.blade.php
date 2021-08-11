@@ -80,13 +80,13 @@
 <section class="specifications" style="    min-height: 657px;">
   <div class="specifications__top">
     <div class="specifications__top-item" style="cursor:pointer; color: #78b9eb;" id="Link1" onclick="changeTab(1)">
-      Задача
+      {{__('index.task')}} 
     </div>
     <div class="specifications__top-item" style="cursor:pointer;" id="Link2" onclick="changeTab(2)">
-      Решение
+      {{__('index.solution')}}
     </div>
     <div class="specifications__top-item" style="cursor:pointer;" id="Link3" onclick="changeTab(3)">
-      Итог
+      {{__('index.result')}}
     </div>
   </div>
   <div class="specifications__bottom">

@@ -44,8 +44,7 @@
         <div class="project__wrapper-info">
           <div class="project__wrapper-info_item">
             <div class="project__wrapper-info_title">
-              Срок
-              выполнения
+              {{__('index.projectInfo1')}}
             </div>
             <div class="project__wrapper-info_number">
               {{ $project->deadline[0] }} <span>{{ $project->deadline[1] }}</span>
@@ -53,8 +52,7 @@
           </div>
           <div class="project__wrapper-info_item">
             <div class="project__wrapper-info_title">
-              Начало
-              работы
+              {{__('index.projectInfo2')}}
             </div>
             <div class="project__wrapper-info_number">
               {{ $project->start_of_work }} <span>год</span>
@@ -62,8 +60,7 @@
           </div>
           <div class="project__wrapper-info_item">
             <div class="project__wrapper-info_title">
-              Стоимость
-              выполнения
+              {{__('index.projectInfo3')}}
             </div>
             <div class="project__wrapper-info_number">
               @if ($currency == 'KZT')
@@ -85,9 +82,9 @@
           {{ $project->description }}
         </div>
         <div class="project__wrapper-button">
-          <button class="project__wrapper-btn {{ $loop->index }}" onclick="changeTab(event, 'task{{ $loop->index }}')">ЗАДАЧА</button>
-          <button class="project__wrapper-btn {{ $loop->index }}" onclick="changeTab(event, 'solution{{ $loop->index }}')">Решение</button>
-          <button class="project__wrapper-btn {{ $loop->index }}" onclick="changeTab(event, 'result{{ $loop->index }}')">Итог</button>
+          <button class="project__wrapper-btn {{ $loop->index }}" onclick="changeTab(event, 'task{{ $loop->index }}')">{{__('index.task')}}</button>
+          <button class="project__wrapper-btn {{ $loop->index }}" onclick="changeTab(event, 'solution{{ $loop->index }}')">{{__('index.solution')}}</button>
+          <button class="project__wrapper-btn {{ $loop->index }}" onclick="changeTab(event, 'result{{ $loop->index }}')">{{__('index.result')}}</button>
         </div>
         <div class="project__wrapper-block">
           <div class="project__wrapper-text" id="task{{ $loop->index }}" style="margin-top: 0 !important;">

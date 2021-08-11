@@ -165,7 +165,7 @@
 </section>
 
 <section class="popular">
-  <div class="popular__title subtitle">Популярные товары</div>
+  <div class="popular__title subtitle">{{__('index.popularTitle')}}</div>
   <div class="popular__wrapper">
     @foreach ($popular as $p)
         

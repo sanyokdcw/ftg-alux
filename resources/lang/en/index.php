@@ -52,5 +52,15 @@ return [
     'more' => 'More',
     'ourProducts' => 'Our Products',
     'showMore' => 'Show more',
-    'paymentMethods' => 'PAYMENT METHODS'
+    'paymentMethods' => 'PAYMENT METHODS',
+    'sert' => 'SERTIFICATE',
+    'popularTitle' => 'Popular products',
+    'selectProduct' => 'SELECTS PRODUCTS',
+    'projectInfo1' => 'Deadline',
+    'projectInfo2' => 'Getting started',
+    'projectInfo3' => 'Execution cost',
+    'task' => 'TASK',
+    'solution' => 'SOLUTION',
+    'result' => 'RESULT',
+    'guarangeTitle' => 'WARRANTY AND SERVICE'
 ];

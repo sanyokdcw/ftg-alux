@@ -53,4 +53,14 @@ return [
     'ourProducts' => 'Наши продукты',
     'showMore' => 'Показать ещё',
     'paymentMethods' => 'СПОСОБЫ ОПЛАТЫ',
+    'sert' => 'СЕРТИФИКАТЫ',
+    'popularTitle' => 'Популярные товары',
+    'selectProduct' => 'ПОДОБРАТЬ ПРОДУКЦИЮ',
+    'projectInfo1' => 'Срок выполнения',
+    'projectInfo2' => 'Начало работы',
+    'projectInfo3' => 'Стоимость выполнения',
+    'task' => 'ЗАДАЧА',
+    'solution' => 'РЕШЕНИЕ',
+    'result' => 'ИТОГ',
+    'guarangeTitle' => 'ГАРАНТИЯ И СЕРВИС'
 ];

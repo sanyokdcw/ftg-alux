@@ -8,7 +8,7 @@
 
 <section class="url">
     <div class="url__text">{{__('index.main')}}</div>
-    <div class="url__text">Подобрать продукцию</div>
+    <div class="url__text">{{__('index.selectProduct')}}</div>
 </section>
 
 <section class="product" style="min-height: 1180px">
@@ -18,7 +18,7 @@
         <p class="form-data_error-body">{{ Session::get('message') }}</p>
     </div>
     @endif
-    <div class="product__title subtitle">ПОДОБРАТЬ ПРОДУКЦИЮ</div>
+    <div class="product__title subtitle">{{__('index.selectProduct')}}</div>
     <div class="product__wrapper">
         <div class="product__wrapper-left">
             <div class="product__wrapper-left">

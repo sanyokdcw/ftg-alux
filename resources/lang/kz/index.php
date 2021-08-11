@@ -52,5 +52,15 @@ return [
     'more' => 'Толыгырак',
     'ourProducts' => 'Бiздiн продукттар',
     'showMore' => 'Тагы корсету',
-    'paymentMethods' => 'ТӨЛЕМ ӘДІСТЕРІ'
+    'paymentMethods' => 'ТӨЛЕМ ӘДІСТЕРІ',
+    'sert' => 'СЕРТИФИКАТТАР',
+    'popularTitle' => 'Танымал тауарлар',
+    'selectProduct' => 'ӨНІМДЕРДІ ТАҢДАҢЫЗ',
+    'projectInfo1' => 'Мерзімі',
+    'projectInfo2' => 'Жұмысты бастау',
+    'projectInfo3' => 'Орындау құны',
+    'task' => 'ТАПСЫРМА',
+    'solution' => 'ШЕШІМ',
+    'result' => 'БАРЛЫҚ',
+    'guarangeTitle' => 'КЕПІЛДІК ЖӘНЕ ҚЫЗМЕТ'
 ];

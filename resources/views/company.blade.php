@@ -97,7 +97,7 @@
 </section>
 
 <section class="sertificate">
-  <div class="sertificate__title title">СЕРТИФИКАТЫ FTG COMPANY</div>
+  <div class="sertificate__title title">{{ __('index.sert')}} FTG COMPANY</div>
   <div class="sertificate__wrapper swiper-container">
     <div class="swiper-wrapper">
       @foreach ($certificates as $certificate)
