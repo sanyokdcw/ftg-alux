@@ -167,7 +167,7 @@
                     </div>
                 </div>
             </div>
-            <button class="product__wrapper-right_btn" onclick="changeTab('Tab2')">Продолжить</button>
+            <a class="product__wrapper-right_btn" onclick="changeTab('Tab2')">Продолжить</a>
         </span>
         <span class="tab-content" id="Tab2">
 
@@ -204,7 +204,7 @@
                         <label for="radio-6">Водопроводная вода (ДСанПиН 2.2.4-171-10)</label>
                     </div>
                 </div>
-                <button class="product__wrapper-right_btn" onclick="changeTab('Tab3')">Продолжить</button>
+                <a  class="product__wrapper-right_btn" onclick="changeTab('Tab3')">Продолжить</a>
             </div>
         </span>
         <span class="tab-content" id="Tab3">
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                 </div>
-            <button class="product__wrapper-right_btn" onclick="changeTab('Tab4')">Продолжить</button>
+            <a class="product__wrapper-right_btn" onclick="changeTab('Tab4')">Продолжить</a>
             </div>
         </span>
         <span class="tab-content" id="Tab4">
