@@ -29,7 +29,7 @@
   @elseif($q != null)
   <div class="project__title subtitle" style="font-size: 25px">Товары по запросу: {{ $q }}</div>
 
-  @else 
+  @else
   <div class="project__title subtitle">{{__('index.ourProducts')}}</div>
 
   @endif
@@ -43,8 +43,8 @@
       <div class="card__wrapper-price"><span>
         @if ($currency == 'KZT')
           {{ number_format($product->price_kz,0,","," ") }}</span> тг
-        @elseif($currency == 'UAH')
-          {{ number_format($product->price_uah,0,","," ") }}</span> грн
+        @elseif($currency == 'USD')
+          {{ number_format($product->price_uah,0,","," ") }}</span> долл
         @elseif($currency == 'RUB')
           {{ number_format($product->price_ru,0,","," ") }}</span> руб
         @endif
@@ -59,7 +59,7 @@
 <script>
   function changeTab(evt,type) {
 
-      @foreach($products as $p) 
+      @foreach($products as $p)
       btns = document.getElementsByClassName("{{ $loop->index }}");
       for (i = 0; i < btns.length; i++) {
         btns[i].style = "border: 1px solid #f7f9fa;"
@@ -69,7 +69,7 @@
         document.getElementById('task{{ $loop->index }}').style.display = "block";
         document.getElementById('result{{ $loop->index }}').style.display = "none";
         document.getElementById('solution{{ $loop->index }}').style.display = "none";
-        
+
         evt.currentTarget.style = "border: 1px solid #112468;";
       }
       if(type == 'solution{{ $loop->index }}') {
@@ -88,7 +88,7 @@
       @endforeach
   }
 </script>
-<style lang="css"> 
+<style lang="css">
   .search {
       width: 50%;
       height: 55px;

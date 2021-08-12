@@ -46,17 +46,12 @@ class CurrencyService
         $tds = $dom->getElementsByTagName('td');
 
         $rub = 5.81;
-        $uah = 15.78;
         $usd = 427.41;
 
         foreach ($tds as $td) {
             if ($td->nodeValue === 'RUB') {
                 if ($td->nextSibling->nodeValue == 1) {
                     $rub = (double) str_replace(',', '.', $td->nextSibling->nextSibling->nextSibling->nodeValue);
-                }
-            } elseif ($td->nodeValue === 'UAH') {
-                if ($td->nextSibling->nodeValue == 1) {
-                    $uah = (double) str_replace(',', '.', $td->nextSibling->nextSibling->nextSibling->nodeValue);
                 }
             } elseif ($td->nodeValue === 'USD') {
                 if ($td->nextSibling->nodeValue == 1) {
@@ -66,9 +61,9 @@ class CurrencyService
         }
 
         if ($exchangeId) {
-            $currencies = ExchangeRate::query()->where('id', $exchangeId)->update(['rub' => $rub, 'uah' => $uah, 'usd' => $usd]);
+            $currencies = ExchangeRate::query()->where('id', $exchangeId)->update(['rub' => $rub, 'usd' => $usd]);
         } else {
-            $currencies = ExchangeRate::query()->create(['rub' => $rub, 'uah' => $uah, 'usd' => $usd]);
+            $currencies = ExchangeRate::query()->create(['rub' => $rub, 'usd' => $usd]);
         }
 
         return $currencies;
@@ -77,14 +72,14 @@ class CurrencyService
     private function updatePrices($currencies)
     {
         $rub = $currencies->rub;
-        $uah = $currencies->uah;
+        $usd = $currencies->usd;
 
         $products = Product::all();
 
         foreach ($products as $product) {
             $kz = $product['price_kz'];
 
-            $product->update(['price_ru' => (int) round($kz / $rub), 'price_uah' => (int) round($kz / $uah)]);
+            $product->update(['price_ru' => (int) round($kz / $rub), 'price_uah' => (int) round($kz / $usd)]);
         }
     }
 }

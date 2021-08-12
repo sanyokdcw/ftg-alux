@@ -75,8 +75,8 @@
         </div>
         @if ($currency == 'KZT')
           <div class="card__wrapper-price"><span>{{ number_format($product->price_kz,0,","," ") }}</span> тг</div>
-        @elseif($currency == 'UAH')
-          <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> грн</div>
+        @elseif($currency == 'USD')
+          <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> долл</div>
         @elseif($currency == 'RUB')
           <div class="card__wrapper-price"><span>{{ number_format($product->price_ru,0,","," ") }}</span> руб</div>
         @endif
