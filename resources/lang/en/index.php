@@ -62,5 +62,11 @@ return [
     'task' => 'TASK',
     'solution' => 'SOLUTION',
     'result' => 'RESULT',
-    'guarangeTitle' => 'WARRANTY AND SERVICE'
+    'guarangeTitle' => 'WARRANTY AND SERVICE',
+    'address' => 'address:',
+    'phone' => 'phone:',
+    'operating' => 'operating mode:',
+    'estimationTitle' => 'Do you have any questions? ',
+    'estimationText' => 'We will definitely help you!',
+    'estimationBtn' => 'Contact us'
 ];

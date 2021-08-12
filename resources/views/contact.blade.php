@@ -18,15 +18,15 @@
   <div class="contact__title subtitle">{{ __('index.contacts')}}</div>
   <div class="contact__wrapper">
     <div class="contact__wrapper-left">
-      <div class="contact__wrapper-title">АДРЕС:</div>
+      <div class="contact__wrapper-title">{{__('index.address')}}</div>
       <div class="contact__wrapper-text">
         {!! setting('contacts.address') !!}
       </div>
-      <div class="contact__wrapper-title" style="text-transform: uppercase">Телефон:</div>
+      <div class="contact__wrapper-title" style="text-transform: uppercase">{{__('index.phone')}}</div>
       <a style="font-size:23px;"  href="tel:+79016543210" class="contact__wrapper-phone title">{{ setting('contacts.telephone') }}</a>
       <div class="contact__wrapper-title">EMAIL:</div>
       <a href="mailto:{{ setting('contacts.email') }}" class="contact__wrapper-email">{{ setting('contacts.email') }}</a>
-      <div class="contact__wrapper-title">РЕЖИМ РАБОТЫ:</div>
+      <div class="contact__wrapper-title">{{__('index.operating')}}</div>
       <div class="contact__wrapper-text">
         {!! setting('contacts.schedule') !!}
         <br>

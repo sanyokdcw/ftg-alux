@@ -62,5 +62,11 @@ return [
     'task' => 'ТАПСЫРМА',
     'solution' => 'ШЕШІМ',
     'result' => 'БАРЛЫҚ',
-    'guarangeTitle' => 'КЕПІЛДІК ЖӘНЕ ҚЫЗМЕТ'
+    'guarangeTitle' => 'КЕПІЛДІК ЖӘНЕ ҚЫЗМЕТ',
+    'address' => 'АДРЕС:',
+    'phone' => 'Телефон:',
+    'operating' => 'ЖҰМЫС ТӘРТІБІ:',
+    'estimationTitle' => 'Сұрақтарыңыз бар ма?',
+    'estimationText' => 'Біз сізге міндетті түрде көмектесеміз!',
+    'estimationBtn' => 'Бізге хабарласыңыз'
 ];

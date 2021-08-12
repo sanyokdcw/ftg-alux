@@ -183,7 +183,7 @@
                 {{ number_format($p->price_ru) }}
                 </span> руб</div>
               @endif
-            <a href="/product/{{ $p->id }}" class="card__wrapper-btn">Подробнее</a>
+            <a href="/product/{{ $p->id }}" class="card__wrapper-btn">{{__('index.more')}}</a>
           </div>
         @endforeach
       </div>

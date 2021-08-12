@@ -183,7 +183,7 @@
             руб
         @endif
       </div>
-      <a class="card__wrapper-btn"  href="/product/{{ $p->id }}" style="color: #112468">Подробнее</a>
+      <a class="card__wrapper-btn"  href="/product/{{ $p->id }}" style="color: #112468">{{__('index.more')}}</a>
     </div>
 
     @endforeach

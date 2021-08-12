@@ -62,5 +62,11 @@ return [
     'task' => 'ЗАДАЧА',
     'solution' => 'РЕШЕНИЕ',
     'result' => 'ИТОГ',
-    'guarangeTitle' => 'ГАРАНТИЯ И СЕРВИС'
+    'guarangeTitle' => 'ГАРАНТИЯ И СЕРВИС',
+    'address' => 'АДРЕС:',
+    'phone' => 'Телефон:',
+    'operating' => 'РЕЖИМ РАБОТЫ:',
+    'estimationTitle' => 'Возникли вопросы?',
+    'estimationText' => 'Мы обязательно Вам поможем!',
+    'estimationBtn' => 'Связаться с нами'
 ];

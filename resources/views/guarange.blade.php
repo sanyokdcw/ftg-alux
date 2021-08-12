@@ -29,9 +29,9 @@
 </div>
 
 <section class="estimation">
-  <div class="estimation__title">Возникли вопросы?</div>
-  <div class="estimation__text">Мы обязательно Вам поможем!</div>
-  <button class="estimation__btn btn-contact" onclick="openModelRight('contact2')">Связаться с нами</button>
+  <div class="estimation__title">{{__('index.estimationTitle')}}</div>
+  <div class="estimation__text">{{__('index.estimationText')}}</div>
+  <button class="estimation__btn btn-contact" onclick="openModelRight('contact2')">{{__('index.estimationBtn')}}</button>
 </section>
 
 </section>
