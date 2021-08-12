@@ -40,7 +40,7 @@
             @endforeach
           </div>
         </div>
-        
+
         <div class="project__wrapper-info">
           <div class="project__wrapper-info_item">
             <div class="project__wrapper-info_title">
@@ -65,8 +65,8 @@
             <div class="project__wrapper-info_number">
               @if ($currency == 'KZT')
                 {{ number_format($project->price_kz) }} <span>тг</span>
-              @elseif($currency == 'UAH')
-                {{ number_format($project->price_uah) }} <span>грн</span>
+              @elseif($currency == 'USD')
+                {{ number_format($project->price_uah) }} <span>долл</span>
               @elseif($currency == 'RUB')
                 {{ number_format($project->price_rub) }} <span>руб</span>
               @endif
@@ -113,7 +113,7 @@
 <script>
   function changeTab(evt,type) {
 
-      @foreach($projects as $p) 
+      @foreach($projects as $p)
       btns = document.getElementsByClassName("{{ $loop->index }}");
       for (i = 0; i < btns.length; i++) {
         btns[i].style = "border: 1px solid #f7f9fa;"
@@ -123,7 +123,7 @@
         document.getElementById('task{{ $loop->index }}').style.display = "block";
         document.getElementById('result{{ $loop->index }}').style.display = "none";
         document.getElementById('solution{{ $loop->index }}').style.display = "none";
-        
+
         evt.currentTarget.style = "border: 1px solid #112468; background-color: #fff;";
       }
       if(type == 'solution{{ $loop->index }}') {
@@ -142,7 +142,7 @@
       @endforeach
   }
 </script>
-<style lang="css"> 
+<style lang="css">
   .search {
       width: 50%;
       height: 55px;

@@ -16,7 +16,6 @@ class CreateExchangeRatesTable extends Migration
         Schema::create('exchange_rates', function (Blueprint $table) {
             $table->id();
             $table->decimal('rub', 8, 2);
-            $table->decimal('uah', 8, 2);
             $table->decimal('usd', 8, 2);
             $table->timestamps();
         });

@@ -61,14 +61,14 @@
             @if ($currency == 'KZT')
               <div class="detail-page__right-item_number">{{ number_format($project->price_kz) }}</div>
               <div class="detail-page__right-item_date">тг</div>
-            @elseif($currency == 'UAH')
+            @elseif($currency == 'USD')
               <div class="detail-page__right-item_number">{{ number_format($project->price_uah) }}</div>
-              <div class="detail-page__right-item_date">грн</div>
+              <div class="detail-page__right-item_date">долл</div>
             @elseif($currency == 'RUB')
               <div class="detail-page__right-item_number">{{ number_format($project->price_rub) }}</div>
               <div class="detail-page__right-item_date">руб</div>
             @endif
-            
+
 
           </div>
         </div>
@@ -80,7 +80,7 @@
 <section class="specifications" style="    min-height: 657px;">
   <div class="specifications__top">
     <div class="specifications__top-item" style="cursor:pointer; color: #78b9eb;" id="Link1" onclick="changeTab(1)">
-      {{__('index.task')}} 
+      {{__('index.task')}}
     </div>
     <div class="specifications__top-item" style="cursor:pointer;" id="Link2" onclick="changeTab(2)">
       {{__('index.solution')}}
@@ -103,7 +103,7 @@
   </div>
 </section>
 
-<script> 
+<script>
     function changeTab(tab) {
            if(tab === 1) {
              document.getElementById('Tab1').style.display = "block"

@@ -75,7 +75,7 @@
         @csrf
 
         <button type="submit" class="office__order-btn">ОСТАВИТЬ ЗАЯВКУ</button>
-</form>      
+</form>
 </div>
 
       <div class="office__order-password">
@@ -100,7 +100,7 @@
 
     <div class="office__order">
       <div class="office__order-title title">Мои заказы</div>
-      
+
       <div class="office__order-item_row office__order-item_title">
         <div class="office__order-item_head">
           Номер заказа
@@ -115,10 +115,10 @@
           Дата
         </div>
       </div>
-      
+
       <div class="office__order-item_bottom">
         @foreach ($orders as $order)
-        
+
         <div class="office__order-item_row">
           <div class="office__order-item_top">
             <div class="office__order-item_tbody">
@@ -136,7 +136,7 @@
           </div>
           <div class="office__order-item_row_bottom">
             @foreach(App\Models\OrderProduct::where('order_id', $order->id)->get() as $product)
-            
+
             <div class="office__order-item_order">
               <div class="office__order-item_name">
                 <a href="/product/{{$product->id}}">
@@ -147,12 +147,12 @@
               </div>
             </div>
             @endforeach
-            
+
           </div>
         </div>
         @endforeach
-        
-        
+
+
       </div>
     </div>
     @php
@@ -164,7 +164,7 @@
     <div class="office__order">
       <div class="popular__title">На данные категории для Вас действуют такие скидки:</div>
       <div class="popular__wrapper">
-        @foreach ($popular as $p)  
+        @foreach ($popular as $p)
           <div class="card__wrapper-item">
             <div class="card__wrapper-img" style="background-image: url(/storage/{{ $p->image }});"></div>
             <div class="card__wrapper-text">
@@ -175,9 +175,9 @@
                 {{ number_format($p->price_kz) }}
                 </span> тг</div>
               @endif
-              @if ($currency == 'UAH')
+              @if ($currency == 'USD')
                 {{ number_format($p->price_uah) }}
-                </span> грн</div>
+                </span> долл</div>
               @endif
               @if ($currency == 'RUB')
                 {{ number_format($p->price_ru) }}
@@ -198,7 +198,7 @@
 
 Swal.fire(
   'Пароли не совпадают, либо пароль введен неверно',
-  '',  
+  '',
   'error'
 )
 

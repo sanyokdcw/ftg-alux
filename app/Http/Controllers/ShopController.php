@@ -17,7 +17,7 @@ use App;
 
 class ShopController extends Controller
 {
-    
+
     public function card($id, Request $request){
         if(session()->has('locale')) {
             $locale = session('locale');
@@ -147,7 +147,7 @@ class ShopController extends Controller
         $discountSum = 0;
         foreach($cart_items as $item) {
             $product = Product::find($item->product_id);
-            if(session('currency') == 'UAH'){
+            if(session('currency') == 'USD'){
                 $price = $product->price_uah;
             }else if(session('currency') == 'RUB'){
                 $price = $product->price_ru;
@@ -192,7 +192,7 @@ class ShopController extends Controller
         }
         return redirect('/office');
     }
-    
+
     public function office(){
         if(session()->has('locale')) {
 
@@ -206,10 +206,10 @@ class ShopController extends Controller
 
         $orders = Order::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get()->translate(session('locale'));
         $popular = Product::where('available', 1)->inRandomOrder()->take(3)->get()->translate(session('locale'));
-        
+
         return view('office', compact('orders', 'popular'));
     }
-    
+
     public function currency_change($currency, Request $request){
         if(session()->has('locale')) {
 
@@ -224,5 +224,5 @@ class ShopController extends Controller
         session(['currency' => $currency]);
         return redirect()->back();
     }
-    
+
 }

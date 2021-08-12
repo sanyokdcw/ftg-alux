@@ -41,17 +41,17 @@
       </div>
       <div class="card-detail__wrapper-right_price">
         @if ($currency == 'KZT')
-       <span id="item_price">   {{  number_format($product->price_kz,0,","," ") }} 
+       <span id="item_price">   {{  number_format($product->price_kz,0,","," ") }}
       </span>
       тенге
-        @elseif($currency == 'UAH')
+        @elseif($currency == 'USD')
 <span id="item_price">
-          {{  number_format($product->price_uah,0,","," ") }} 
+          {{  number_format($product->price_uah,0,","," ") }}
 </span>
-гривен
+долларов
         @elseif($currency == 'RUB')
-<span id="item_price">       
-   {{  number_format($product->price_ru,0,","," ") }} 
+<span id="item_price">
+   {{  number_format($product->price_ru,0,","," ") }}
 </span>
 рублей
       @endif
@@ -65,19 +65,19 @@
         <div class="card-detail__wrapper-right_subprice title" style="font-size: 21px;">
 
           @if ($currency == 'KZT')
-<span id="total_price"> 
+<span id="total_price">
  {{ number_format($product->price_kz,0,","," ") }}
 </span>
  тг
-          @elseif($currency == 'UAH')
+          @elseif($currency == 'USD')
        <span id="total_price">
-     {{ number_format($product->price_uah,0,","," ") }} 
-</span>          
-грн
+     {{ number_format($product->price_uah,0,","," ") }}
+</span>
+долл
 @elseif($currency == 'RUB')
-<span id="total_price">       
-     {{  number_format($product->price_ru,0,","," ") }} 
-</span>          
+<span id="total_price">
+     {{  number_format($product->price_ru,0,","," ") }}
+</span>
 руб
 @endif
 </span>
@@ -94,10 +94,10 @@
         <div class="card-detail__wrapper-right_phone">
           <input type="phone" name="phone" required="required" id="number">
         </div>
-	    @csrf        
+	    @csrf
       <button type="button" onclick="sendNumber()" class="card-detail__wrapper-right_order">Заказать консультацию</button>
      </div>
-    </form> 
+    </form>
     </div>
   </div>
 </section>
@@ -117,7 +117,7 @@
   <div class="specifications__bottom">
     <div class="specifications__bottom-item" id="Tab1" style="display: block;">
     {!! strip_tags($product->description) !!}
-	
+
     </div>
     <div class="specifications__bottom-item" id="Tab2" style="display: none;">
     {!! strip_tags($product->characteristics) !!}
@@ -154,8 +154,8 @@
       </div>
       @if ($currency == 'KZT')
         <div class="card__wrapper-price"><span>{{ number_format($product->price_kz,0,","," ") }}</span> тг</div>
-      @elseif($currency == 'UAH')
-        <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> грн</div>
+      @elseif($currency == 'USD')
+        <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> долл</div>
       @elseif($currency == 'RUB')
         <div class="card__wrapper-price"><span>{{ number_format($product->price_rub,0,","," ") }}</span> руб</div>
       @endif
@@ -169,7 +169,7 @@
 <script>
   function countIncrement() {
     let count = document.getElementById("counter")
-    let price = document.getElementById("item_price")  
+    let price = document.getElementById("item_price")
     let total_price = document.getElementById("total_price")
     let newPrice = Number(total_price.innerHTML.replace(/\s/g, '').replace(/&nbsp;/g, '')) + Number(price.innerHTML.replace(/\s/g, '').replace(/&nbsp;/g, ''))
     total_price.innerHTML = `${addSpaces(newPrice)}`
@@ -180,14 +180,14 @@
 
   function countDecrement() {
     let count = document.getElementById("counter")
-    
+
     if(parseInt(count.innerHTML) > 1) {
-    let price = document.getElementById("item_price")  
-      
+    let price = document.getElementById("item_price")
+
     let total_price = document.getElementById("total_price")
     let newPrice = Number(total_price.innerHTML.replace(/\s/g, '').replace(/&nbsp;/g, '')) - Number(price.innerHTML.replace(/\s/g, '').replace(/&nbsp;/g, ''))
     total_price.innerHTML = `${addSpaces(newPrice)}`
-      
+
     let newCount = parseInt(count.innerHTML) - 1
       count.innerHTML = `${newCount}`
       document.getElementById('quantity').value = newCount
@@ -197,7 +197,7 @@
   function addSpaces(n) {
     let num = Number(n)
     let result = new Intl.NumberFormat('ru-RU').format(num)
-    
+
     return result.toString()
   }
 
@@ -236,7 +236,7 @@ function sendNumber() {
     {
       Swal.fire(
         'Пожалуйста, введите корректный номер',
-        '',  
+        '',
         'error'
       )
     }
@@ -251,7 +251,7 @@ function sendNumber() {
 
 Swal.fire(
   'Товар успешно добавлен в корзину',
-'',  
+'',
 'success'
 )
 

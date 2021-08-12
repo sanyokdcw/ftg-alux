@@ -10,7 +10,7 @@
     session(['currency' => 'KZT']);
   }
   $currency = session('currency');
-@endphp      
+@endphp
 
 <section class="url">
   <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
@@ -23,7 +23,7 @@
   <div class="card__wrapper">
     <div class="card__wrapper-top">
       <div class="card__wrapper-number">
-        Товаров - <span>{{ $products->count() }}</span> 
+        Товаров - <span>{{ $products->count() }}</span>
       </div>
       <div class="card__wrapper-filter dropdown">
           <span>
@@ -39,7 +39,7 @@
               <a href="/subcategory/{{ $subcategory->id }}?sort=up">
                 По увеличению цены
             </a>
-            @else 
+            @else
             <p style="font-size: 14px;">
               <a href="/subcategory/{{ $subcategory->id }}?sort=down">
                 По уменьшению цены
@@ -59,8 +59,8 @@
         <div class="card__wrapper-price"><span>
           @if ($currency == 'KZT')
             {{ number_format($product->price_kz,0,","," ") }}</span> тг
-          @elseif($currency == 'UAH')
-            {{ number_format($product->price_uah,0,","," ") }}</span> грн
+          @elseif($currency == 'USD')
+            {{ number_format($product->price_uah,0,","," ") }}</span> долл
           @elseif($currency == 'RUB')
             {{ number_format($product->price_ru,0,","," ") }}</span> руб
           @endif

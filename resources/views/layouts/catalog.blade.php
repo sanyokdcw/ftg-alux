@@ -138,7 +138,7 @@
                             <span>
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99 0.214844C4.47 0.214844 0 4.69484 0 10.2148C0 15.7348 4.47 20.2148 9.99 20.2148C15.52 20.2148 20 15.7348 20 10.2148C20 4.69484 15.52 0.214844 9.99 0.214844ZM10 18.2148C5.58 18.2148 2 14.6348 2 10.2148C2 5.79484 5.58 2.21484 10 2.21484C14.42 2.21484 18 5.79484 18 10.2148C18 14.6348 14.42 18.2148 10 18.2148ZM9 5.21484H10.5V10.4648L15 13.1348L14.25 14.3648L9 11.2148V5.21484Z" fill="#112468"/>
-                                    </svg>                                    
+                                    </svg>
                                 <div class="sitebar__wrapper-item_right sitebar_text_nowrap">
                                     <div>
                                         {{ setting('contacts.schedule') }}
@@ -171,10 +171,10 @@
                                     <img src="/images/arrow-bottom.png" alt="" style="width: 8px">
                                 </div>
                                 <div class="dropdown-content" style="min-width: 0">
-                                    @if ($currency != 'UAH')
+                                    @if ($currency != 'USD')
                                         <p style="font-size: 14px;">
-                                            <a href="/currency/UAH">
-                                                UAH
+                                            <a href="/currency/USD">
+                                                USD
                                             </a>
                                         </p>
                                     @endif
@@ -312,10 +312,10 @@
                                     <img src="/images/arrow-bottom.png" alt="" style="width: 8px">
                                 </div>
                                 <div class="dropdown-content" style="min-width: 0">
-                                    @if ($currency != 'UAH')
+                                    @if ($currency != 'USD')
                                         <p style="font-size: 14px;">
-                                            <a href="/currency/UAH">
-                                                UAH
+                                            <a href="/currency/USD">
+                                                USD
                                             </a>
                                         </p>
                                     @endif
@@ -367,7 +367,7 @@
                             <a href="#" class="sidebar-adaptive__icons--href">
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99 0.214844C4.47 0.214844 0 4.69484 0 10.2148C0 15.7348 4.47 20.2148 9.99 20.2148C15.52 20.2148 20 15.7348 20 10.2148C20 4.69484 15.52 0.214844 9.99 0.214844ZM10 18.2148C5.58 18.2148 2 14.6348 2 10.2148C2 5.79484 5.58 2.21484 10 2.21484C14.42 2.21484 18 5.79484 18 10.2148C18 14.6348 14.42 18.2148 10 18.2148ZM9 5.21484H10.5V10.4648L15 13.1348L14.25 14.3648L9 11.2148V5.21484Z" fill="#112468"/>
-                                    </svg>                                    
+                                    </svg>
                                 <div class="sitebar__wrapper-item_right" style="font-size:13px">
                                     <div>
                                         {{ setting('contacts.schedule') }}

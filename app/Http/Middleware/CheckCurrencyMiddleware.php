@@ -28,10 +28,9 @@ class CheckCurrencyMiddleware
         $currencies = $this->currencyService->updateCurrencies();
 
         $rub = $currencies->rub;
-        $uah = $currencies->uah;
         $usd = $currencies->usd;
 
-        View::share(['rub' => $rub, 'uah' => $uah, 'usd' => $usd]);
+        View::share(['rub' => $rub, 'usd' => $usd]);
 
         return $next($request);
     }

@@ -10,7 +10,6 @@
            <p>{{ __('index.exchangeRates')}}</p>
            <div>&#8376</div>
            <div>USD: {{$usd}}</div>
-           <div>EUR: {{$uah}}</div>
            <div>RUB: {{$rub}}</div>
           </div>
         </div>

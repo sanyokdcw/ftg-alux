@@ -10,7 +10,7 @@
   }
   $currency = session('currency');
 @endphp
-        
+
 <section class="url">
   <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
   <div class="url__text">{{__('index.basket')}}</div>
@@ -60,7 +60,7 @@
         </div>
       <textarea style="width:500px" class="cart__wrapper-left_textarea" placeholder="Комментировать"></textarea>
     </div>
-    
+
     <div class="cart__wrapper-right">
       <form action="/add-order" method="POST">
       @csrf
@@ -71,9 +71,9 @@
 
           @php
           if($product->sale != 0) {
-            $product->price_kz = $product->price_kz - ( $product->price_kz * ($product->sale / 100));   
-           $product->price_ru = $product->price_ru - ( $product->price_ru * ($product->sale / 100));   
-           $product->price_uah = $product->price_uah - ( $product->price_uah * ($product->sale / 100));   
+            $product->price_kz = $product->price_kz - ( $product->price_kz * ($product->sale / 100));
+           $product->price_ru = $product->price_ru - ( $product->price_ru * ($product->sale / 100));
+           $product->price_uah = $product->price_uah - ( $product->price_uah * ($product->sale / 100));
 
           }
           @endphp
@@ -97,13 +97,13 @@
         @if ($currency == 'KZT')
         <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">
 
-          {{ number_format(($product->price_kz) * $item->quantity,0,","," ") }}</span> 
+          {{ number_format(($product->price_kz) * $item->quantity,0,","," ") }}</span>
           тг
-        @elseif($currency == 'UAH')
-          <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_uah * $item->quantity,0,","," ") }}</span> 
-          грн
+        @elseif($currency == 'USD')
+          <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_uah * $item->quantity,0,","," ") }}</span>
+          долл
         @elseif($currency == 'RUB')
-          <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_ru * $item->quantity,0,","," ") }}</span> 
+          <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_ru * $item->quantity,0,","," ") }}</span>
           руб
           @endif
           </div>
@@ -121,27 +121,27 @@
       @endforeach
 
       <input type="hidden" name="sum" id="sum_hidden" value="{{ $sum }}">
-     
+
       <div class="cart__wrapper-right_text">
         <div>Стоимость товаров:</div>
-        <span> <span id=""> {{ number_format($sum,0,","," ") }} </span> 
+        <span> <span id=""> {{ number_format($sum,0,","," ") }} </span>
         @if ($currency == 'KZT')
             тг
-        @elseif($currency == 'UAH')
-            грн
+        @elseif($currency == 'USD')
+            долл
         @elseif($currency == 'RUB')
             руб
         @endif
         </span>
-      </div> 
+      </div>
 
       <div class="cart__wrapper-right_text cart__wrapper-right_result">
         <div>ИТОГО К ОПЛАТЕ:</div>
-        <span> <span id="sum"> {{ number_format($discountSum,0,","," ") }} </span> 
+        <span> <span id="sum"> {{ number_format($discountSum,0,","," ") }} </span>
           @if ($currency == 'KZT')
             тг
-          @elseif($currency == 'UAH')
-            грн
+          @elseif($currency == 'USD')
+            долл
           @elseif($currency == 'RUB')
             руб
           @endif
@@ -159,7 +159,7 @@
         <button type="button"  onclick="sendNumber()" class="card-detail__wrapper-right_order">Заказать консультацию</button>
       </div>
     </form>
-      
+
     </div>
   </div>
 </section>
@@ -168,17 +168,17 @@
   <div class="popular__title subtitle">{{__('index.popularTitle')}}</div>
   <div class="popular__wrapper">
     @foreach ($popular as $p)
-        
+
     <div class="card__wrapper-item">
       <div class="card__wrapper-img" style="background-image: url(/storage/{{ $p->image }});"></div>
       <div class="card__wrapper-text">
         {{ $p->name }}
       </div>
-      <div class="card__wrapper-price"><span>{{ number_format($p->price_kz,0,","," ") }}</span> 
+      <div class="card__wrapper-price"><span>{{ number_format($p->price_kz,0,","," ") }}</span>
         @if ($currency == 'KZT')
             тг
-        @elseif($currency == 'UAH')
-            грн
+        @elseif($currency == 'USD')
+            долл
         @elseif($currency == 'RUB')
             руб
         @endif
@@ -197,7 +197,7 @@
 
 @if(session('success'))
 <script>
-	
+
 Swal.fire(
   'Ваша заявка принята',
   'Мы вам перезвоним',
@@ -260,7 +260,7 @@ Swal.fire(
 function addSpaces(n) {
   let num = Number(n)
   let result = new Intl.NumberFormat('ru-RU').format(num)
-  
+
   return result.toString()
 }
 
@@ -270,7 +270,7 @@ function sendNumber() {
     {
       Swal.fire(
         'Пожалуйста, введите корректный номер',
-        '',  
+        '',
         'error'
       )
     }
