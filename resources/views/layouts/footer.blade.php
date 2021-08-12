@@ -5,7 +5,7 @@
           <div class="footer__wrapper-logo">
             <img class="logotype" src="../images/logo.png" alt="">
           </div>
-          <div class="footer__wrapper-text" style="font-size: 16px; margin-top: 35px">
+          <div class="footer__wrapper-text footer__exchange">
            {{-- {{ setting('index.footer_description') }} --}}
            <p>{{ __('index.exchangeRates')}}</p>
            <div>&#8376</div>

@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
 
     var maskPhoneOptions = {
         mask: '+{7}(000)000-00-00'
-      };
+    };
     var mask = IMask(registerPhoneNum, maskPhoneOptions);
 
     const projectMySwiper = document.querySelectorAll('.project .mySwiper'),
@@ -66,18 +66,35 @@ window.addEventListener("load", () => {
         breakpoints: {
             1400: {
                 slidesPerView: 4,
+                pagination: {
+                    el: ".swiper-pagination",
+                }
             },
             1200: {
                 slidesPerView: 4,
+                pagination: {
+                    el: ".swiper-pagination",
+                }
             },
             900: {
                 slidesPerView: 3,
+                pagination: {
+                    el: ".swiper-pagination",
+                }
             },
             600: {
                 slidesPerView: 2,
+                dots: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                }
             },
             320: {
                 slidesPerView: 1,
+                dots: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                }
             }
         }
     });

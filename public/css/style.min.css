@@ -2241,18 +2241,17 @@ font-size: 18px !important;
     margin-bottom: 15px
 }
 .contact__wrapper-text {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 30px;
     color: #474747;
-    margin-bottom: 40px
 }
-.contact__wrapper-phone {
+.contact__wrapper-phone:last-child {
     margin-bottom: 30px
 }
 .contact__wrapper-email {
     font-size: 20px;
     line-height: 30px;
-    margin-bottom: 30px
+    margin-bottom: 20px
 }
 .card__title {
     font-size: 40px;
@@ -4023,7 +4022,7 @@ display:none;
         margin: 10px
     }
     a {
-        font-size: 12px
+        font-size: 13px
     }
 
     .sitebar__drowdown-item_btn {
@@ -4713,7 +4712,8 @@ display:block;
 display:block;
 }
     .swiper-pagination {
-        top: 325px;
+        top: unset;
+        bottom: 0 !important;
     }
     .team__wrapper-bottom {
         padding: 10px
@@ -5102,7 +5102,7 @@ width:100% !important;
         font-size: 11px
     }
     a {
-        font-size: 11px
+        font-size: 13px
     }
     .sitebar__wrapper-item_left img,
     .sitebar__wrapper-item img {
@@ -5741,6 +5741,7 @@ width:100% !important;
 
 .contact__wrapper-right iframe {
     width: 100%;
+    height: 100%;
 }
 
 .card-detail__wrapper-right_text span{
@@ -6305,5 +6306,24 @@ input[type=number] {
 
     .news__wrapper-item_next::before{
         display: none;
+    }
+}
+
+.contact__wrapper-text span p{
+    font-size: 16px !important;
+}
+
+.footer__exchange{
+    font-size: 16px;
+    margin-top: 35px;
+}
+
+@media (max-width: 767px){
+    .footer__exchange{
+        font-size: 13px !important;
+        margin-top: 35px;
+    }
+    .footer__wrapper-link{
+        font-size: 13px !important;
     }
 }
