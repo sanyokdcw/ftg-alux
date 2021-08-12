@@ -63,7 +63,7 @@ return [
     'solution' => 'ШЕШІМ',
     'result' => 'БАРЛЫҚ',
     'guarangeTitle' => 'КЕПІЛДІК ЖӘНЕ ҚЫЗМЕТ',
-    'address' => 'АДРЕС:',
+    'address' => 'МЕКЕН-ЖАЙ:',
     'phone' => 'Телефон:',
     'operating' => 'ЖҰМЫС ТӘРТІБІ:',
     'estimationTitle' => 'Сұрақтарыңыз бар ма?',
