@@ -34,8 +34,8 @@ class MainController extends Controller
             App::setLocale('ru');
         }
 
-        dd(HomepageBanner::first()->toArray());
         return view('index', [
+            'banner' => HomepageBanner::first()->image,
             'advantages' => Advantage::all()->translate(session('locale')),
             'customers' => Customer::all()->take(5),
             'blogs' => Blog::orderBy('created_at', 'desc')->take(3)->get(),
