@@ -35,7 +35,7 @@ class MainController extends Controller
         }
 
         return view('index', [
-            'banner' => HomepageBanner::first()->image,
+            'banner' => HomepageBanner::first()->image ?? null,
             'advantages' => Advantage::all()->translate(session('locale')),
             'customers' => Customer::all()->take(5),
             'blogs' => Blog::orderBy('created_at', 'desc')->take(3)->get(),
