@@ -19,6 +19,7 @@ use App\Models\Employee;
 use App\Models\ContactUs;
 use App;
 use App\Blog;
+use App\Models\HomepageBanner;
 
 class MainController extends Controller
 {
@@ -33,6 +34,7 @@ class MainController extends Controller
             App::setLocale('ru');
         }
 
+        dd(HomepageBanner::first()->toArray());
         return view('index', [
             'advantages' => Advantage::all()->translate(session('locale')),
             'customers' => Customer::all()->take(5),
