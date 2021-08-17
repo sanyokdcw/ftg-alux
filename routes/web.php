@@ -72,6 +72,7 @@ Route::middleware('checkCurrencies')->group(function () {
     Route::get('/projects', [MainController::class, 'projects']);
 
     Route::post('/callback', [MailController::class, 'call']);
+    Route::post('/office-mail', [MailController::class, 'office']);
 
     Route::post('/consultation', [MainController::class, 'consultation']);
 

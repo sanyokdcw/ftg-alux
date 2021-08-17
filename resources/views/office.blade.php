@@ -51,21 +51,21 @@
   <div class="office__choice">
     <div class="office__order">
       <div class="office__order-title title">Персональные данные</div>
-      <form action="/request" method="POST" class="office__order-form">
+      <form action="/office-mail" method="POST" class="office__order-form">
         <div class="office__order-form_input">
-          <input type="text" placeholder="Имя*"  value="{{ Auth::user()->name }}" required>
+          <input name="name" type="text" placeholder="Имя*"  value="{{ Auth::user()->name }}" required>
         </div>
         <div class="office__order-form_input">
-          <input type="text" placeholder="Фамилия*" value="{{ Auth::user()->surname }}" required>
+          <input name="surname" type="text" placeholder="Фамилия*" value="{{ Auth::user()->surname }}" required>
         </div>
         <div class="office__order-form_input">
-          <input type="text" placeholder="Отчество*" value="{{ Auth::user()->second_name }}" required>
+          <input name="middle_name" type="text" placeholder="Отчество*" value="{{ Auth::user()->second_name }}" required>
         </div>
         <div class="office__order-form_input">
-          <input type="email" placeholder="Электронная почта*" value="{{ Auth::user()->email }}" required>
+          <input name="email" type="email" placeholder="Электронная почта*" value="{{ Auth::user()->email }}" required>
         </div>
         <div class="office__order-form_input">
-          <input type="text" placeholder="Телефон*" required name="phone" value="{{ Auth::user()->number }}">
+          <input name="phone" type="text" placeholder="Телефон*" required value="{{ Auth::user()->number }}">
         </div>
       <div class="office__order-text" style="width:100%">
         Если Вы хотите изменить Email или контактный номер свяжитесь пожалуйста с Вашим

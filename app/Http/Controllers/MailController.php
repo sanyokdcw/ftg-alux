@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CallData;
 use App\Mail\FormData;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\CallDataRequest;
 use App\Http\Requests\FormDataRequest;
-use App\Mail\CallData;
+use App\Http\Requests\OfficeDataRequest;
+use App\Mail\OfficeData;
 
 class MailController extends Controller
 {
@@ -35,6 +37,10 @@ class MailController extends Controller
         return redirect()->back()->with('contact', 'contact');
     }
 
+    /**
+     * @param CallDataRequest  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function call(CallDataRequest $request)
     {
         # 1 ======================================== #
@@ -44,6 +50,24 @@ class MailController extends Controller
         try {
             Mail::to(self::MAIL_TO)
                 ->send(new CallData($request->validated()));
+        } catch (\Exception $exception) {
+            $request->session()->flash('message', self::MAIL_ERROR);
+            return redirect()->back();
+        }
+
+        # 3 ======================================== #
+        return redirect()->back()->with(['contact'=> 'contact']);
+    }
+
+    public function office(OfficeDataRequest $request)
+    {
+        # 1 ======================================== #
+        $this->check_session();
+
+        # 2 ======================================== #
+        try {
+            Mail::to(self::MAIL_TO)
+                ->send(new OfficeData($request->validated()));
         } catch (\Exception $exception) {
             $request->session()->flash('message', self::MAIL_ERROR);
             return redirect()->back();
