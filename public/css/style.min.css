@@ -832,8 +832,16 @@ button {
     border-radius: 50%;
     bottom: 20px;
     right: 20px;
-    z-index: 999
+    z-index: 999;
+    animation: chats 2000ms infinite;
 }
+
+@keyframes chats{
+    0%{opacity: 1;;}
+    50%{opacity: 0;;}
+    100%{opacity: 1;;}
+}
+
 .chat:before {
     content: "";
     background: #1967a8;
@@ -1010,7 +1018,7 @@ button {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.sitebar__drowdown-item_active:before {
+.sitebar__drowdown-item_active .sitebar__drowdown-btn:before {
     content: "";
     background-image: url('../images/arrow-bottom.svg');
     width: 16px;
@@ -6326,4 +6334,13 @@ input[type=number] {
     .footer__wrapper-link{
         font-size: 13px !important;
     }
+}
+
+.сhat{
+    animation: chat 1s infinite;
+}
+@keyframes chat{
+    0%{color:rgba(0, 0, 0, 1);}
+    50%{color:rgba(0, 0, 0, 0);}
+    100%{color:rgba(0, 0, 0, 1);}
 }

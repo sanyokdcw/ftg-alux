@@ -7,7 +7,7 @@
 
 
 <section class="url">
-    <div class="url__text">{{__('index.main')}}</div>
+    <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
     <div class="url__text">{{__('index.selectProduct')}}</div>
 </section>
 
@@ -18,7 +18,7 @@
         <p class="form-data_error-body">{{ Session::get('message') }}</p>
     </div>
     @endif
-    <div class="product__title subtitle">{{__('index.selectProduct')}}</div>
+    <div class="product__title subtitle" style="text-transform: uppercase">{{__('index.system')}}</div>
     <div class="product__wrapper">
         <div class="product__wrapper-left">
             <div class="product__wrapper-left">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="product__wrapper-left_item" id="Tab3link" onclick="changeTab('Tab3')">
                     <div class="product__wrapper-left_number">4.</div>
-                    <div class="product__wrapper-left_text">Анализ очищенной води</div>
+                    <div class="product__wrapper-left_text">Анализ очищенной воды</div>
                 </div>
                 <div class="product__wrapper-left_item" id="Tab4link" onclick="changeTab('Tab4')">
                     <div class="product__wrapper-left_number">5.</div>
@@ -97,7 +97,7 @@
                         <input type="number" name="input_water[mutnost_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" name="input_water[mutnost_standart]" value="0">
+                        <input type="number" name="input_water[mutnost_standart]" value="1">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -108,7 +108,7 @@
                         <input type="number" name="input_water[permangant_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" name="input_water[permangant_standart]" value="0">
+                        <input type="number" name="input_water[permangant_standart]" value="2">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -119,7 +119,7 @@
                         <input type="number" name="input_water[zhestkost_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" name="input_water[zhestkost_standart]" value="0">
+                        <input type="number" name="input_water[zhestkost_standart]" value="7">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -130,7 +130,7 @@
                         <input type="number" name="input_water[zhelezo_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" name="input_water[zhelezo_standart]" value="0">
+                        <input type="number" name="input_water[zhelezo_standart]" value="0.3">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -141,7 +141,7 @@
                         <input type="number" name="input_water[serovodorod_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" name="input_water[serovodorod_standart]" value="0">
+                        <input type="number" name="input_water[serovodorod_standart]" value="0.1">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -152,7 +152,7 @@
                         <input type="number" name="input_water[nitrat_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" name="input_water[nitrat_standart]" value="0">
+                        <input type="number" name="input_water[nitrat_standart]" value="50">
                     </div>
                 </div>
                 <div class="product__wrapper-right_row">
@@ -163,7 +163,7 @@
                         <input type="number" name="input_water[ostatok_user]" value="0">
                     </div>
                     <div class="product__wrapper-right_column">
-                        <input type="number" name="input_water[ostatok_standart]" value="0">
+                        <input type="number" name="input_water[ostatok_standart]" value="1000">
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@
                             <input type="number" name="purified_water[mutnost_user]" value="0">
                         </div>
                         <div class="product__wrapper-right_column">
-                            <input type="number" name="purified_water[mutnost_standart]" value="0">
+                            <input type="number" name="purified_water[mutnost_standart]" value="2">
                         </div>
                     </div>
                     <div class="product__wrapper-right_row">
@@ -240,7 +240,7 @@
                             <input type="number" name="purified_water[permangant_user]" value="0">
                         </div>
                         <div class="product__wrapper-right_column">
-                            <input type="number" name="purified_water[permangant_standart]" value="0">
+                            <input type="number" name="purified_water[permangant_standart]" value="5">
                         </div>
                     </div>
                     <div class="product__wrapper-right_row">
@@ -251,7 +251,7 @@
                             <input type="number" name="purified_water[zhestkost_user]" value="0">
                         </div>
                         <div class="product__wrapper-right_column">
-                            <input type="number" name="purified_water[zhestkost_standart]" value="0">
+                            <input type="number" name="purified_water[zhestkost_standart]" value="7">
                         </div>
                     </div>
                     <div class="product__wrapper-right_row">
@@ -262,7 +262,7 @@
                             <input type="number" name="purified_water[zhelezo_user]" value="0">
                         </div>
                         <div class="product__wrapper-right_column">
-                            <input type="number" name="purified_water[zhelezo_standart]" value="0">
+                            <input type="number" name="purified_water[zhelezo_standart]" value="0.3">
                         </div>
                     </div>
                     <div class="product__wrapper-right_row">
@@ -273,7 +273,7 @@
                             <input type="number" name="purified_water[serovodorod_user]" value="0">
                         </div>
                         <div class="product__wrapper-right_column">
-                            <input type="number" name="purified_water[serovodorod_standart]" value="0">
+                            <input type="number" name="purified_water[serovodorod_standart]" value="0.5">
                         </div>
                     </div>
                     <div class="product__wrapper-right_row">
@@ -284,7 +284,7 @@
                             <input type="number" name="purified_water[nitrat_user]" value="0">
                         </div>
                         <div class="product__wrapper-right_column">
-                            <input type="number" name="purified_water[nitrat_standart]" value="0">
+                            <input type="number" name="purified_water[nitrat_standart]" value="100">
                         </div>
                     </div>
                     <div class="product__wrapper-right_row">
@@ -295,7 +295,7 @@
                             <input type="number" name="purified_water[ostatok_user]" value="0">
                         </div>
                         <div class="product__wrapper-right_column">
-                            <input type="number" name="purified_water[ostatok_standart]" value="0">
+                            <input type="number" name="purified_water[ostatok_standart]" value="1500">
                         </div>
                     </div>
                 </div>
