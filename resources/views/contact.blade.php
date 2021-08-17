@@ -23,7 +23,9 @@
         {!! setting('contacts.address') !!}
       </div>
       <div class="contact__wrapper-title" style="text-transform: uppercase">{{__('index.phone')}}</div>
-      <a style="font-size:20px;"  href="tel:+77273173652" class="contact__wrapper-phone title">+7 727 317 36 52</a>
+      <a style="font-size:20px;" href="tel:{{ setting('contacts.telephone') }}" class="contact__wrapper-phone title">
+        {{ setting('contacts.telephone') }}
+      </a>
       <a style="font-size:20px;"  href="tel:+77082150492" class="contact__wrapper-phone title">+7 708 215 04 92</a>
       <div class="contact__wrapper-title" style="margin-top: 20px;">EMAIL:</div>
       <a href="mailto:{{ setting('contacts.email') }}" class="contact__wrapper-email">{{ setting('contacts.email') }}</a>
