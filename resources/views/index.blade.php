@@ -8,7 +8,8 @@
 
 
 <section class="system">
-  <div class="system__bg" style="background-image: {{ asset("storage/$banner")  }};"></div>
+  @php($image = is_null($banner)? 'images/main-bg.jpg'? asset("storage/$banner"))
+  <div class="system__bg" style="background-image: {{ $image  }};"></div>
   <div class="system__wrapper swiper-container">
     <div class="swiper-wrapper">
       @foreach ($categories_menu as $category)
