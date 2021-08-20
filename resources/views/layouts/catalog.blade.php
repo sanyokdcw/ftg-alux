@@ -16,9 +16,12 @@
     </div>
 
     <div class="main">
-        <button class="chat" onclick="openModelRight('contact2')">
+        {{-- <button class="chat" onclick="openModelRight('contact2')">
             <img src="../images/chat.png" alt="">
-        </button>
+        </button> --}}
+        <div class="chat" onclick="openModelRight('contact2')">
+            <img src="../images/chat.png" alt="">
+        </div>
         <div class="container">
             <section class="sitebar">
                 <a href="/" class="sitebar__logo">
@@ -210,7 +213,7 @@
 
 
 
-                <a href="/product" class="sitebar__btn">{{ __('index.products') }}</a>
+                <a href="/product" class="sitebar__btn">{{ __('index.system') }}</a>
                 <div class="sitebar__drowdown-title">
                     <img src="../images/product-icon.png" alt=""> <span>{{ __('index.catalog') }}</span>
                 </div>
