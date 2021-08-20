@@ -8,7 +8,7 @@
       <form action="/callback" method="POST">
         @csrf
       <div class="form__input">
-        <input name="name" type="text" placeholder="{{ __('index.fullname') }}*" required>
+        <input name="fullname" type="text" placeholder="{{ __('index.fullname') }}*" required>
       </div>
       <div class="form__input">
         <input name="email" type="email" placeholder="{{ __('index.email') }}*" required>

@@ -19,6 +19,7 @@ use App\Models\Employee;
 use App\Models\ContactUs;
 use App;
 use App\Blog;
+use App\Models\HomepageBanner;
 
 class MainController extends Controller
 {
@@ -34,6 +35,7 @@ class MainController extends Controller
         }
 
         return view('index', [
+            'banner' => HomepageBanner::first()->image ?? null,
             'advantages' => Advantage::all()->translate(session('locale')),
             'customers' => Customer::all()->take(5),
             'blogs' => Blog::orderBy('created_at', 'desc')->take(3)->get(),
