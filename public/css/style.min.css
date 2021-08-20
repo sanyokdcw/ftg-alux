@@ -6424,3 +6424,10 @@ opacity: 0;
 }
 }
 /* конец кнопки звязи */
+
+.property__wrapper-item_top img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
