@@ -130,7 +130,7 @@
             @if(Auth::check())  
             {{  \App\Models\Cart::where('user_id', Auth::user()->id)->get()->count() }}
             @else
-            0
+            {{session('cart_items') ? count(session('cart_items')) : 0 }}
             @endif
           </div>
           <img class="icon-images" src="../images/icon-cart.png" alt="">

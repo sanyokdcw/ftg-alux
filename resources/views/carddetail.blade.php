@@ -19,7 +19,6 @@
   @endif
   <div class="url__text">{{ $product->name }}</div>
 </section>
-
 <section class="card-detail">
   <div class="card-detail__title subtitle">{{ $product->name }}</div>
   <div class="card-detail__wrapper">

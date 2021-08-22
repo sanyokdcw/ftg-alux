@@ -24,7 +24,7 @@ Route::get('/setlocale/{locale}', function($locale) {
 });
 
 Route::middleware('checkCurrencies')->group(function () {
-    Route::get('/cart', [ShopController::class, 'cart'])->middleware('auth');
+    Route::get('/cart', [ShopController::class, 'cart']);
     Route::get('/category/{id}', [ShopController::class, 'category_show']);
 
     Route::get('/contact', function () {
@@ -95,10 +95,11 @@ Route::middleware('checkCurrencies')->group(function () {
 
     Route::get('/product/{id}', [ShopController::class, 'card_detail']);
 
-    Route::post('/cart-add', [ShopController::class, 'cart_add'])->middleware('auth');
+    Route::post('/cart-add', [ShopController::class, 'cart_add']);
     Route::post('/cart-remove', [ShopController::class, 'cart_remove']);
 
     Route::post('/add-order', [ShopController::class, 'add_order'])->middleware('auth');
+    Route::post('/add-guest-order', [ShopController::class, 'add_guest_order']);
     Route::post('/password_change', [UserController::class, 'password_change'])->middleware('auth');
 
     Route::get('/calc', [MainController::class, 'calculator']);

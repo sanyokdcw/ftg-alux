@@ -12,6 +12,8 @@ use App\Models\OrderProduct;
 use App\Models\Order;
 use App\Models\DeliveryType;
 use App\Models\DeliveryMethod;
+use App\Models\GuestOrder;
+use App\Models\GuestOrderProduct;
 use Auth;
 use App;
 
@@ -86,6 +88,7 @@ class ShopController extends Controller
     }
 
     public function cart_add(Request $request) {
+        
         if(session()->has('locale')) {
 
             $locale = session('locale');
@@ -96,18 +99,41 @@ class ShopController extends Controller
             App::setLocale('ru');
         }
 
-        $cart = Cart::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->get();
-        if($cart->isEmpty() == false){
-            $cart[0]->update(['quantity' => $cart[0]->quantity + $request->quantity]);
+        if(!Auth::check()){
+            if(!session('cart_items')){
+                session(['cart_items' => []]);
+            }
+            $cart_items = session('cart_items');
+            $answer = false;
+            for($i = 0; $i < count($cart_items); $i++){
+                if($cart_items[$i]['product_id'] == $request->product_id){
+                    $cart_items[$i]['quantity'] = $cart_items[$i]['quantity']+$request->quantity;
+                    $answer = true;
+                }
+            }
+            // dd($cart_items);
+            if($answer != true){
+                array_push($cart_items, ['product_id' => $request->product_id, 'quantity' => $request->quantity]);
+            }
+            session(['cart_items' => $cart_items]);
+            // dd(session('cart'));
         }
         else{
-            Cart::create([
-                'user_id'=>Auth::user()->id,
-                'product_id'=>$request->product_id,
-                'quantity'=>$request->quantity,
-            ]);
+            $cart = Cart::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->get();
+            if($cart->isEmpty() == false){
+                $cart[0]->update(['quantity' => $cart[0]->quantity + $request->quantity]);
+            }
+            else{
+                Cart::create([
+                    'user_id'=>Auth::user()->id,
+                    'product_id'=>$request->product_id,
+                    'quantity'=>$request->quantity,
+                ]);
+            }
         }
-        return redirect()->back()->with('cart', 'cart');;
+        // dd(session('cart'));
+        // return redirect()->back();
+        return redirect()->back()->with('cart', 'cart');
     }
 
     public function cart_remove(Request $request) {
@@ -140,13 +166,26 @@ class ShopController extends Controller
         foreach($deliveries as $delivery){
             $delivery->methods = $delivery->DeliveryMethods;
         }
+        
+        if(!Auth::check()){
+            if(!session('cart_items')){
+                session(['cart_items' => []]);
+            }
+            $cart_items = session('cart_items');
 
-        $cart_items = Cart::where('user_id', Auth::user()->id)->get();
+        }
+        else{
+            $cart_items = Cart::where('user_id', Auth::user()->id)->get();
+        }
         $sum = 0;
         $discount = 0;
         $discountSum = 0;
         foreach($cart_items as $item) {
-            $product = Product::find($item->product_id);
+            if(!Auth::check()){
+                $product = Product::find($item['product_id']);
+            } else{
+                $product = Product::find($item->product_id);
+            }
             if(session('currency') == 'USD'){
                 $price = $product->price_uah;
             }else if(session('currency') == 'RUB'){
@@ -154,7 +193,11 @@ class ShopController extends Controller
             }else{
                 $price = $product->price_kz;
             }
-        	$sum+= $price * $item->quantity;
+            if(!Auth::check()){
+                $sum+= $price * $item['quantity'];
+            } else{
+                $sum+= $price * $item->quantity;
+            }
             $discount += $product->sale;
             $discountSum += $product->price_kz - ( $product->price_kz * ($product->sale / 100));
         }
@@ -191,6 +234,44 @@ class ShopController extends Controller
             $cart->delete();
         }
         return redirect('/office');
+    }
+
+    public function add_guest_order(Request $request){
+        if(session()->has('locale')) {
+
+            $locale = session('locale');
+            App::setLocale($locale);
+        }
+        else {
+            $locale = session(['locale' => 'ru']);
+            App::setLocale('ru');
+        }
+        // dd($request->all());
+        $order = GuestOrder::create([
+            'name' => $request->name,
+            'surname' => $request->surname,
+            'telephone' => $request->telephone,
+            'mail' => $request->mail,
+            'city' => $request->delivery_0,
+            'branch' => $request->delivery_1,
+            'department' => $request->delivery_2,
+            'payment' => $request->payment,
+            'comment' => $request->comment,
+            'sum'=>$request->sum,
+            'status' => 'В обработке',
+        ]);
+        $products = $request->products;
+        $quantities = $request->quantities;
+        for($i = 0; $i <= count($products)-1; $i++){
+            GuestOrderProduct::Create([
+                'product_id'=>$products[$i],
+                'order_id'=>$order->id,
+                'quantity'=>$quantities[$i],
+            ]);
+        }
+
+        session(['cart_items' => []]);
+        return redirect('/cart');
     }
 
     public function office(){

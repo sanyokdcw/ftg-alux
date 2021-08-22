@@ -22,28 +22,46 @@
     <div class="cart__wrapper-left">
       <div class="cart__wrapper-left_title">ИНФОРМАЦИЯ ПОКУПАТЕЛЯ</div>
       {{-- <button class="cart__wrapper-left_btn">Я новый покупатель</button> --}}
+      @if (!Auth::check())
+      <form action="/add-guest-order" method="POST">
       <div class="cart__wrapper-form">
-        <div class="cart__wrapper-form_input">
-          <input type="text" placeholder="Имя" value="{{ Auth::user()->name }}" required>
-        </div>
-        <div class="cart__wrapper-form_input">
-          <input type="text" placeholder="Фамилия" value="{{ Auth::user()->surname }}" required>
-        </div>
-        <div class="cart__wrapper-form_input">
-          <input type="phone" placeholder="Телефон" value="{{ Auth::user()->number }}" required >
-        </div>
-        <div class="cart__wrapper-form_input">
-          <input type="email" placeholder="Электронная почта" value="{{ Auth::user()->email }}" required>
-        </div>
+          <div class="cart__wrapper-form_input">
+            <input type="text" placeholder="Имя" name="name" value="" required>
+          </div>
+          <div class="cart__wrapper-form_input">
+            <input type="text" placeholder="Фамилия" name="surname" value="" required>
+          </div>
+          <div class="cart__wrapper-form_input">
+            <input type="phone" placeholder="Телефон" name="telephone" value="" required >
+          </div>
+          <div class="cart__wrapper-form_input">
+            <input type="email" placeholder="Электронная почта" name="mail" value="" required>
+          </div>
+        @else
+        <form action="/add-order" method="POST">
+        <div class="cart__wrapper-form">
+          <div class="cart__wrapper-form_input">
+            <input type="text" placeholder="Имя" name="name" value="{{ Auth::user()->name}}" required>
+          </div>
+          <div class="cart__wrapper-form_input">
+            <input type="text" placeholder="Фамилия" name="surname" value="{{ Auth::user()->surname }}" required>
+          </div>
+          <div class="cart__wrapper-form_input">
+            <input type="phone" placeholder="Телефон" name="telephone" value="{{ Auth::user()->number }}" required >
+          </div>
+          <div class="cart__wrapper-form_input">
+            <input type="email" placeholder="Электронная почта" name="mail" value="{{ Auth::user()->email }}" required>
+          </div>
+        @endif
       </div>
       <div class="cart__wrapper-left_title">СПОСОБ ДОСТАВКИ</div>
       <div class="cart__wrapper-form">
         @foreach ($deliveries as $delivery)
           <div class="cart__wrapper-left_select">
-            <select class="cart__wrapper-left_output">
-              <option value="">{{ $delivery->name }}</option>
+            <select name="delivery_{{ $loop->index }}" class="cart__wrapper-left_output" required>
+              <option value="{{ $delivery->name }}">{{ $delivery->name }}</option>
               @foreach ($delivery->methods as $method)
-              <option value="">{{ $method->name }}</option>
+              <option value="{{ $method->name }}">{{ $method->name }}</option>
               @endforeach
             </select>
           </div>
@@ -53,51 +71,65 @@
 
       <div class="cart__wrapper-left_title">СПОСОБ оплаты</div>
       <div class="cart__wrapper-left_select">
-          <select class="cart__wrapper-left_output">
-            <option value="">Наличными</option>
-            <option value="">Картой</option>
+          <select class="cart__wrapper-left_output" name="payment" required>
+            <option value="cash">Наличными</option>
+            <option value="card">Картой</option>
           </select>
         </div>
-      <textarea style="width:500px" class="cart__wrapper-left_textarea" placeholder="Комментировать"></textarea>
+      <textarea style="width:500px" class="cart__wrapper-left_textarea" name="comment" placeholder="Комментировать" required></textarea>
     </div>
 
     <div class="cart__wrapper-right">
-      <form action="/add-order" method="POST">
+      @if (!Auth::check())
+      @else
+      @endif
       @csrf
       @foreach ($cart_items as $item)
         @php
-          $product = \App\Models\Product::find($item->product_id);
+          if(!Auth::check()){
+            $product = \App\Models\Product::find($item['product_id']);
+          }
+          else{
+            $product = \App\Models\Product::find($item->product_id);
+          }
         @endphp
 
           @php
           if($product->sale != 0) {
             $product->price_kz = $product->price_kz - ( $product->price_kz * ($product->sale / 100));
-           $product->price_ru = $product->price_ru - ( $product->price_ru * ($product->sale / 100));
-           $product->price_uah = $product->price_uah - ( $product->price_uah * ($product->sale / 100));
-
+            $product->price_ru = $product->price_ru - ( $product->price_ru * ($product->sale / 100));
+            $product->price_uah = $product->price_uah - ( $product->price_uah * ($product->sale / 100));
           }
           @endphp
         <input type="hidden" name="products[]" value="{{ $product->id }}">
-      <a href="/product/{{$product->id}}" class="cart__wrapper-right_title title">
-        {{ $product->name }}
-      </a>
-      <div class="cart__wrapper-right_product">
-        <div class="cart__wrapper-right_img">
-          <img src="/storage/{{ $product->image }}" alt="">
-        </div>
-        <div class="cart__wrapper-right_count">
-          <button type="button" class="cart__wrapper-right_minus" onclick="countDecrement{{ $loop->index }}()">-</button>
-          <div class="cart__wrapper-right_number"><span id="counter{{ $loop->index }}">{{ $item->quantity }} </span></div>
-          <button type="button" class="cart__wrapper-right_plus" onclick="countIncrement{{ $loop->index }}()">+</button>
-        </div>
+        <a href="/product/{{$product->id}}" class="cart__wrapper-right_title title">
+          {{ $product->name }}
+        </a>
+        <div class="cart__wrapper-right_product">
+          <div class="cart__wrapper-right_img">
+            <img src="/storage/{{ $product->image }}" alt="">
+          </div>
+          <div class="cart__wrapper-right_count">
+            <button type="button" class="cart__wrapper-right_minus" onclick="countDecrement{{ $loop->index }}()">-</button>
+            @if (!Auth::check())
+            <div class="cart__wrapper-right_number"><span id="counter{{ $loop->index }}">{{ $item['quantity'] }} </span></div>
+            <input type="hidden" name="quantities[]" value="{{ $item['quantity'] }}">
+            @else
+            <div class="cart__wrapper-right_number"><span id="counter{{ $loop->index }}">{{ $item->quantity }} </span></div>
+            @endif
+            <button type="button" class="cart__wrapper-right_plus" onclick="countIncrement{{ $loop->index }}()">+</button>
+          </div>
         <input type="hidden" id="item_price{{ $loop->index }}" value="{{ $product->price_kz }}">
 
 
 
         @if ($currency == 'KZT')
         <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">
-
+          @if (!Auth::check())
+          {{ number_format(($product->price_kz) * $item['quantity'],0,","," ") }}</span>
+          @else
           {{ number_format(($product->price_kz) * $item->quantity,0,","," ") }}</span>
+          @endif
           тг
         @elseif($currency == 'USD')
           <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_uah * $item->quantity,0,","," ") }}</span>
