@@ -396,10 +396,10 @@
                                 <a href="/company" class="sitebar__adaptive-menu--link">{{ __('index.about') }}</a>
                             </li>
                             <li class="sitebar__adaptive-menu--item">
-                                <a href="/projects" class="sitebar__adaptive-menu--link">{{__('projects')}}</a>
+                                <a href="/projects" class="sitebar__adaptive-menu--link">{{ __('index.projects') }}</a>
                             </li>
                             <li class="sitebar__adaptive-menu--item">
-                                <a href="/delivery" class="sitebar__adaptive-menu--link">{{__('del')}}</a>
+                                <a href="/delivery" class="sitebar__adaptive-menu--link">{{ __('index.del') }}</a>
                             </li>
                             <li class="sitebar__adaptive-menu--item">
                                 <a href="/contact" class="sitebar__adaptive-menu--link">{{ __('index.contacts')}}</a>
