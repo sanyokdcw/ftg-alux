@@ -5395,7 +5395,11 @@ width:100% !important;
         flex-direction: column;
     }
     .system__bg {
-        height: 275px
+        height: 245px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: top center;
     }
     .sitebar__logo img {
         width: 140px;
@@ -6318,6 +6322,10 @@ input[type=number] {
 }
 
 .contact__wrapper-text span p{
+    font-size: 16px !important;
+}
+
+.contact__wrapper-text pre span{
     font-size: 16px !important;
 }
 
