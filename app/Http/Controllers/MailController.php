@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Mail\CallData;
 use App\Mail\FormData;
+use App\Mail\OfficeData;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\CallDataRequest;
 use App\Http\Requests\FormDataRequest;
 use App\Http\Requests\OfficeDataRequest;
-use App\Mail\OfficeData;
+use App\Mail\ProductData;
 
 class MailController extends Controller
 {

@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Models\Category;
-use App\Models\Subcategory;
-use App\Models\Product;
-use App\Models\Cart;
-use App\Models\OrderProduct;
-use App\Models\Order;
-use App\Models\DeliveryType;
-use App\Models\DeliveryMethod;
-use App\Models\GuestOrder;
-use App\Models\GuestOrderProduct;
-use Auth;
 use App;
+
+use Auth;
+use App\Models\Cart;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\GuestOrder;
+use App\Models\Subcategory;
+use App\Models\DeliveryType;
+use App\Models\OrderProduct;
+use Illuminate\Http\Request;
+use App\Models\DeliveryMethod;
+use App\Models\GuestOrderProduct;
+use App\Notifications\OrderCreated;
+use Illuminate\Support\Facades\Notification;
 
 class ShopController extends Controller
 {
@@ -233,6 +235,8 @@ class ShopController extends Controller
         foreach($carts as $cart){
             $cart->delete();
         }
+        Notification::route('mail', 'info@ftgco.kz')
+            ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
         return redirect('/office');
     }
 
