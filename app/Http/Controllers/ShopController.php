@@ -275,6 +275,8 @@ class ShopController extends Controller
         }
 
         session(['cart_items' => []]);
+        Notification::route('mail', 'info@ftgco.kz')
+            ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
         return redirect('/cart');
     }
 
