@@ -35,7 +35,7 @@
             <input type="phone" placeholder="Телефон" name="telephone" value="" required >
           </div>
           <div class="cart__wrapper-form_input">
-            <input type="email" placeholder="Электронная почта" name="mail" value="" required>
+            <input type="email" placeholder="Электронная почта" name="mail">
           </div>
         @else
         <form action="/add-order" method="POST">
@@ -76,7 +76,7 @@
             <option value="card">Картой</option>
           </select>
         </div>
-      <textarea style="width:500px" class="cart__wrapper-left_textarea" name="comment" placeholder="Комментировать" required></textarea>
+      <textarea style="width:500px" class="cart__wrapper-left_textarea" name="comment" placeholder="Комментировать"></textarea>
     </div>
 
     <div class="cart__wrapper-right">
