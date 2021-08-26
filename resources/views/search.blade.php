@@ -17,12 +17,15 @@
 </section>
 
 <section class="project">
-  <form action="/search" method="POST">
+  <form action="/search" method="POST" >
     @csrf
-    <input type="text" name="q" class="search" placeholder="Введите ваш запрос...">
-    <button type="submit">
-      <img src="../images/search-icon.png" alt="">
-    </button>
+      <div style="position: relative; max-width: 410px">
+          <input style="width: 100%" type="text" name="q" class="search" placeholder="Введите ваш запрос...">
+          <button class="search-main-btn" type="submit" style="position: absolute; top: 36%; right: 15px">
+              <img src="../images/search-icon.png" alt="" style="width: 25px; height: 25px">
+          </button>
+      </div>
+
   </form>
   @if($products->count() == 0)
     <div class="project__title subtitle" style="font-size: 25px">По запросу {{ $q }} ничего не найдено</div>

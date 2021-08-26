@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
-@section('title', 'Про Компанию')
+@section('title', 'О компании')
 @include('layouts.catalog')
 @include('layouts.header')
 @section('content')
 
-        
+
 <section class="url">
   <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
   <div class="url__text">{{ __('index.about') }}</div>
@@ -106,10 +106,10 @@
         <div class="sertificate__wrapper-text">{{ $certificate->name }}</div>
       </div>
       @endforeach
-      
+
     </div>
 
-    
+
 
     <div class="swiper-pagination" style="top: inherit !important;"></div>
   </div>

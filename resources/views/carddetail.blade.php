@@ -115,15 +115,18 @@
   </div>
   <div class="specifications__bottom">
     <div class="specifications__bottom-item" id="Tab1" style="display: block;">
-    {!! strip_tags($product->description) !!}
+{{--    {!! strip_tags($product->description) !!}--}}
+        {!!$product->description!!}
 
     </div>
     <div class="specifications__bottom-item" id="Tab2" style="display: none;">
-    {!! strip_tags($product->characteristics) !!}
+{{--    {!! strip_tags($product->characteristics) !!}--}}
+        {!!$product->characteristics!!}
     </div>
 
     <div class="specifications__bottom-item" id="Tab3" style="display: none;">
-    {!! strip_tags($product->documentation) !!}
+{{--    {!! strip_tags($product->documentation) !!}--}}
+        {!!$product->documentation!!}
     </div>
 
   </div>
