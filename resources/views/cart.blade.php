@@ -28,15 +28,27 @@
           <div class="cart__wrapper-form_input">
             <input type="text" placeholder="Имя" name="name" value="" required>
           </div>
+          @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
           <div class="cart__wrapper-form_input">
             <input type="text" placeholder="Фамилия" name="surname" value="" required>
           </div>
+          @error('surname')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
           <div class="cart__wrapper-form_input">
             <input type="phone" placeholder="Телефон" name="telephone" value="" required >
           </div>
+          @error('telephone')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
           <div class="cart__wrapper-form_input">
             <input type="email" placeholder="Электронная почта" name="mail">
           </div>
+          @error('mail')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         @else
         <form action="/add-order" method="POST">
         <div class="cart__wrapper-form">
@@ -64,6 +76,9 @@
               <option value="{{ $method->name }}">{{ $method->name }}</option>
               @endforeach
             </select>
+              @error("delivery_{{ $loop->index }}")
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
           </div>
         @endforeach
       </div>
@@ -75,6 +90,9 @@
             <option value="cash">Наличными</option>
             <option value="card">Картой</option>
           </select>
+          @error('payment')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
       <textarea style="width:500px" class="cart__wrapper-left_textarea" name="comment" placeholder="Комментировать"></textarea>
     </div>

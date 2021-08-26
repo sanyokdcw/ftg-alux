@@ -55,4 +55,19 @@ class GuestOrderRequest extends FormRequest
 
         return $validated;
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Обязательное поле',
+            'surname.required' => 'Обязательное поле',
+            'telephone.required' => 'Обязательное поле',
+            'mail.required' => 'Обязательное поле',
+            'delivery_0.required' => 'Обязательное поле',
+            'delivery_1.required' => 'Обязательное поле',
+            'delivery_2.required' => 'Обязательное поле',
+            'payment.required' => 'Обязательное поле',
+            'comment.required' => 'Обязательное поле'
+        ];
+    }
 }
