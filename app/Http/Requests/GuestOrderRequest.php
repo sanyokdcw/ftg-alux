@@ -42,7 +42,7 @@ class GuestOrderRequest extends FormRequest
         $validated = $this->validator->validated();
 
         if ($this->has('delivery_0')) {
-            $validated['city'] = $this->delivety_0;
+            $validated['city'] = $this->delivery_0;
         }
         if ($this->has('delivery_1')) {
             $validated['branch'] = $this->delivery_1;
