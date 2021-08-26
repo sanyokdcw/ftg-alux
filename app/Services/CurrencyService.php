@@ -16,7 +16,7 @@ class CurrencyService
         $currencies = ExchangeRate::query()->first();
 
         if ($currencies) {
-            if (Carbon::make($currencies->updated_at)->subDay() > Carbon::now()) {
+            if (Carbon::now()->subDay() > Carbon::parse($currencies->updated_at)) {
                 $currencies = $this->parse($currencies->id);
 
                 $this->updatePrices($currencies);
