@@ -18,6 +18,7 @@ use App\Models\DeliveryMethod;
 use App\Models\GuestOrderProduct;
 use App\Notifications\OrderCreated;
 use Illuminate\Support\Facades\Notification;
+use App\Http\Requests\GuestOrderRequest;
 
 class ShopController extends Controller
 {
@@ -90,7 +91,7 @@ class ShopController extends Controller
     }
 
     public function cart_add(Request $request) {
-        
+
         if(session()->has('locale')) {
 
             $locale = session('locale');
@@ -168,7 +169,7 @@ class ShopController extends Controller
         foreach($deliveries as $delivery){
             $delivery->methods = $delivery->DeliveryMethods;
         }
-        
+
         if(!Auth::check()){
             if(!session('cart_items')){
                 session(['cart_items' => []]);
@@ -240,7 +241,7 @@ class ShopController extends Controller
         return redirect('/office');
     }
 
-    public function add_guest_order(Request $request){
+    public function add_guest_order(GuestOrderRequest $request){
         if(session()->has('locale')) {
 
             $locale = session('locale');
@@ -250,20 +251,7 @@ class ShopController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        // dd($request->all());
-        $order = GuestOrder::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'telephone' => $request->telephone,
-            'mail' => $request->mail,
-            'city' => $request->delivery_0,
-            'branch' => $request->delivery_1,
-            'department' => $request->delivery_2,
-            'payment' => $request->payment,
-            'comment' => $request->comment,
-            'sum'=>$request->sum,
-            'status' => 'В обработке',
-        ]);
+        $order = GuestOrder::create($request->validated());
         $products = $request->products;
         $quantities = $request->quantities;
         for($i = 0; $i <= count($products)-1; $i++){
