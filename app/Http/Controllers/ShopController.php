@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\DeliveryMethod;
 use App\Models\GuestOrderProduct;
 use App\Notifications\OrderCreated;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 use App\Http\Requests\GuestOrderRequest;
 
@@ -251,20 +252,28 @@ class ShopController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        $order = GuestOrder::create($request->validated());
-        $products = $request->products;
-        $quantities = $request->quantities;
-        for($i = 0; $i <= count($products)-1; $i++){
-            GuestOrderProduct::Create([
-                'product_id'=>$products[$i],
-                'order_id'=>$order->id,
-                'quantity'=>$quantities[$i],
-            ]);
-        }
+        try {
+            DB::transaction(function() use ($request) {
+                $order = GuestOrder::create($request->validated());
+                $products = $request->products;
+                $quantities = $request->quantities;
 
-        session(['cart_items' => []]);
-        Notification::route('mail', 'info@ftgco.kz')
-            ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
+                for($i = 0; $i <= count($products)-1; $i++){
+                    GuestOrderProduct::Create([
+                        'product_id'=>$products[$i],
+                        'order_id'=>$order->id,
+                        'quantity'=>$quantities[$i],
+                    ]);
+                }
+
+                session(['cart_items' => []]);
+                Notification::route('mail', 'info@ftgco.kz')
+                    ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
+            });
+        } catch(\Exception $e) {
+            $request->session()->flash('message', 'Произошла ошибка при оформлении заказа, пожалуйста попробуйте еще раз или свяжитесь с нами.');
+            return redirect()->back();
+        }
         return redirect('/cart');
     }
 

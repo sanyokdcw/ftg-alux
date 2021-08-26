@@ -17,6 +17,12 @@
 </section>
 
 <section class="cart">
+    @if (Session::has('message'))
+        <div class="form-data_error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p class="form-data_error-body">{{ Session::get('message') }}</p>
+        </div>
+    @endif
   <div class="cart__title subtitle">{{__('index.basket')}}</div>
   <div class="cart__wrapper">
     <div class="cart__wrapper-left">
