@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class GuestOrderRequest extends FormRequest
 {
     protected const ORDER_CREATED = 'В обработке';
+    protected const COLUMN_REQUIRED = 'Обязательное поле';
 
     /**
      * @return bool
@@ -56,18 +57,19 @@ class GuestOrderRequest extends FormRequest
         return $validated;
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [
-            'name.required' => 'Обязательное поле',
-            'surname.required' => 'Обязательное поле',
-            'telephone.required' => 'Обязательное поле',
-            'mail.required' => 'Обязательное поле',
-            'delivery_0.required' => 'Обязательное поле',
-            'delivery_1.required' => 'Обязательное поле',
-            'delivery_2.required' => 'Обязательное поле',
-            'payment.required' => 'Обязательное поле',
-            'comment.required' => 'Обязательное поле'
+            'name.required' => self::COLUMN_REQUIRED,
+            'surname.required' => self::COLUMN_REQUIRED,
+            'telephone.required' => self::COLUMN_REQUIRED,
+            'delivery_0.required' => self::COLUMN_REQUIRED,
+            'delivery_1.required' => self::COLUMN_REQUIRED,
+            'delivery_2.required' => self::COLUMN_REQUIRED,
+            'payment.required' => self::COLUMN_REQUIRED,
         ];
     }
 }
