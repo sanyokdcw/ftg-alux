@@ -23,37 +23,6 @@
         {{ $c->col1_3 }}
       </div>
     </div>
-    <div class="company__block-item">
-      <div class="company__block-title title">{{ $c->col2 }}</div>
-      <div class="company__block-subtitle">{{ $c->col2_2 }}</div>
-      <div class="company__block-text">
-        {{ $c->col2_3 }}
-      </div>
-    </div>
-    <div class="company__block-item">
-      <div class="company__block-title title">{{ $c->col3 }}</div>
-      <div class="company__block-subtitle">{{ $c->col3_2 }}</div>
-      <div class="company__block-text">
-        {{ $c->col3_3 }}
-      </div>
-    </div>
-  </div>
-  <div class="company__block company__block-too">
-    <div class="company__block-item">
-      <div class="company__block-title title">
-        {{ $c->col1_4 }}
-      </div>
-    </div>
-    <div class="company__block-item">
-      <div class="company__block-text">
-        {{ $c->col2_4 }}
-      </div>
-    </div>
-    <div class="company__block-item">
-      <div class="company__block-text">
-        {{ $c->col3_4 }}
-      </div>
-    </div>
   </div>
   <div class="company__subtitle subtitle">{{ $c->col5 }}</div>
   <div class="company__text">
