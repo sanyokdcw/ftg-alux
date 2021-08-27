@@ -13,7 +13,7 @@
 
 <section class="company">
   <div class="company__title subtitle">{{ __('index.about') }}</div>
-  <img src="{{ $c->image? asset("storage/$c->image"): '../images/main-bg-2.jpg' }}" alt="ABOUT BG IMAGE">
+  <img src="{{ $c->image? asset("storage/$c->image"): '../images/main-bg-2.jpg' }}" alt="ABOUT BG IMAGE" class="company__img-about">
   <div class="company__subtitle--first title">ТОО FTG COMPANY</div>
   <div class="company__block">
     <div class="company__block-item">
@@ -21,31 +21,6 @@
       <div class="company__block-subtitle">{{ $c->col1_2 }} </div>
       <div class="company__block-text">
         {{ $c->col1_3 }}
-      </div>
-    </div>
-  </div>
-  <div class="company__subtitle subtitle">{{ $c->col5 }}</div>
-  <div class="company__text">
-    {{ $c->col5_2 }}
-  </div>
-  <div class="company__wrapper">
-    <div class="company__wrapper-item">
-      <div class="company__wrapper-title subtitle">
-        {{ $c->col4 }}
-      </div>
-      <div class="company__wrapper-text">
-        {{ $c->col4_2 }}
-      </div>
-    </div>
-    <div class="company__wrapper-item">
-      <img src="../images/news/item-3.jpg" alt="">
-    </div>
-    <div class="company__wrapper-item">
-      <div class="company__wrapper-title">
-        {{ $c->col6 }}
-      </div>
-      <div class="company__wrapper-text">
-        {{ $c->col6_2 }}
       </div>
     </div>
   </div>

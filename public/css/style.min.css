@@ -1761,6 +1761,20 @@ button {
     line-height: 28px;
     color: #474747
 }
+
+@media (min-width: 1200px){
+    .company__img-about{
+        height: 590px;
+    }
+}
+
+@media (max-width: 1199px){
+    .company__img-about{
+        height: auto;
+        object-fit: contain;
+    }
+}
+
 .sertificate {
     margin-top: 74px
 }
