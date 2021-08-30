@@ -14,10 +14,10 @@
 <section class="company">
   <div class="company__title subtitle">{{ __('index.about') }}</div>
   <img src="{{ $c->image? asset("storage/$c->image"): '../images/main-bg-2.jpg' }}" alt="ABOUT BG IMAGE" class="company__img-about">
-  <div class="company__subtitle--first title">ТОО FTG COMPANY</div>
+  {{-- <div class="company__subtitle--first title">ТОО FTG COMPANY</div> --}}
   <div class="company__block">
     <div class="company__block-item">
-      <div class="company__block-title title">{{ $c->col1 }}</div>
+      {{-- <div class="company__block-title title">{{ $c->col1 }}</div> --}}
       <div class="company__block-subtitle">{{ $c->col1_2 }} </div>
       <div class="company__block-text">
         {{ $c->col1_3 }}
