@@ -81,7 +81,7 @@ class CurrencyService
             $kz = $product['price_kz'];
 
             $product->update(['price_ru' => (int) round($kz / $rub), 'price_uah' => (int) round($kz / $usd)]);
-            Log::info('ПОСЛЕДНИЙ РАЗ БЫЛ ОБНОВЛЕН: ' . \Carbon\Carbon::now()->toDateTimeString());
         }
+        Log::info('ПОСЛЕДНИЙ РАЗ БЫЛ ОБНОВЛЕН: ' . \Carbon\Carbon::now()->toDateTimeString());
     }
 }
