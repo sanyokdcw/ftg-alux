@@ -4,10 +4,11 @@
 namespace App\Services;
 
 
-use App\Models\ExchangeRate;
-use App\Models\Product;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
+use App\Models\Product;
+use App\Models\ExchangeRate;
+use Illuminate\Support\Facades\Log;
 
 class CurrencyService
 {
@@ -80,6 +81,7 @@ class CurrencyService
             $kz = $product['price_kz'];
 
             $product->update(['price_ru' => (int) round($kz / $rub), 'price_uah' => (int) round($kz / $usd)]);
+            Log::info('ПОСЛЕДНИЙ РАЗ БЫЛ ОБНОВЛЕН: ' . \Carbon\Carbon::now()->toDateTimeString());
         }
     }
 }
