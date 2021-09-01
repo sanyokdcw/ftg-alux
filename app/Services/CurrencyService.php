@@ -17,7 +17,7 @@ class CurrencyService
         $currencies = ExchangeRate::query()->first();
 
         if ($currencies) {
-            if (Carbon::now()->subDay() > Carbon::parse($currencies->updated_at)) {
+            if (Carbon::now()->subHours(12) > Carbon::parse($currencies->updated_at)) {
                 $currencies = $this->parse($currencies->id);
 
                 $this->updatePrices($currencies);
@@ -61,11 +61,9 @@ class CurrencyService
             }
         }
 
-        if ($exchangeId) {
-            $currencies = ExchangeRate::query()->where('id', $exchangeId)->update(['rub' => $rub, 'usd' => $usd]);
-        } else {
-            $currencies = ExchangeRate::query()->create(['rub' => $rub, 'usd' => $usd]);
-        }
+        $currencies = ExchangeRate::query()
+            ->where('id', $exchangeId)
+            ->updateOrCreate(compact('rub', 'usd'));
 
         return $currencies;
     }
