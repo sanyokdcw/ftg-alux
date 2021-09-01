@@ -78,7 +78,7 @@ class CurrencyService
         foreach ($products as $product) {
             $kz = $product['price_kz'];
 
-            $product->update(['price_ru' => (int) round($kz / $rub), 'price_uah' => (int) round($kz / $usd)]);
+            $product->update(['price_ru' => (int) ceil($kz / $rub), 'price_uah' => (int) ceil($kz / $usd)]);
         }
         Log::info('ПОСЛЕДНИЙ РАЗ БЫЛ ОБНОВЛЕН: ' . \Carbon\Carbon::now()->toDateTimeString());
     }
