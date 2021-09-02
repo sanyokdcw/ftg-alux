@@ -6474,27 +6474,37 @@ opacity: 0;
 
 .news__wrapper-item_top img{
     height: 197px;
+    object-fit: contain !important;
 }
 
 .card-detail__wrapper-left_img img{
     height: 330px;
+    object-fit: contain !important;
 }
 
 .delivery__wrapper-item_bg img{
     height: 320px;
+    object-fit: contain !important;
 }
 
 .methods__wrapper-title img{
     width: 60px;
     height: 60px;
+    object-fit: contain !important;
 }
 
 .guarange__wrapper-title img{
     width: 60px;
     height: 60px;
+    object-fit: contain !important;
 }
 
 .pather__wrapper-item img{
     width: 60px;
     height: 60px;
+    object-fit: contain !important;
+}
+
+* img{
+    object-fit: contain !important;
 }
