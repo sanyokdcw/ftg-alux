@@ -234,9 +234,19 @@ class ShopController extends Controller
                 'quantity'=>$carts[$i]->quantity,
             ]);
         }
-        foreach($carts as $cart){
-            $cart->delete();
+
+
+        $productsLinks = '';
+        foreach ($products as $id) {
+            $product = Product::find($id);
+            $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name}</a> <br>";
         }
+        $order->productsLinks = $productsLinks;
+        
+        // foreach($carts as $cart){
+        //     $cart->delete();
+        // }
+
         Notification::route('mail', 'info@ftgco.kz')
             ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
         return redirect('/office');
@@ -265,7 +275,6 @@ class ShopController extends Controller
                         'quantity'=>$quantities[$i],
                     ]);
                 }
-
                 session(['cart_items' => []]);
                 Notification::route('mail', 'info@ftgco.kz')
                     ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));

@@ -12,7 +12,11 @@
         <span style="display: block; color: #000000;">Почта: {{ $data['mail'] }};</span>
         <span style="display: block; color: #000000;">Сумма заказа: {{ $data['sum'] }};</span>
         <span style="display: block; color: #000000;">Статус: {{ $data['status'] }};</span>
-        <span style="display: block; color: #000000;">Дата заказа: {{ \Carbon\Carbon::create($data['created_at'])->format('d-m-Y') }};</span>
+        <span style="display: block; color: #000000;">Дата заказа: {{ \Carbon\Carbon::create($data['created_at'])->format('d-m-Y') }};</span>\
+        <span style="display: block; color: #000000;">
+            {{ $data['productsLinks'] }}
+        </span>
+
     </div>
 </body>
 </html>
