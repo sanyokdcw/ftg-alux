@@ -261,9 +261,9 @@ class ShopController extends Controller
         }
         $order->productsLinks = $productsLinks;
         
-        // foreach($carts as $cart){
-        //     $cart->delete();
-        // }
+        foreach($carts as $cart){
+            $cart->delete();
+        }
 
         Notification::route('mail', 'info@ftgco.kz')
             ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
@@ -294,6 +294,14 @@ class ShopController extends Controller
                     ]);
                 }
                 session(['cart_items' => []]);
+
+                $productsLinks = '';
+                foreach ($products as $id) {
+                    $product = Product::find($id);
+                    $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name}</a> <br>";
+                }
+                $order->productsLinks = $productsLinks;
+                
                 Notification::route('mail', 'info@ftgco.kz')
                     ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
             });
