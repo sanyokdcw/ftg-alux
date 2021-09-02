@@ -6498,3 +6498,7 @@ opacity: 0;
     width: 60px;
     height: 60px;
 }
+
+img{
+    object-fit: contain !important;
+}
