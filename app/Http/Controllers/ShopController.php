@@ -150,8 +150,26 @@ class ShopController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
+        if(!Auth::check()){
+            if(!session('cart_items')){
+                session(['cart_items' => []]);
+            }
+            $cart_items = session('cart_items');
 
-        Cart::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->first()->delete();
+        }
+
+        if(!Auth::check()){
+            $cart = [];
+            foreach ($cart_items as $item) {
+                if($item['product_id'] != $request->product_id){
+                    array_push($cart, ['product_id' => $item[$product_id], 'quantity' => $item[$quantity]]);
+                }
+            }
+            session(['cart_items' => $cart]);
+            
+        } else {
+            Cart::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->first()->delete();
+        }
         return redirect()->back();
     }
 
