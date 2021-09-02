@@ -4,10 +4,11 @@
 namespace App\Services;
 
 
-use App\Models\ExchangeRate;
-use App\Models\Product;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
+use App\Models\Product;
+use App\Models\ExchangeRate;
+use Illuminate\Support\Facades\Log;
 
 class CurrencyService
 {
@@ -16,7 +17,7 @@ class CurrencyService
         $currencies = ExchangeRate::query()->first();
 
         if ($currencies) {
-            if (Carbon::now()->subDay() > Carbon::parse($currencies->updated_at)) {
+            if (Carbon::now()->subHours(12) > Carbon::parse($currencies->updated_at)) {
                 $currencies = $this->parse($currencies->id);
 
                 $this->updatePrices($currencies);
@@ -60,11 +61,9 @@ class CurrencyService
             }
         }
 
-        if ($exchangeId) {
-            $currencies = ExchangeRate::query()->where('id', $exchangeId)->update(['rub' => $rub, 'usd' => $usd]);
-        } else {
-            $currencies = ExchangeRate::query()->create(['rub' => $rub, 'usd' => $usd]);
-        }
+        $currencies = ExchangeRate::query()
+            ->where('id', $exchangeId)
+            ->updateOrCreate(compact('rub', 'usd'));
 
         return $currencies;
     }
@@ -79,7 +78,8 @@ class CurrencyService
         foreach ($products as $product) {
             $kz = $product['price_kz'];
 
-            $product->update(['price_ru' => (int) round($kz / $rub), 'price_uah' => (int) round($kz / $usd)]);
+            $product->update(['price_ru' => (int) ceil($kz / $rub), 'price_uah' => (int) ceil($kz / $usd)]);
         }
+        Log::info('ПОСЛЕДНИЙ РАЗ БЫЛ ОБНОВЛЕН: ' . \Carbon\Carbon::now()->toDateTimeString());
     }
 }
