@@ -156,10 +156,18 @@
           @endif
           тг
         @elseif($currency == 'USD')
+        @if (!Auth::check())
+          <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_uah * $item['quantity'],0,","," ") }}</span>
+        @else
           <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_uah * $item->quantity,0,","," ") }}</span>
+        @endif
           долл
         @elseif($currency == 'RUB')
+        @if (!Auth::check())
+          <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_ru * $item['quantity'],0,","," ") }}</span>
+        @else
           <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_ru * $item->quantity,0,","," ") }}</span>
+        @endif
           руб
           @endif
           </div>
