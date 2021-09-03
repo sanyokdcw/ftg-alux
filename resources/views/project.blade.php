@@ -30,6 +30,8 @@
             @endforeach
           </div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
         <div class="swiper-container mySwiper">
           <div class="swiper-wrapper">
             @foreach (json_decode($project->image, true) as $image)
