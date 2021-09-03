@@ -309,7 +309,7 @@ class ShopController extends Controller
             $request->session()->flash('message', 'Произошла ошибка при оформлении заказа, пожалуйста попробуйте еще раз или свяжитесь с нами.');
             return redirect()->back();
         }
-        return redirect('/cart');
+        return redirect('/cart')->with('contact', 'contact');;
     }
 
     public function office(){
