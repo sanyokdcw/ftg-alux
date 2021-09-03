@@ -6508,3 +6508,13 @@ opacity: 0;
 * img{
     object-fit: contain !important;
 }
+
+.swiper-button-prev{
+    top: 25%;
+    z-index: 11111;
+}
+
+.swiper-button-next{
+    top: 25%;
+    z-index: 1111111;
+}
