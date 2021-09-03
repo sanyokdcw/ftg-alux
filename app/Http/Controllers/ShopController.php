@@ -297,10 +297,10 @@ class ShopController extends Controller
                 }
                 session(['cart_items' => []]);
 
-        $i = 0;
+            $i = 0;
         foreach ($products as $id) {
             $product = Product::find($id);
-            $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name} Количество: {$carts[$i]->quantity} </a> <br>";
+            $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name} Количество: {$quantities[$i]} </a> <br>";
             $i++;
         }
                 $order->productsLinks = $productsLinks;
