@@ -162,7 +162,7 @@ class ShopController extends Controller
             $cart = [];
             foreach ($cart_items as $item) {
                 if($item['product_id'] != $request->product_id){
-                    array_push($cart, ['product_id' => $item[$product_id], 'quantity' => $item[$quantity]]);
+                    array_push($cart, ['product_id' => $item['product_id'], 'quantity' => $item['quantity']]);
                 }
             }
             session(['cart_items' => $cart]);
