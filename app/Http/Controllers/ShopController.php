@@ -150,8 +150,26 @@ class ShopController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
+        if(!Auth::check()){
+            if(!session('cart_items')){
+                session(['cart_items' => []]);
+            }
+            $cart_items = session('cart_items');
 
-        Cart::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->first()->delete();
+        }
+
+        if(!Auth::check()){
+            $cart = [];
+            foreach ($cart_items as $item) {
+                if($item['product_id'] != $request->product_id){
+                    array_push($cart, ['product_id' => $item[$product_id], 'quantity' => $item[$quantity]]);
+                }
+            }
+            session(['cart_items' => $cart]);
+            
+        } else {
+            Cart::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->first()->delete();
+        }
         return redirect()->back();
     }
 
@@ -234,9 +252,19 @@ class ShopController extends Controller
                 'quantity'=>$carts[$i]->quantity,
             ]);
         }
+
+
+        $productsLinks = '';
+        foreach ($products as $id) {
+            $product = Product::find($id);
+            $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name}</a> <br>";
+        }
+        $order->productsLinks = $productsLinks;
+        
         foreach($carts as $cart){
             $cart->delete();
         }
+
         Notification::route('mail', 'info@ftgco.kz')
             ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
         return redirect('/office');
@@ -265,8 +293,15 @@ class ShopController extends Controller
                         'quantity'=>$quantities[$i],
                     ]);
                 }
-
                 session(['cart_items' => []]);
+
+                $productsLinks = '';
+                foreach ($products as $id) {
+                    $product = Product::find($id);
+                    $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name}</a> <br>";
+                }
+                $order->productsLinks = $productsLinks;
+                
                 Notification::route('mail', 'info@ftgco.kz')
                     ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
             });
