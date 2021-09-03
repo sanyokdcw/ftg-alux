@@ -111,7 +111,7 @@ window.addEventListener("load", () => {
         })
     }
 
-    //=======================Project text open=====================//
+    //======================= text open=====================//
     const projectRed = document.querySelectorAll('.project__wrapper-red');
 
     projectRed.forEach(btn => {
