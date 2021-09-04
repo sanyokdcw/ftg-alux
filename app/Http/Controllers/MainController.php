@@ -35,6 +35,7 @@ class MainController extends Controller
         }
 
         return view('index', [
+            'c' => AboutCompany::first()->translate(session('locale')),
             'banner' => HomepageBanner::first()->image ?? null,
             'advantages' => Advantage::all()->translate(session('locale')),
             'customers' => Customer::all()->take(5),
