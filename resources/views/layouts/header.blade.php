@@ -84,6 +84,10 @@
           </li>
           <li class="menu__list">
             <a href="/company" class="menu__list-link menu__list-link_active">{{ __('index.clients') }}</a>
+            <div class="menu__list-submenu">
+              <a href="/delivery" class="menu__list-link">{{ __('index.del') }}</a>
+              <a href="/guarange" class="menu__list-link">{{ __('index.warranty') }}</a>
+            </div>
           </li>
           <li class="menu__list mobile">
             <a href="/blog" class="menu__list-link">{{ __('index.blog') }}</a>
