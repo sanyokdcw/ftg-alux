@@ -162,7 +162,7 @@ class ShopController extends Controller
             $cart = [];
             foreach ($cart_items as $item) {
                 if($item['product_id'] != $request->product_id){
-                    array_push($cart, ['product_id' => $item[$product_id], 'quantity' => $item[$quantity]]);
+                    array_push($cart, ['product_id' => $item['product_id'], 'quantity' => $item['quantity']]);
                 }
             }
             session(['cart_items' => $cart]);
@@ -217,11 +217,15 @@ class ShopController extends Controller
             }
             if(!Auth::check()){
                 $sum+= $price * $item['quantity'];
+                $discountSum += ($product->price_kz - ( $product->price_kz * ($product->sale / 100))) * $item['quantity'];
+                $discount += $product->sale  * $item['quantity'];
             } else{
                 $sum+= $price * $item->quantity;
+                $discountSum += ($product->price_kz - ( $product->price_kz * ($product->sale / 100))) * $item->quantity;
+                $discount += $product->sale  * $item->quantity;
             }
-            $discount += $product->sale;
-            $discountSum += $product->price_kz - ( $product->price_kz * ($product->sale / 100));
+            
+           
         }
 
         $popular = Product::where('available', 1)->inRandomOrder()->take(3)->get()->translate(session('locale'));
@@ -255,9 +259,11 @@ class ShopController extends Controller
 
 
         $productsLinks = '';
+        $i = 0;
         foreach ($products as $id) {
             $product = Product::find($id);
-            $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name}</a> <br>";
+            $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name} Количество: {$carts[$i]->quantity} </a> <br>";
+            $i++;
         }
         $order->productsLinks = $productsLinks;
         
@@ -280,7 +286,6 @@ class ShopController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        try {
             DB::transaction(function() use ($request) {
                 $order = GuestOrder::create($request->validated());
                 $products = $request->products;
@@ -295,20 +300,20 @@ class ShopController extends Controller
                 }
                 session(['cart_items' => []]);
 
-                $productsLinks = '';
-                foreach ($products as $id) {
-                    $product = Product::find($id);
-                    $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name}</a> <br>";
-                }
+            $i = 0;
+            $productsLinks = '';
+            foreach ($products as $id) {
+                $product = Product::find($id);
+                $productsLinks .= "<a href='https://ftg.kz/product/{$product->id}'>{$product->name} Количество: {$quantities[$i]} </a> <br>";
+                $i++;
+            }
                 $order->productsLinks = $productsLinks;
                 
                 Notification::route('mail', 'info@ftgco.kz')
                     ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
             });
-        } catch(\Exception $e) {
-            $request->session()->flash('message', 'Произошла ошибка при оформлении заказа, пожалуйста попробуйте еще раз или свяжитесь с нами.');
-            return redirect()->back();
-        }
+            // $request->session()->flash('message', 'Произошла ошибка при оформлении заказа, пожалуйста попробуйте еще раз или свяжитесь с нами.');
+            // return redirect()->back();
         return redirect('/cart')->with('contact', 'contact');
     }
 

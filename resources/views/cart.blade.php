@@ -184,11 +184,11 @@
       @endif
       @endforeach
 
-      <input type="hidden" name="sum" id="sum_hidden" value="{{ $sum }}">
+      <input type="hidden" name="sum" id="sum_hidden" value="{{ $discountSum }}">
 
       <div class="cart__wrapper-right_text">
         <div>Стоимость товаров:</div>
-        <span> <span id=""> {{ number_format($sum,0,","," ") }} </span>
+        <span> <span id=""> {{ number_format($discountSum,0,","," ") }} </span>
         @if ($currency == 'KZT')
             тг
         @elseif($currency == 'USD')

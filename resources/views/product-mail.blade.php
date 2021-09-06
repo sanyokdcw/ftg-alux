@@ -14,7 +14,7 @@
         <span style="display: block; color: #000000;">Статус: {{ $data['status'] }};</span>
         <span style="display: block; color: #000000;">Дата заказа: {{ \Carbon\Carbon::create($data['created_at'])->format('d-m-Y') }};</span>\
         <span style="display: block; color: #000000;">
-            {{ $data['productsLinks'] }}
+            {!! $data['productsLinks'] !!}
         </span>
 
     </div>

@@ -109,7 +109,7 @@ else $sub_link = '#'
     <div class="client__title title">ТОО FTG COMPANY</div>
     <a href="/company" class="client__full">{{ __('index.read') }}</a>
   </div>
-  <div class="ftg__text">{{ setting('index.index_description') }}</div>
+  <div class="ftg__text">{!! $c->col1_3 !!}</div>
 </section>
 
 
