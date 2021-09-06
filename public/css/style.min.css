@@ -6548,3 +6548,13 @@ opacity: 0;
 .specifications__bottom #Tab1{
     width: 100%;
 }
+
+@media (max-width: 700px){
+    .card-detail__wrapper-left{
+        width: 100%;
+    }
+
+    .card-detail__wrapper-left_img{
+        width: 100%;
+    }
+}
