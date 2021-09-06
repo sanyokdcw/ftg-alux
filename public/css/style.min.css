@@ -6529,3 +6529,7 @@ opacity: 0;
     top: 25%;
     z-index: 1111111;
 }
+.sitebar__social-link img{
+    width: 30px;
+    height: 30px;
+}
