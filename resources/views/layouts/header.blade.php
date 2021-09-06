@@ -72,7 +72,7 @@
         </div>
         <ul class="menu__ul">
           <li class="menu__list">
-            <a href="/company" class="menu__list-link menu__list-link_active">{{ __('index.about') }}</a>
+            <div href="#" style="cursor: pointer" class="menu__list-link menu__list-link_active">{{ __('index.about') }}</div>
             <div class="menu__list-submenu">
               <a href="/company" class="menu__list-link">{{ __('index.about') }}</a>
               <a href="/blog" class="menu__list-link">{{ __('index.blog') }}</a>
@@ -81,7 +81,7 @@
             </div>
           </li>
           <li class="menu__list">
-            <a href="/company" class="menu__list-link menu__list-link_active">{{ __('index.clients') }}</a>
+            <div href="#" style="cursor: pointer" class="menu__list-link menu__list-link_active">{{ __('index.clients') }}</div>
             <div class="menu__list-submenu">
               <a href="/delivery" class="menu__list-link">{{ __('index.del') }}</a>
               <a href="/guarange" class="menu__list-link">{{ __('index.warranty') }}</a>
