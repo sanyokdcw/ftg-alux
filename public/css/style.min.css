@@ -6538,3 +6538,13 @@ opacity: 0;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
+.specifications__bottom{
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.specifications__bottom #Tab1{
+    width: 100%;
+}
