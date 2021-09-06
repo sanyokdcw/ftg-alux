@@ -6533,3 +6533,8 @@ opacity: 0;
     width: 30px;
     height: 30px;
 }
+
+.system__bg{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
