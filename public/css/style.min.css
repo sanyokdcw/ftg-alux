@@ -1185,7 +1185,7 @@ button {
 }
 .system__bg {
     width: 100%;
-    height: 380px
+    height: 365px
 }
 .system__wrapper {
     margin-top: 70px;
@@ -5431,7 +5431,7 @@ width:100% !important;
         flex-direction: column;
     }
     .system__bg {
-        height: 175px;
+        height: 160px;
         width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
@@ -6536,7 +6536,7 @@ opacity: 0;
 
 .system__bg{
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
 .specifications__bottom{
