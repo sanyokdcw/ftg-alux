@@ -5431,10 +5431,10 @@ width:100% !important;
         flex-direction: column;
     }
     .system__bg {
-        height: 245px;
+        height: 175px;
         width: 100%;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: cover;
         background-position: top center;
     }
     .sitebar__logo img {
