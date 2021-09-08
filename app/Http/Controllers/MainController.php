@@ -171,7 +171,7 @@ class MainController extends Controller
             App::setLocale('ru');
         }
 
-        $projects = Project::all()->translate(session('locale'));
+        $projects = Project::orderby('created_at', 'desc')->get()->translate(session('locale'));
 
         foreach($projects as $project){
             $deadline = explode(" ", $project->deadline);
