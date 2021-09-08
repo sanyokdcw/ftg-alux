@@ -15,7 +15,9 @@
 	@php
 if(App\Models\Subcategory::where('category_id', $category->id)->where('available', 1) ->first())
 	$sub_link = '/subcategory/' .  App\Models\Subcategory::where('category_id', $category->id)->first()->id;
-else $sub_link = '#'
+else {
+  $sub_link = '/category/'.$category->id;
+}
 @endphp
 
 <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
