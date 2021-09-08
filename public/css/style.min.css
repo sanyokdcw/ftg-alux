@@ -6563,3 +6563,11 @@ opacity: 0;
     width: 110px;
     height: 110px;
 }
+
+.project__wrapper-left .swiper-wrapper .swiper-slide img{
+    width: 100%;
+    height: 360px;
+    object-fit: cover !important;
+    object-position: center;
+    border-radius: 10px;
+}
