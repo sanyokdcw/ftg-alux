@@ -298,7 +298,7 @@ class ShopController extends Controller
                         'quantity'=>$quantities[$i],
                     ]);
                 }
-                // session(['cart_items' => []]);
+                session(['cart_items' => []]);
 
             $i = 0;
             $productsLinks = '';
@@ -312,8 +312,8 @@ class ShopController extends Controller
                 Notification::route('mail', 'info@ftgco.kz')
                     ->notify(new OrderCreated(array_merge($order->toArray(), $request->all())));
             });
-            $request->session()->flash('message', 'Произошла ошибка при оформлении заказа, пожалуйста попробуйте еще раз или свяжитесь с нами.');
-            return redirect()->back();
+            // $request->session()->flash('message', 'Произошла ошибка при оформлении заказа, пожалуйста попробуйте еще раз или свяжитесь с нами.');
+            // return redirect()->back();
         return redirect('/cart')->with('contact', 'contact');
     }
 

@@ -1185,7 +1185,7 @@ button {
 }
 .system__bg {
     width: 100%;
-    height: 380px
+    height: 365px
 }
 .system__wrapper {
     margin-top: 70px;
@@ -5228,7 +5228,7 @@ width:100% !important;
         width: 90%
     }
     .project__wrapper-img {
-        width: 90%;
+        width: 95%;
         height: 84px
     }
     .product__wrapper-left_item {
@@ -5431,10 +5431,10 @@ width:100% !important;
         flex-direction: column;
     }
     .system__bg {
-        height: 245px;
+        height: 160px;
         width: 100%;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: cover;
         background-position: top center;
     }
     .sitebar__logo img {
@@ -5477,7 +5477,7 @@ width:100% !important;
         width: 100%
     }
     .project__wrapper-img {
-        height: 65px
+        height: 80px
     }
     .detail-page__right-item {
         margin-bottom: 10px
@@ -6528,4 +6528,33 @@ opacity: 0;
 .swiper-button-next{
     top: 25%;
     z-index: 1111111;
+}
+.sitebar__social-link img{
+    width: 30px;
+    height: 30px;
+}
+
+.system__bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.specifications__bottom{
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.specifications__bottom #Tab1{
+    width: 100%;
+}
+
+@media (max-width: 700px){
+    .card-detail__wrapper-left{
+        width: 100%;
+    }
+
+    .card-detail__wrapper-left_img{
+        width: 100%;
+    }
 }
