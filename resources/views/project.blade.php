@@ -66,11 +66,11 @@
             </div>
             <div class="project__wrapper-info_number">
               @if ($currency == 'KZT')
-                {{ number_format($project->price_kz) }} <span>тг</span>
+                {{ $project->price_kz }} <span>тг</span>
               @elseif($currency == 'USD')
-                {{ number_format($project->price_uah) }} <span>долл</span>
+                {{ $project->price_uah }} <span>долл</span>
               @elseif($currency == 'RUB')
-                {{ number_format($project->price_rub) }} <span>руб</span>
+                {{ $project->price_rub }} <span>руб</span>
               @endif
             </div>
           </div>

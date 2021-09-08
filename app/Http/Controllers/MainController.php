@@ -176,6 +176,9 @@ class MainController extends Controller
         foreach($projects as $project){
             $deadline = explode(" ", $project->deadline);
             $project->deadline = $deadline;
+            $project->price_kz = number_format($project->price_kz,0,","," ");
+            $project->price_uah = number_format($project->price_uah,0,","," ");
+            $project->price_rub = number_format($project->price_rub,0,","," ");
         }
 
         return view('project', ['projects' => $projects]);
