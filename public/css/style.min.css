@@ -6558,3 +6558,8 @@ opacity: 0;
         width: 100%;
     }
 }
+
+.detail-page__right_img img{
+    width: 110px;
+    height: 110px;
+}
