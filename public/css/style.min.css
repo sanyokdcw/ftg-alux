@@ -6043,7 +6043,7 @@ width:100% !important;
     top: 0;
     left: 0;
     background-color: #fff;
-    z-index: 150;
+    z-index: 15000000;
     width: 100%;
     height: 100%;
     padding-top: 20px;
@@ -6556,5 +6556,30 @@ opacity: 0;
 
     .card-detail__wrapper-left_img{
         width: 100%;
+    }
+}
+
+.detail-page__right_img img{
+    width: 110px;
+    height: 110px;
+}
+
+.project__wrapper-left .swiper-wrapper .swiper-slide img{
+    width: 100%;
+    height: 360px;
+    object-fit: cover !important;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.detail-page__left{
+    width: 100%;
+    height: 600px;
+}
+
+@media (max-width: 767px){
+    .detail-page__left{
+        height: 223px;
+        margin-bottom: 0;
     }
 }

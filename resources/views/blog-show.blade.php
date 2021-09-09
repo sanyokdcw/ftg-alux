@@ -21,7 +21,7 @@
 <section class="detail-page">
   <div class="detail-page-title subtitle">КОНЦЕНТРИРОВАНИЕ ЗАСОЛЕННЫХ СТОЧНЫХ ВОД</div>
   <div class="detail-page__wrapper">
-    <div class="detail-page__left" style="width:100%;height: 600px;">
+    <div class="detail-page__left" style="">
       <img src="/storage/{{ $blog->image }}" alt="" style="height: 100%; object-fit:cover">
     </div>
   </div>
