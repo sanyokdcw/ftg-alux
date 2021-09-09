@@ -87,9 +87,6 @@ class ShopController extends Controller
         }
 
         $product = Product::find($id)->translate(session('locale'));
-$product->description = preg_replace('/ style=".*"| class=".*"| id=".*"/', '', $product->description);
-$product->characteristics = preg_replace('/ style=".*"| class=".*"| id=".*"/', '', $product->characteristics);
-$product->documentation = preg_replace('/ style=".*"| class=".*"| id=".*"/', '', $product->documentation);
         $products = Product::where('available', 1)->where('id', '!=', $id)->inRandomOrder()->take(3)->get()->translate(session('locale'));
         return view('carddetail', compact('product', 'products'));
     }
