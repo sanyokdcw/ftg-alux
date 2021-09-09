@@ -49,7 +49,11 @@
               {{__('index.projectInfo1')}}
             </div>
             <div class="project__wrapper-info_number">
-              {{ $project->deadline[0] }} <span>{{ $project->deadline[1] }}</span>
+              @if(count($project->deadline) == 2)
+                {{ $project->deadline[0] }} <span>{{ $project->deadline[1] }}</span>
+              @else
+                <span>{{ $project->deadline[0] }}</span>
+              @endif
             </div>
           </div>
           <div class="project__wrapper-info_item">
