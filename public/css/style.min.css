@@ -6571,3 +6571,10 @@ opacity: 0;
     object-position: center;
     border-radius: 10px;
 }
+
+@media (max-width: 767px){
+    .detail-page__left{
+        height: 223px;
+        margin-bottom: 0;
+    }
+}
