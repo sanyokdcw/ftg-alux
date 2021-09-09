@@ -172,12 +172,11 @@ class MainController extends Controller
         }
 
         $projects = Project::orderby('created_at', 'desc')->get()->translate(session('locale'));
-
         foreach($projects as $project){
             $deadline = explode(" ", $project->deadline);
             $project->deadline = $deadline;
         }
-
+        
         return view('project', ['projects' => $projects]);
     }
 
