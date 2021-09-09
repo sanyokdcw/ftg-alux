@@ -382,7 +382,6 @@
                             </a>
                         </div>
                     </div>
-
                     <a href="/product" class="sitebar__btn sitebar__btn-adaptive">{{ __('index.products') }}</a>
 
                     <div id="sitebar_dropdown" class="sitebar__drowdown-title adaptive__show">
