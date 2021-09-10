@@ -74,14 +74,14 @@ else
     <div class="news__wrapper-item">
       <div class="news__wrapper-item_top" style="width:100%">
         <img src="/storage/{{ $blog->image }}" alt="" style="width:100%">
-      </div>
-      <div class="news__wrapper-item_bottom">
         <div class="news__wrapper-item_title">
           {{ $blog->name }}
         </div>
         <div class="news__wrapper-item_text">
           {{ $blog->description }}
         </div>
+      </div>
+      <div class="news__wrapper-item_bottom">
         <div class="news__wrapper-item_button">
           <a href="/blog/{{ $blog->id }}" class="news__wrapper-item_next">{{ __('index.read') }}</a>
           <div class="news__wrapper-item_date">{{ $blog->created_at->format('d.m.Y') }}</div>
