@@ -1345,6 +1345,7 @@ button {
     font-size: 14px;
     font-family: "MuseoSansCyrl-500"
 }
+
 .news__wrapper-item_next:before {
     content: "";
     position: absolute;
