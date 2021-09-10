@@ -40,7 +40,7 @@ class MainController extends Controller
             'advantages' => Advantage::all()->translate(session('locale')),
             'customers' => Customer::all()->take(5),
             'blogs' => Blog::orderBy('created_at', 'desc')->take(3)->get(),
-            'categories_menu' => Category::orderBy('created_at', 'desc')->get()->translate(session('locale')),
+            'categories_menu' => Category::where('available', 1)->orderBy('created_at', 'desc')->get()->translate(session('locale')),
         ]);
     }
 

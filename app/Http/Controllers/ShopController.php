@@ -85,7 +85,6 @@ class ShopController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-
         $product = Product::find($id)->translate(session('locale'));
         $products = Product::where('available', 1)->where('id', '!=', $id)->inRandomOrder()->take(3)->get()->translate(session('locale'));
         return view('carddetail', compact('product', 'products'));
