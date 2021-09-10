@@ -120,7 +120,7 @@ class MainController extends Controller
             App::setLocale('ru');
         }
 
-        return view('blog', ['blogs' => Blog::all()->translate(session('locale'))]);
+        return view('blog', ['blogs' => Blog::all()->sortByDesc('created_at')->translate(session('locale'))]);
     }
 
     public function blog_show($id) {
