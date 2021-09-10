@@ -1327,7 +1327,7 @@ button {
     max-width: 330px
 }
 .news__wrapper-item_button {
-    margin-top: 40px;
+    margin-top: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1345,6 +1345,7 @@ button {
     font-size: 14px;
     font-family: "MuseoSansCyrl-500"
 }
+
 .news__wrapper-item_next:before {
     content: "";
     position: absolute;
@@ -3624,9 +3625,6 @@ font-size: 18px !important;
     color: #474747;
     font-family: "MuseoSansCyrl-300"
 }
-.pather__wrapper-item:nth-child(2) {
-    margin-left: 40px
-}
 .pather__wrapper-item_subtitle {
     font-size: 20px;
     line-height: 24px;
@@ -3826,7 +3824,7 @@ display:none;
         justify-content: center
     }
     .guarange__wrapper-item {
-        margin: 10px
+        margin: 10px 0
     }
     .company img {
         width: 100%
@@ -6588,4 +6586,42 @@ opacity: 0;
         height: 223px;
         margin-bottom: 0;
     }
+}
+
+.guarange__wrapper{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.guarange__wrapper-item{
+    width: 49%;
+}
+
+.pather__wrapper{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pather__wrapper-item{
+    width: 49%;
+}
+
+.news__wrapper-item_button{
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@media (max-width: 767px){
+    .news__wrapper-item_button{
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.news__wrapper-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

@@ -12,20 +12,22 @@
 <section style="min-height: 1215px">
 <section class="pather">
   <div class="pather__title subtitle">{{ __('index.partners')}}</div>
-  <div class="pather__wrapper-item_title title">{{ __('index.patherTitle')}}</div>
+  @foreach ($texts as $text)
+  <div class="pather__wrapper-item_title title">{{ $text->title }}</div>
   <div class="pather__wrapper">
     <div class="pather__wrapper-item">
       <div class="pather__wrapper-item_text">
-        {{ __('index.patherDescr')}}
+          {!! $text->description !!}
       </div>
     </div>
     <div class="pather__wrapper-item">
       <div class="pather__wrapper-item_text">
-        {{ __('index.patherDescr2')}}
+        {!! $text->description2 !!}
       </div>
     </div>
   </div>
   <div class="pather__wrapper-item_title title" style="text-transform: uppercase;">{{ __('index.patherTitle2')}}</div>
+  @endforeach 
   <div class="pather__wrapper">
     @foreach ($cards as $card)
     <div class="pather__wrapper-item">

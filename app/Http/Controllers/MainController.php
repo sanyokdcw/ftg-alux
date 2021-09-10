@@ -8,6 +8,7 @@ use App\Models\Certificate;
 use App\Models\Delivery;
 use App\Models\Payment;
 use App\Models\PartnerCard;
+use App\Models\PartnerText;
 use App\Models\Position;
 use App\Models\Project;
 use App\Models\Customer;
@@ -88,7 +89,10 @@ class MainController extends Controller
             App::setLocale('ru');
         }
 
-        return view('partner', ['cards'=>PartnerCard::all()->translate(session('locale'))]);
+        return view('partner', [
+            'cards'=>PartnerCard::all()->translate(session('locale')),
+            'texts'=>PartnerText::all()->translate(session('locale'))
+    ]);
     }
 
     public function team(){
@@ -120,7 +124,7 @@ class MainController extends Controller
             App::setLocale('ru');
         }
 
-        return view('blog', ['blogs' => Blog::all()->translate(session('locale'))]);
+        return view('blog', ['blogs' => Blog::all()->sortByDesc('created_at')->translate(session('locale'))]);
     }
 
     public function blog_show($id) {
