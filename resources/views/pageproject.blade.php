@@ -38,8 +38,13 @@
             выполнения
           </div>
           <div class="detail-page__right-item_text">
-            <div class="detail-page__right-item_number">{{ $project->deadline[0] ?? '' }}</div>
-            <div class="detail-page__right-item_date">{{ $project->deadline[1] ?? '' }}</div>
+            @if(count($project->deadline) == 2)
+              <div class="detail-page__right-item_number">{{ $project->deadline[0] }}</div>
+              <div class="detail-page__right-item_date">{{ $project->deadline[1] }}</div>
+            @else
+              <div class="detail-page__right-item_number">{{ $project->deadline[0] }}</div>
+            @endif
+            
           </div>
         </div>
         <div class="detail-page__right-item">
