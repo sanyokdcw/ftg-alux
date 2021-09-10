@@ -6598,3 +6598,12 @@ opacity: 0;
 .guarange__wrapper-item{
     width: 49%;
 }
+
+.pather__wrapper{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pather__wrapper-item{
+    width: 49%;
+}
