@@ -3624,9 +3624,6 @@ font-size: 18px !important;
     color: #474747;
     font-family: "MuseoSansCyrl-300"
 }
-.pather__wrapper-item:nth-child(2) {
-    margin-left: 40px
-}
 .pather__wrapper-item_subtitle {
     font-size: 20px;
     line-height: 24px;
