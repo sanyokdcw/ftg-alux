@@ -10,5 +10,5 @@ class PartnerText extends Model
     use HasFactory;
     use Translatable;
     
-    protected $translatable = ['title', 'text'];
+    protected $translatable = ['title', 'description','description2'];
 }
