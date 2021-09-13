@@ -1327,7 +1327,7 @@ button {
     max-width: 330px
 }
 .news__wrapper-item_button {
-    margin-top: 40px;
+    margin-top: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1345,6 +1345,7 @@ button {
     font-size: 14px;
     font-family: "MuseoSansCyrl-500"
 }
+
 .news__wrapper-item_next:before {
     content: "";
     position: absolute;
@@ -6603,4 +6604,24 @@ opacity: 0;
 
 .pather__wrapper-item{
     width: 49%;
+}
+
+.news__wrapper-item_button{
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@media (max-width: 767px){
+    .news__wrapper-item_button{
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.news__wrapper-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
