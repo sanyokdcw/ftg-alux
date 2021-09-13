@@ -117,13 +117,11 @@
     <div class="specifications__bottom-item" style="word-wrap: break-word !important;" id="Tab1" style="display: block;">
 {{--    {!! strip_tags($product->description) !!}--}}
         {!!$product->description!!}
-
     </div>
     <div class="specifications__bottom-item" style="word-wrap: break-word !important; display: none;" id="Tab2" style="display: none;">
 {{--    {!! strip_tags($product->characteristics) !!}--}}
         {!!$product->characteristics!!}
     </div>
-
     <div class="specifications__bottom-item" style="word-wrap: break-word !important; display: none;" id="Tab3" style="display: none;">
 {{--    {!! strip_tags($product->documentation) !!}--}}
         {!!$product->documentation!!}

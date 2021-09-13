@@ -21,13 +21,16 @@ else
 
 <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
       <div class="system__wrapper-item swiper-slide">
+        <div class="system__wrapper-hover">
+          test
+        </div>
         <div class="system__wrapper-item_img">
           <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
         </div>
         <div class="system__wrapper-item_text">
           {!! $category->name !!}
-	</a>
-</div>
+      </a>
+    </div>
       </div>
       @endforeach
     </div>
