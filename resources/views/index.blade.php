@@ -22,7 +22,12 @@ else
 <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
       <div class="system__wrapper-item swiper-slide">
         <div class="system__wrapper-hover">
-          test
+          @foreach ($category->subcategories as $subcategory)
+              <a href="/subcategory/{{ $subcategory->id }}"
+              class="sitebar__drowdown-item_btn">
+              <span>{{ $subcategory->name }}</span>
+              </a>
+           @endforeach
         </div>
         <div class="system__wrapper-item_img">
           <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
