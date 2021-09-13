@@ -6630,12 +6630,17 @@ opacity: 0;
     display: none;
     padding: 15px;
     position: absolute;
+    background: white;
     width: 100%;
     height: 100%;
     left: 0;
     bottom: 0;
     right: 0;
     top: 0;
+}
+
+.system__wrapper-hover a{
+    display: block;
 }
 
 .system__wrapper-item:hover .system__wrapper-hover{
