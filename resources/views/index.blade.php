@@ -23,8 +23,7 @@ else
       <div class="system__wrapper-item swiper-slide">
         <div class="system__wrapper-hover">
           @foreach ($category->subcategories as $subcategory)
-              <a href="/subcategory/{{ $subcategory->id }}"
-              class="sitebar__drowdown-item_btn">
+              <a href="/subcategory/{{ $subcategory->id }}">
               <span>{{ $subcategory->name }}</span>
               </a>
            @endforeach
