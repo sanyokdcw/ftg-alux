@@ -21,6 +21,7 @@
     @foreach ($projects as $project)
     <div class="project__wrapper-card">
       <div class="project__wrapper-left">
+        
         <div class="swiper-container mySwiper2">
           <div class="swiper-wrapper">
             @foreach (json_decode($project->image, true) as $image)
@@ -29,9 +30,10 @@
             </div>
             @endforeach
           </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        
         <div class="swiper-container mySwiper">
           <div class="swiper-wrapper">
             @foreach (json_decode($project->image, true) as $image)
@@ -42,6 +44,7 @@
             @endforeach
           </div>
         </div>
+
 
         <div class="project__wrapper-info">
           <div class="project__wrapper-info_item">

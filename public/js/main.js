@@ -28,8 +28,8 @@ window.addEventListener("load", () => {
     };
     var mask = IMask(registerPhoneNum, maskPhoneOptions);
 
-    const projectMySwiper = document.querySelectorAll('.project .mySwiper'),
-        projectMySwiper2 = document.querySelectorAll('.project .mySwiper2');
+    const projectMySwiper = document.querySelectorAll('.project .mySwiper');
+    const projectMySwiper2 = document.querySelectorAll('.project .mySwiper2');
 
     if (projectMySwiper && projectMySwiper2) {
         for (let i = 0; i < projectMySwiper.length; i++) {
