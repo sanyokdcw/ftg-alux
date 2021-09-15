@@ -21,7 +21,7 @@
   <div class="detail-page-title subtitle">{{ $project->title }}</div>
   <div class="detail-page__wrapper">
     <div class="detail-page__left">
-      <img src="/storage/{{ json_decode($project->image, true)[0] }}" alt="">
+      <img style="height: 500px" src="/storage/{{ json_decode($project->image, true)[0] }}" alt="">
     </div>
     <div class="detail-page__right">
       <div class="detail-page__right_img">
