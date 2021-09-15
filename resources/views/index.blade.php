@@ -21,13 +21,16 @@ else
 
 <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
       <div class="system__wrapper-item swiper-slide">
+                @if(count($category->subcategories) > 0)
         <div class="system__wrapper-hover">
-          @foreach ($category->subcategories as $subcategory)
+
+        @foreach ($category->subcategories as $subcategory)
               <a href="/subcategory/{{ $subcategory->id }}">
               <span>{{ $subcategory->name }}</span>
               </a>
            @endforeach
-        </div>
+    @endif
+</div>
         <div class="system__wrapper-item_img">
           <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
         </div>
