@@ -29,8 +29,9 @@ else
               <span>{{ $subcategory->name }}</span>
               </a>
            @endforeach
+           </div>
     @endif
-</div>
+
         <div class="system__wrapper-item_img">
           <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
         </div>
