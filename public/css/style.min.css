@@ -6650,3 +6650,14 @@ opacity: 0;
 .swiper-button-next:after, .swiper-button-prev:after{
     margin-top: 150px !important;
 }
+
+.swiper-slide{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+}
+
+.project__wrapper-left .swiper-wrapper .swiper-slide img{
+    width: auto !important;
+    height: inherit !important;
+}
