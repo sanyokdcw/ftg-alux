@@ -6651,6 +6651,6 @@ opacity: 0;
     display: flex;
     height: -webkit-fill-available;
     margin-top: -200px;
-    height: -moz-available;
     height: fill-available;
+    height: -moz-available;
 } 
