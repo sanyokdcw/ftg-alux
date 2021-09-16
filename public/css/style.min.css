@@ -6646,3 +6646,11 @@ opacity: 0;
 .system__wrapper-item:hover .system__wrapper-hover{
     display: block
 }
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    display: flex;
+    height: -webkit-fill-available;
+    margin-top: -200px;
+    height: -moz-available;
+    height: fill-available;
+}

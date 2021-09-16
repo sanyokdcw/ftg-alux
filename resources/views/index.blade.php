@@ -19,25 +19,40 @@ else
   $sub_link = '/category/'.$category->id;
 @endphp
 
-<a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
-      <div class="system__wrapper-item swiper-slide">
+@return $lookup_table[$key];
+
+@if ($category->subcategories = 1)
+  <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
+     <div class="system__wrapper-item swiper-slide">
         <div class="system__wrapper-hover">
           @foreach ($category->subcategories as $subcategory)
-              <a href="/subcategory/{{ $subcategory->id }}">
+            <a href="/subcategory/{{ $subcategory->id }}">
               <span>{{ $subcategory->name }}</span>
-              </a>
-           @endforeach
+            </a>
+          @endforeach
         </div>
         <div class="system__wrapper-item_img">
           <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
         </div>
         <div class="system__wrapper-item_text">
           {!! $category->name !!}
-      </a>
-    </div>
+        </div>
       </div>
-      @endforeach
+  </a>
+      @else      
+  
+  <div class="system__wrapper-item swiper-slide">
+    <div class="system__wrapper-item_img">
+      <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
     </div>
+    <div class="system__wrapper-item_text">
+      {!! $category->name !!}
+    </div>
+  </div>
+
+  @endif
+
+      @endforeach
       <div class="swiper-pagination" ></div>
 
   </div>
