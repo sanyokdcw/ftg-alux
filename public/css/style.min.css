@@ -6660,3 +6660,10 @@ opacity: 0;
 .project__wrapper-left .swiper-wrapper .swiper-slide img{
     width: auto !important;
 }
+
+.project__wrapper-img{
+    width: 120px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
