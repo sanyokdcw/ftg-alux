@@ -20,8 +20,8 @@
 <section class="detail-page">
   <div class="detail-page-title subtitle">{{ $project->title }}</div>
   <div class="detail-page__wrapper">
-    <div class="detail-page__left">
-      <img style="height: 500px" src="/storage/{{ json_decode($project->image, true)[0] }}" alt="">
+    <div class="detail-page__left" style="height: 300px">
+      <img style="height: 300px" src="/storage/{{ json_decode($project->image, true)[0] }}" alt="">
     </div>
     <div class="detail-page__right">
       <div class="detail-page__right_img">
