@@ -19,7 +19,7 @@ else
   $sub_link = '/category/'.$category->id;
 @endphp
 
-@return $lookup_table[$key];
+return $lookup_table[$key];
 
 @if ($category->subcategories = 1)
   <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
@@ -34,21 +34,6 @@ else
         <div class="system__wrapper-item_img">
           <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
         </div>
-        <div class="system__wrapper-item_text">
-          {!! $category->name !!}
-        </div>
-      </div>
-  </a>
-      @else      
-  
-  <div class="system__wrapper-item swiper-slide">
-    <div class="system__wrapper-item_img">
-      <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
-    </div>
-    <div class="system__wrapper-item_text">
-      {!! $category->name !!}
-    </div>
-  </div>
 
   @endif
 
