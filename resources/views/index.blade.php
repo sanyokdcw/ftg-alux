@@ -19,6 +19,7 @@ else
   $sub_link = '/category/'.$category->id;
 @endphp
 
+<<<<<<< HEAD
 @return $lookup_table[$key];
 
 @if ($category->subcategories = 1)
@@ -31,6 +32,21 @@ else
             </a>
           @endforeach
         </div>
+=======
+<a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
+      <div class="system__wrapper-item swiper-slide">
+                @if(count($category->subcategories) > 0)
+        <div class="system__wrapper-hover">
+
+        @foreach ($category->subcategories as $subcategory)
+              <a href="/subcategory/{{ $subcategory->id }}">
+              <span>{{ $subcategory->name }}</span>
+              </a>
+           @endforeach
+           </div>
+    @endif
+
+>>>>>>> 815855deef2b156c056b2e8f5230721622f6d650
         <div class="system__wrapper-item_img">
           <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
         </div>
