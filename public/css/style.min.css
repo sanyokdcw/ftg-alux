@@ -6650,7 +6650,7 @@ opacity: 0;
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
     display: flex;
     height: -webkit-fill-available;
-    margin-top: -200px;
+    margin-top: -160px;
     height: fill-available;
     height: -moz-available;
 } 
