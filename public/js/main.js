@@ -218,3 +218,4 @@ function closeModelRight() {
     main.classList.remove('open-form');
     formWrapper.forEach(el => { el.style.display = 'none' })
 }
+
