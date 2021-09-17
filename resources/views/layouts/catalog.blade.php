@@ -434,7 +434,7 @@
                     })
 
                     siteBarLink.addEventListener('click', (e) => {
-                        modalApadtive.classList.toggle('closed');
+                        modalApadtive.classList.remove('active');
                         document.getElementsByTagName("html")[0].style.overflow = "hidden";
                     })
 
