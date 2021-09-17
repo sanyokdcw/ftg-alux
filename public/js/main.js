@@ -222,5 +222,5 @@ function closeModelRight() {
 
 var el = document.getElementsByClassName('btn-contact2');
   el.addEventListener('click', function() {
-    document.querySelectorAll('.modal-adaptive-sidebar').classList.remove('sitebar-open');
+    document.querySelectorAll('.modal-adaptive-sidebar').classList.add('closed');
   })
