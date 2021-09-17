@@ -219,3 +219,8 @@ function closeModelRight() {
     formWrapper.forEach(el => { el.style.display = 'none' })
 }
 
+
+var el = document.getElementsByClassName('btn-contact2');
+  el.addEventListener('click', function() {
+    document.querySelectorAll('.modal-adaptive-sidebar').classList.remove('sitebar-open');
+  })
