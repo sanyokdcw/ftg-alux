@@ -423,12 +423,18 @@
                 <script>
                     let hamburger = document.getElementById('hamburger');
                     let modalApadtive = document.querySelector('.modal-adaptive-sidebar');
+                    let siteBarLink = document.querySelector('.sitebar__link');
                     let hamburgerClose = document.querySelector('.close-adaptive-modal-btn');
                     let sidebarOpen = document.getElementsByTagName("body")[0];
                     let sidebarDropdown = document.getElementById('sitebar_dropdown');
 
                     hamburger.addEventListener('click', (e) => {
                         modalApadtive.classList.toggle('active');
+                        document.getElementsByTagName("html")[0].style.overflow = "hidden";
+                    })
+
+                    siteBarLink.addEventListener('click', (e) => {
+                        modalApadtive.classList.toggle('closed');
                         document.getElementsByTagName("html")[0].style.overflow = "hidden";
                     })
 
