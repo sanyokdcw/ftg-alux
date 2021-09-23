@@ -127,7 +127,7 @@
         {!!$product->documentation!!}
     </div>
 
-    <a style="display: none;" class="specifications__download" id="downloadPdf" href="#">скачать pdf</a>
+    <a style="display: none;" class="specifications__download" id="downloadPdf" href="/storage/{{ $product->document }}">скачать pdf</a>
 
   </div>
 </section>
