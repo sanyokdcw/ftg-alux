@@ -14,6 +14,7 @@
 
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">каталог</div>
   <div class="url__text"><a href="/blog">Блог</a></div>
   <div class="url__text">{{ $blog->name }}</div>
 </section>
