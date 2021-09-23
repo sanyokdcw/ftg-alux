@@ -6677,3 +6677,16 @@ opacity: 0;
 .form{
     z-index: 2121212121212 !important;
 }
+
+.specifications__download{
+    padding-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.specifications__download:nth-child(1){
+    display: none;
+}
+
+.specifications__download:nth-child(2){
+    display: none;
+}
