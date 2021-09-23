@@ -14,7 +14,7 @@
 
 <section class="url">
   <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="openSitebar()">каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">каталог</div>
   <div class="url__text">{!! strip_tags(App\Models\Category::find($subcategory->category_id)->name) !!}</div>
   <div class="url__text">{{ $subcategory->name }}</div>
 </section>
