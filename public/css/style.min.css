@@ -6679,14 +6679,11 @@ opacity: 0;
 }
 
 .specifications__download{
+    display: none;
     padding-bottom: 30px;
     text-transform: uppercase;
 }
 
-.specifications__download:nth-child(1){
-    display: none;
-}
-
-.specifications__download:nth-child(2){
-    display: none;
+.specifications__download.active{
+    display: block !important;
 }

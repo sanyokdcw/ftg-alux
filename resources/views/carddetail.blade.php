@@ -127,7 +127,7 @@
         {!!$product->documentation!!}
     </div>
 
-    <a class="specifications__download" href="#">скачать pdf</a>
+    <a class="specifications__download" id="download_pdf" href="#">скачать pdf</a>
 
   </div>
 </section>
