@@ -109,7 +109,7 @@
     <div class="specifications__top-item" id="Link2"  onclick="changeTab(2)" style="cursor:pointer">
       Характеристики
     </div>
-    <div class="specifications__top-item" id="Link3"  onclick="changeTab(3) addpdf()" style="cursor:pointer">
+    <div class="specifications__top-item" id="Link3"  onclick="changeTab(3)" onclick="addpdf()" style="cursor:pointer">
       Документация
     </div>
   </div>
