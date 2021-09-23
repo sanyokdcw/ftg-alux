@@ -104,10 +104,10 @@
 <section class="specifications">
   <div class="specifications__top">
     <div class="specifications__top-item" id="Link1"  onclick="changeTab(1)" style="cursor: pointer; color: rgb(120, 185, 235);">
-      Описание
+      <div onclick="remPdf()" >Описание</div>
     </div>
     <div class="specifications__top-item" id="Link2"  onclick="changeTab(2)" style="cursor:pointer">
-      Характеристики
+      <div onclick="remPdf()" >Характеристики</div>
     </div>
     <div class="specifications__top-item" id="Link3"  onclick="changeTab(3)" style="cursor:pointer">
       <div onclick="addPdf()" >Документация</div>
