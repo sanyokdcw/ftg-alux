@@ -110,7 +110,7 @@
       Характеристики
     </div>
     <div class="specifications__top-item" id="Link3"  onclick="changeTab(3)" style="cursor:pointer">
-      Документация
+      <div>Документация</div>
     </div>
   </div>
   <div class="specifications__bottom" style="word-wrap: break-word !important;">
