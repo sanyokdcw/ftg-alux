@@ -110,7 +110,7 @@
       Характеристики
     </div>
     <div class="specifications__top-item" id="Link3"  onclick="changeTab(3)" style="cursor:pointer">
-      <div>Документация</div>
+      <div id="addPdf">Документация</div>
     </div>
   </div>
   <div class="specifications__bottom" style="word-wrap: break-word !important;">
@@ -127,7 +127,7 @@
         {!!$product->documentation!!}
     </div>
 
-    <a class="specifications__download" href="#">скачать pdf</a>
+    <a class="specifications__download" id="downloadPdf" href="#">скачать pdf</a>
 
   </div>
 </section>
