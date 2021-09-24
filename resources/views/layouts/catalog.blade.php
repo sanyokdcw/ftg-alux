@@ -217,7 +217,8 @@
                 <div class="sitebar__drowdown-title">
                     <img src="../images/product-icon.png" alt=""> <span>{{ __('index.catalog') }}</span>
                 </div>
-                <div class="sitebar__fixed">
+                <div class="sitebar__fixed
+                ">
                     <div class="sitebar__fixed-close">
                         <div class="sitebar__fixed-close_item"></div>
                         <div class="sitebar__fixed-close_item"></div>

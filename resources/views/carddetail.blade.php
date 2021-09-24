@@ -12,6 +12,7 @@
 @endphp
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">каталог</div>
   @if($product->subcategory_id != null)
     <div class="url__text"><a href="/subcategory/{{ App\Models\Subcategory::find($product->subcategory_id)->id }}">{{ strip_tags(App\Models\Subcategory::find($product->subcategory_id)->name) }}</a></div>
   @elseif($product->category_id != null)
@@ -104,13 +105,13 @@
 <section class="specifications">
   <div class="specifications__top">
     <div class="specifications__top-item" id="Link1"  onclick="changeTab(1)" style="cursor: pointer; color: rgb(120, 185, 235);">
-      {{-- <div onclick="remPdf()" ></div> --}}Описание
+      <div onclick="remPdf()" >Описание</div>
     </div>
     <div class="specifications__top-item" id="Link2"  onclick="changeTab(2)" style="cursor:pointer">
-      {{-- <div onclick="remPdf()" ></div> --}}Характеристики
+      <div onclick="remPdf()" >Характеристики</div>
     </div>
     <div class="specifications__top-item" id="Link3"  onclick="changeTab(3)" style="cursor:pointer">
-      {{-- <div onclick="addPdf()" ></div> --}}Документация
+      <div onclick="addPdf()" >Документация</div>
     </div>
   </div>
   <div class="specifications__bottom" style="word-wrap: break-word !important;">
