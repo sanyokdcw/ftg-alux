@@ -128,7 +128,7 @@
         {!!$product->documentation!!}
     </div>
 
-    @dd($product->document)
+    {{-- @dd($product->document) --}}
     @if (!$product->document)
       <a class="specifications__download" id="downloadPdf" href="#">Скачать pdf</a>
     @else
