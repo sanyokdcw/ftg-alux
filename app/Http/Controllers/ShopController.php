@@ -77,7 +77,6 @@ class ShopController extends Controller
 
     public function card_detail($id){
         if(session()->has('locale')) {
-
             $locale = session('locale');
             App::setLocale($locale);
         }
