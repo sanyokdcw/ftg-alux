@@ -128,12 +128,12 @@
         {!!$product->documentation!!}
     </div>
 
-    @if ($product->document == null)
+    @if (!$product->document)
       <a class="specifications__download" id="downloadPdf" href="#">Скачать pdf</a>
     @else
       <a class="specifications__download" id="downloadPdf" href="/storage/{{json_decode($product->document)[0]->download_link}}">Скачать pdf</a>
     @endif
-
+  
   </div>
 </section>
 
