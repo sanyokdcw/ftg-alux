@@ -131,7 +131,7 @@
     @if ($product->document == null)
       <a class="specifications__download" id="downloadPdf" href="#">Скачать pdf</a>
     @else
-      <a class="specifications__download" id="downloadPdf" href="/storage/{{json_decode($product->document)[0]->download_link}}">Скачать pdf</a>
+      <a class="specifications__download" id="downloadPdf" href="{{ $product->document)[0]->download_link ? '/storage/'.json_decode($product->document)[0]->download_link : '#' }}">Скачать pdf</a>
     @endif
 
   </div>
