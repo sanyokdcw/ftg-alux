@@ -128,7 +128,7 @@
         {!!$product->documentation!!}
     </div>
 
-    {{-- <a class="specifications__download" id="downloadPdf" href="/storage/{{json_decode($product->document)[0]->download_link}}">Скачать pdf</a> --}}
+    <a class="specifications__download" id="downloadPdf" href="/storage/{{json_decode($product->document)[0]->download_link}}">Скачать pdf</a>
 
   </div>
 </section>
