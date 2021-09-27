@@ -128,7 +128,7 @@
         {!!$product->documentation!!}
     </div>
 
-    {{-- @dd(json_decode($product->document)->download_link) --}}
+    @dd(json_decode($product->document))
     @if (!$product->document)
       <a class="specifications__download" id="downloadPdf" href="#">Скачать pdf</a>
     @else
