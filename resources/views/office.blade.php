@@ -8,7 +8,7 @@
 
 <section class="url">
   <div class="url__text">{{ __('index.main')}}</div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
   <div class="url__text">Личный кабинет</div>
 </section>
 

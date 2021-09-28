@@ -86,7 +86,7 @@
           @csrf
           <input type="hidden" name="quantity" id="quantity" value="1">
           <input type="hidden" name="product_id" value="{{ $product->id }}">
-          <button class="card-detail__wrapper-right_btn" type="submit">заказать</button>
+          <button class="card-detail__wrapper-right_btn" type="submit">Заказать</button>
         </form>
       </div>
     <form action="/consultation" method="POST" id="number-form">
