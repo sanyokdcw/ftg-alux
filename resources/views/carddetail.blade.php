@@ -129,9 +129,7 @@
     </div>
       {{-- @dd(json_decode($product->document) == null) --}}
       @if(json_decode($product->document) != null)
-        <a class="specifications__download" id="downloadPdf" href="/storage/{{ json_decode($product->document)[0]->download_link }}">Скачать pdf</a>
-      @else
-        <a class="specifications__download" id="downloadPdf" href="/#">Скачать pdf</a>
+        <a class="specifications__download" id="downloadPdf" href="/storage/{{ json_decode($product->document)[0]->download_link }}">Просмотреть документ</a>
       @endif
   </div>
 </section>
