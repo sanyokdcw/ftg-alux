@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="../css/style.min.css" />
     <link rel="icon" href="/favicon.png" type="image/png">
 </head>
-
+<style>
+    body {
+        background-color: {{ setting('site.background') ?? 'white' }};
+    }
+</style>
 <body>
     <div class="modal-wrapper form__close" id="modal-wrapper">
     </div>
