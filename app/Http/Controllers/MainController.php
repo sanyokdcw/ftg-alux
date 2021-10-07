@@ -21,6 +21,8 @@ use App\Models\ContactUs;
 use App;
 use App\Blog;
 use App\Models\HomepageBanner;
+use App\Models\Banner;
+use App\Models\BannerImage;
 
 class MainController extends Controller
 {
@@ -34,10 +36,12 @@ class MainController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-
+        $banner = Banner::first()->translate(session('locale'));
+        $banner_images = BannerImage::all();
         return view('index', [
             'c' => AboutCompany::first()->translate(session('locale')),
-            'banner' => HomepageBanner::first()->image ?? null,
+            'banner' => $banner,
+            'banner_images' => $banner_images,
             'advantages' => Advantage::all()->translate(session('locale')),
             'customers' => Customer::all()->take(5),
             'blogs' => Blog::orderBy('created_at', 'desc')->take(3)->get(),
