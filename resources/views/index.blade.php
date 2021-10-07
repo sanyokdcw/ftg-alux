@@ -6,7 +6,41 @@
   @include('layouts.header')
   @section('content')
   <section class="system">
-    <div class="system__bg" style="background-image: url({{ is_null($banner)? 'images/main-bg.jpg': asset("storage/$banner") }});"></div>
+  
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <style>
+      .slider-banne-wrapper{
+          
+          padding:30px;
+      }
+      .slick-slide {
+          /* height:400px; */
+          padding:10px;
+      }
+      .banner__name{
+          width: 100%;
+          text-align: center;
+      }
+      .slick-slide img{
+          width:100%;
+          max-width:350px;
+          margin: 0 auto;
+      }
+  </style>
+
+  
+
+    <div class="slider-banne-wrapper" style="background-color: red;">
+      <div class="slider-banner">
+          <div><img src="https://randomwordgenerator.com/img/picture-generator/52e0dd4b4a57a914f1dc8460962e33791c3ad6e04e50744172287edc9e4ec7_640.jpg" alt=""></div>
+          <div><img src="https://randomwordgenerator.com/img/picture-generator/fun-1009760_640.jpg" alt=""></div>
+          <div><img src="https://randomwordgenerator.com/img/picture-generator/gc0765d6b2d5d1d19ddff39eecc0b32158f69d940d91fd16536fb3049dffed5128c623e61d13d0de0fd010cdfe43e38b6_640.jpg" alt=""></div>
+          <div><img src="https://randomwordgenerator.com/img/picture-generator/yns-plt-6dJ4fApKPk8-unsplash.jpg" alt=""></div>
+      </div>
+      <h2 class="banner__name">Banner name </h2>
+  </div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
