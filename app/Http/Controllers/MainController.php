@@ -36,11 +36,11 @@ class MainController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        $banner = Banner::first()->translate(session('locale'));
+        $banner = Banner::first();
         $banner_images = BannerImage::all();
         return view('index', [
             'c' => AboutCompany::first()->translate(session('locale')),
-            'main_baner' => HomepageBanner::first(),
+            'main_banner' => HomepageBanner::first()->get(),
             'banner' => $banner,
             'banner_images' => $banner_images,
             'advantages' => Advantage::all()->translate(session('locale')),
