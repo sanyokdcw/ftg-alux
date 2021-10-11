@@ -5,9 +5,10 @@
   @include('layouts.catalog')
   @include('layouts.header')
   @section('content')
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <section class="system">
-    
-  <div class="system__bg" style="background-image: url({{ is_null($banner)? 'images/main-bg.jpg': asset("storage/$banner") }});"></div>
+    <div class="system__bg" style="background-image: url(/storage/{{ str_replace ( '\\', '/', $main_banner[0]->image) }})"></div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
