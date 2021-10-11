@@ -36,7 +36,7 @@ class MainController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        $banner = Banner::first()->translate(session('locale'));
+        $banner = Banner::first();
         $banner_images = BannerImage::all();
         return view('index', [
             'c' => AboutCompany::first()->translate(session('locale')),

@@ -6,39 +6,32 @@
   @include('layouts.header')
   @section('content')
   <section class="system">
-    <div class="slider-banne-wrapper" style="background-color: {{ $banner->background_color ?? 'white' }};">
-      <div class="slider-banner">
-        @foreach ($banner_images as $image)
-          <div><img src="/storage/{{ $image->image ?? null }}"></div>
-        @endforeach
-      </div>
-      <h2 class="banner__name" style="color: {{ $banner->font_color ?? 'grey' }};">{{ $banner->text ?? '' }}</h2>
-    </div>
+    
+  <div class="system__bg" style="background-image: url({{ is_null($banner)? 'images/main-bg.jpg': asset("storage/$banner") }});"></div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
-    @php
-  if(App\Models\Subcategory::where('category_id', $category->id)->where('available', 1) ->first())
-    $sub_link = '/subcategory/' .  App\Models\Subcategory::where('category_id', $category->id)->first()->id;
-  else 
-    $sub_link = '/category/'.$category->id;
-  @endphp
+    
   
-
+                    @php
+                    if(App\Models\Subcategory::where('category_id', $category->id)->where('available', 1) ->first())
+                      $sub_link = '/subcategory/' .  App\Models\Subcategory::where('category_id', $category->id)->first()->id;
+                    else 
+                      $sub_link = '/category/'.$category->id;
+                    @endphp
 
           <div class="system__wrapper-item_img">
             <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
           </div>
           <div class="system__wrapper-item_text">
             {!! $category->name !!}
-        </a>
+
+          </div>
       </div>
-        </div>
         @endforeach
-      </div>
         <div class="swiper-pagination" ></div>
-  
     </div>
+  </div>  
   </section>
   <section class="property">
     <div class="property__wrapper">
@@ -114,6 +107,6 @@
     </div>
     <div class="ftg__text">{!! $c->col1_3 !!}</div>
   </section>
-  
+
   @include('layouts.footer')
   </html>
