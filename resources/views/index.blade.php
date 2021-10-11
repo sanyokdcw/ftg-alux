@@ -6,14 +6,7 @@
   @include('layouts.header')
   @section('content')
   <section class="system">
-    <div class="slider-banne-wrapper" style="background-color: {{ $banner->background_color ?? 'white' }};">
-      <div class="slider-banner">
-        @foreach ($banner_images as $image)
-          <div><img src="/storage/{{ $image->image ?? null }}"></div>
-        @endforeach
-      </div>
-      <h2 class="banner__name" style="color: {{ $banner->font_color ?? 'grey' }};">{{ $banner->text ?? '' }}</h2>
-    </div>
+    
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
@@ -23,18 +16,15 @@
   else 
     $sub_link = '/category/'.$category->id;
   @endphp
-  
-
-
           <div class="system__wrapper-item_img">
             <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
           </div>
           <div class="system__wrapper-item_text">
             {!! $category->name !!}
-        </a>
+          </a>
       </div>
-        </div>
-        @endforeach
+      @endforeach
+    </div>
       </div>
         <div class="swiper-pagination" ></div>
   
