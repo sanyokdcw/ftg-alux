@@ -6,16 +6,13 @@
   @include('layouts.header')
   @section('content')
   <section class="system">
-    <div class="slider-banne-wrapper" style="background-color: wheat;">
+    <div class="slider-banne-wrapper" style="background-color: {{ $banner->background_color ?? 'white' }};">
       <div class="slider-banner">
-          <div><img src="https://randomwordgenerator.com/img/picture-generator/52e0dd4b4a57a914f1dc8460962e33791c3ad6e04e50744172287edc9e4ec7_640.jpg" alt=""></div>
-          <div><img src="https://randomwordgenerator.com/img/picture-generator/fun-1009760_640.jpg" alt=""></div>
-          <div><img src="https://randomwordgenerator.com/img/picture-generator/gc0765d6b2d5d1d19ddff39eecc0b32158f69d940d91fd16536fb3049dffed5128c623e61d13d0de0fd010cdfe43e38b6_640.jpg" alt=""></div>
-          <div><img src="https://randomwordgenerator.com/img/picture-generator/yns-plt-6dJ4fApKPk8-unsplash.jpg" alt=""></div>
-          <div><img src="https://randomwordgenerator.com/img/picture-generator/yns-plt-6dJ4fApKPk8-unsplash.jpg" alt=""></div>
-          <div><img src="https://randomwordgenerator.com/img/picture-generator/yns-plt-6dJ4fApKPk8-unsplash.jpg" alt=""></div>
+        @foreach ($banner_images as $image)
+          <div><img src="/storage/{{ $image->image ?? null }}"></div>
+        @endforeach
       </div>
-      <h2 class="banner__name">Banner name </h2>
+      <h2 class="banner__name" style="color: {{ $banner->font_color ?? 'grey' }};">{{ $banner->text ?? '' }}</h2>
     </div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
