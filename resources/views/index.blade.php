@@ -17,7 +17,7 @@
                 $sub_link = '/category/'.$category->id;
             @endphp
             <div class="system__wrapper-item_img">
-              <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
+              <img src="/storage/{{ $category->image }}" class="system_img">
             </div>
             <div class="system__wrapper-item_text">{!! $category->name !!}
             </div>
@@ -26,7 +26,6 @@
         <div class="swiper-pagination" >
         </div>
       </div>
-    {{-- </div>   --}}
   </section>
   <section class="property">
     <div class="property__wrapper">
