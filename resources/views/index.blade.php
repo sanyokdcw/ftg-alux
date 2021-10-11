@@ -11,22 +11,22 @@
         <div class="swiper-wrapper">
           @foreach ($categories_menu as $category)
             @php
-            if(App\Models\Subcategory::where('category_id', $category->id)->where('available', 1) ->first())
-              $sub_link = '/subcategory/' .  App\Models\Subcategory::where('category_id', $category->id)->first()->id;
-            else 
-              $sub_link = '/category/'.$category->id;
+              if(App\Models\Subcategory::where('category_id', $category->id)->where('available', 1) ->first())
+                $sub_link = '/subcategory/' .  App\Models\Subcategory::where('category_id', $category->id)->first()->id;
+              else 
+                $sub_link = '/category/'.$category->id;
             @endphp
             <div class="system__wrapper-item_img">
               <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
             </div>
-            <div class="system__wrapper-item_text">
-            {!! $category->name !!}
+            <div class="system__wrapper-item_text">{!! $category->name !!}
             </div>
+          @endforeach
         </div>
-        @endforeach
-        <div class="swiper-pagination" ></div>
+        <div class="swiper-pagination" >
+        </div>
       </div>
-    </div>  
+    {{-- </div>   --}}
   </section>
   <section class="property">
     <div class="property__wrapper">
