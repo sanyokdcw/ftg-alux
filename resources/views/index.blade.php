@@ -7,9 +7,9 @@
   @section('content')
   <section class="system">
     <div class="system__bg" style="background-image: url(/storage/{{ str_replace ( '\\', '/', $main_banner[0]->image) }})"></div>
-    <div class="system__wrapper swiper-container">
-      <div class="swiper-wrapper">
-        @foreach ($categories_menu as $category)
+      <div class="system__wrapper swiper-container">
+        <div class="swiper-wrapper">
+          @foreach ($categories_menu as $category)
     
   
                     @php
@@ -19,18 +19,17 @@
                       $sub_link = '/category/'.$category->id;
                     @endphp
 
-          <div class="system__wrapper-item_img">
-            <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
-          </div>
-          <div class="system__wrapper-item_text">
+            <div class="system__wrapper-item_img">
+              <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
+            </div>
+            <div class="system__wrapper-item_text">
             {!! $category->name !!}
-
-          </div>
-      </div>
+            </div>
+        </div>
         @endforeach
         <div class="swiper-pagination" ></div>
-    </div>
-  </div>  
+      </div>
+    </div>  
   </section>
   <section class="property">
     <div class="property__wrapper">
