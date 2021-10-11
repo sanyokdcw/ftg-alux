@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <section class="system">
-    <div class="system__bg" style="background-image: url(/storage/{{ $main_banner }})"></div>
+    <div class="system__bg" style="background-image: url(/storage/{{ $main_banner->image }})"></div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
