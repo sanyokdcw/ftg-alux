@@ -5,27 +5,6 @@
   @include('layouts.catalog')
   @include('layouts.header')
   @section('content')
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <style>
-    .slider-banne-wrapper{
-        
-        padding:30px;
-    }
-    .slick-slide {
-        /* height:400px; */
-        padding:10px;
-    }
-    .banner__name{
-        width: 100%;
-        text-align: center;
-    }
-    .slick-slide img{
-        width:100%;
-        max-width:350px;
-        margin: 0 auto;
-    }
-</style>
   <section class="system">
     <div class="slider-banne-wrapper" style="background-color: wheat;">
       <div class="slider-banner">
@@ -48,17 +27,8 @@
     $sub_link = '/category/'.$category->id;
   @endphp
   
-  <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
-        <div class="system__wrapper-item swiper-slide">
-        @if(count($category->subcategories) > 0)
-          <div class="system__wrapper-hover">
-            @foreach ($category->subcategories as $subcategory)
-                <a href="/subcategory/{{ $subcategory->id }}">
-                <span>{{ $subcategory->name }}</span>
-                </a>
-             @endforeach
-          </div>
-          @endif
+
+
           <div class="system__wrapper-item_img">
             <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
           </div>
@@ -148,48 +118,5 @@
     <div class="ftg__text">{!! $c->col1_3 !!}</div>
   </section>
   
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <script>
-        $(".slider-banner").slick({
-            // dots:false,
-            adaptiveHeight: true,
-            // prevArrow: false,
-            //  nextArrow: false,
-            slidesToShow:4,
-            responsive: [
-                    {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        infinite: true,
-                    }
-                    },
-                    {
-                    breakpoint: 770,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                    },
-                    {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                    },
-                    {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                    } 
-            ]
-        })
-    </script>
   @include('layouts.footer')
   </html>
