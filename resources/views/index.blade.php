@@ -27,7 +27,7 @@
     }
 </style>
   <section class="system">
-    <div class="system__bg" style="background-image: url({{ is_null($banner)? 'images/main-bg.jpg': asset("storage/$banner") }});"></div>
+    <div class="system__bg" style="background-image: url(/storage/{{  str_replace ( '\\', '/', $main_baner->image) }});"></div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
