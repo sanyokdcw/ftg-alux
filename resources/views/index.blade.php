@@ -6,7 +6,14 @@
   @include('layouts.header')
   @section('content')
   <section class="system">
-    <div class="system__bg" style="background-image: url(/storage/{{  str_replace ( '\\', '/', $main_baner->image) }});"></div>
+    <div class="slider-banne-wrapper" style="background-color: {{ $banner->background_color ?? 'white' }};">
+      <div class="slider-banner">
+        @foreach ($banner_images as $image)
+          <div><img src="/storage/{{ $image->image ?? null }}"></div>
+        @endforeach
+      </div>
+      <h2 class="banner__name" style="color: {{ $banner->font_color ?? 'grey' }};">{{ $banner->text ?? '' }}</h2>
+    </div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
@@ -17,17 +24,8 @@
     $sub_link = '/category/'.$category->id;
   @endphp
   
-  <a href="{{ $sub_link }}" style="display:flex; flex-direction: column">
-        <div class="system__wrapper-item swiper-slide">
-        @if(count($category->subcategories) > 0)
-          <div class="system__wrapper-hover">
-            @foreach ($category->subcategories as $subcategory)
-                <a href="/subcategory/{{ $subcategory->id }}">
-                <span>{{ $subcategory->name }}</span>
-                </a>
-             @endforeach
-          </div>
-          @endif
+
+
           <div class="system__wrapper-item_img">
             <img src="/storage/{{ $category->image }}" class="system_img"  alt="">
           </div>
@@ -36,7 +34,11 @@
         </a>
       </div>
         </div>
+        @endforeach
       </div>
+        <div class="swiper-pagination" ></div>
+  
+    </div>
   </section>
   <section class="property">
     <div class="property__wrapper">
@@ -112,6 +114,6 @@
     </div>
     <div class="ftg__text">{!! $c->col1_3 !!}</div>
   </section>
-
+  
   @include('layouts.footer')
   </html>
