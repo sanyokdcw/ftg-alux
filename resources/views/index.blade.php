@@ -27,7 +27,7 @@
     }
 </style>
   <section class="system">
-    <div class="system__bg" style="background-image: url(/storage/{{ $main_banner->image }})"></div>
+    <div class="system__bg" style="background-image: url(/storage/{{ $main_banner }})"></div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)
