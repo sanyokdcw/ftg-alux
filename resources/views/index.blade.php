@@ -27,14 +27,7 @@
     }
 </style>
   <section class="system">
-    <div class="slider-banne-wrapper" style="background-color: {{ $banner->background_color ?? 'white' }};">
-      <div class="slider-banner">
-        @foreach ($banner_images as $image)
-          <div><img src="/storage/{{ $image->image ?? null }}"></div>
-        @endforeach
-      </div>
-      <h2 class="banner__name" style="color: {{ $banner->font_color ?? 'grey' }};">{{ $banner->text ?? '' }}</h2>
-    </div>
+    <div class="system__bg" style="background-image: url({{ is_null($banner)? 'images/main-bg.jpg': asset("storage/$banner") }});"></div>
     <div class="system__wrapper swiper-container">
       <div class="swiper-wrapper">
         @foreach ($categories_menu as $category)

@@ -40,6 +40,7 @@ class MainController extends Controller
         $banner_images = BannerImage::all();
         return view('index', [
             'c' => AboutCompany::first()->translate(session('locale')),
+            'main_baner' => HomepageBanner::first(),
             'banner' => $banner,
             'banner_images' => $banner_images,
             'advantages' => Advantage::all()->translate(session('locale')),
