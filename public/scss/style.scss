@@ -386,7 +386,7 @@ button {
 }
 
 .system {
-    margin-top: 55px;
+    margin-top: 45px;
     .swiper-wrapper {
         padding-bottom: 70px;
     }
@@ -3159,6 +3159,7 @@ button {
     }
     .header__button {
         display: flex;
+        padding-right:8px;
     }
     .system__wrapper-item {
         width: 270px;
@@ -3917,7 +3918,9 @@ button {
         width: 100%;
     }
     .system__bg {
-        height: 275px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 380px;
     }
     .sitebar__logo img {
         width: 140px;
