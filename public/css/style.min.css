@@ -1185,10 +1185,8 @@ button {
 }
 .system__bg {
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 165px !important;
-    min-height: 105px !important;
-    FONT-WEIGHT: 100;
+    background-size: 100%;
+    height: 380px;
 }
 .system__wrapper {
     margin-top: 70px;
