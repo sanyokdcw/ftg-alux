@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
 use App\Models\Advantage;
@@ -26,17 +27,17 @@ use App\Models\BannerImage;
 
 class MainController extends Controller
 {
-    public function index(){
-        if(session()->has('locale')) {
+    public function index()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        $banner = Banner::first()->translate(session('locale'));
+        $banner = Banner::first();
         $banner_images = BannerImage::all();
         return view('index', [
             'c' => AboutCompany::first()->translate(session('locale')),
@@ -50,13 +51,13 @@ class MainController extends Controller
         ]);
     }
 
-    public function company(){
-        if(session()->has('locale')) {
+    public function company()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
@@ -64,16 +65,16 @@ class MainController extends Controller
         return view('company', [
             'c' => AboutCompany::first()->translate(session('locale')),
             'advantages' => Advantage::all()->translate(session('locale')),
-            'certificates'=> Certificate::all()->translate(session('locale'))
+            'certificates' => Certificate::all()->translate(session('locale'))
         ]);
     }
-    public function delivery(){
-        if(session()->has('locale')) {
+    public function delivery()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
@@ -83,48 +84,48 @@ class MainController extends Controller
             'payments' => Payment::all()->translate(session('locale'))
         ]);
     }
-    public function partners(){
-        if(session()->has('locale')) {
+    public function partners()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
 
         return view('partner', [
-            'cards'=>PartnerCard::all()->translate(session('locale')),
-            'texts'=>PartnerText::all()->translate(session('locale'))
-    ]);
+            'cards' => PartnerCard::all()->translate(session('locale')),
+            'texts' => PartnerText::all()->translate(session('locale'))
+        ]);
     }
 
-    public function team(){
-        if(session()->has('locale')) {
+    public function team()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
 
         $positions = Position::all();
-        foreach($positions as $position){
+        foreach ($positions as $position) {
             $position->employees = Employee::where('position_id', $position->id)->get()->translate(session('locale'));
         }
         return view('team', compact('positions'));
     }
-    
-    public function blog(){
-        if(session()->has('locale')) {
+
+    public function blog()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
@@ -132,70 +133,70 @@ class MainController extends Controller
         return view('blog', ['blogs' => Blog::all()->sortByDesc('created_at')->translate(session('locale'))]);
     }
 
-    public function blog_show($id) {
-        if(session()->has('locale')) {
+    public function blog_show($id)
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
 
-        if(Blog::find($id + 1) == null) {
+        if (Blog::find($id + 1) == null) {
             $next_id = Blog::first()->id;
-        }
-        else {
+        } else {
             $next_id = Blog::find($id + 1)->id;
         }
-        return view('blog-show', ['blog' => Blog::find($id)->translate(session('locale')),
-        'products' => Product::where('available', 1)->inRandomOrder()->take(3)->get()->translate(session('locale')),
-        'next_id' => $next_id
+        return view('blog-show', [
+            'blog' => Blog::find($id)->translate(session('locale')),
+            'products' => Product::where('available', 1)->inRandomOrder()->take(3)->get()->translate(session('locale')),
+            'next_id' => $next_id
         ]);
     }
 
-    public function guarange() {
-        if(session()->has('locale')) {
+    public function guarange()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
 
-        return view('guarange', ['guarantees'=>Guarantee::all()->translate(session('locale'))]);
+        return view('guarange', ['guarantees' => Guarantee::all()->translate(session('locale'))]);
     }
 
-    public function projects(){
-        if(session()->has('locale')) {
+    public function projects()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
 
         $projects = Project::orderby('created_at', 'desc')->get()->translate(session('locale'));
-        foreach($projects as $project){
+        foreach ($projects as $project) {
             $deadline = explode(" ", $project->deadline);
             $project->deadline = $deadline;
         }
-        
+
         return view('project', ['projects' => $projects]);
     }
 
-    public function pageproject($id){
-        if(session()->has('locale')) {
+    public function pageproject($id)
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
@@ -204,45 +205,48 @@ class MainController extends Controller
 
         $deadline = explode(" ", $project->deadline);
         $project->deadline = $deadline;
-                
-        return view('pageproject', ['project'=> $project]);
+
+        return view('pageproject', ['project' => $project]);
     }
 
 
-    public function calculator(){
-        if(session()->has('locale')) {
+    public function calculator()
+    {
+        if (session()->has('locale')) {
 
             $locale = session('locale');
             App::setLocale($locale);
-        }
-        else {
+        } else {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        
+
         return view('calc');
     }
 
-    public function calculation(Request $request){
+    public function calculation(Request $request)
+    {
     }
 
-    public function callback(Request $request){
+    public function callback(Request $request)
+    {
         ContactUs::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'question'=>$request->question,
-            'type'=>'Обратный звонок',
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'question' => $request->question,
+            'type' => 'Обратный звонок',
         ]);
-        return redirect()->back()->with(['contact'=> 'contact']);
+        return redirect()->back()->with(['contact' => 'contact']);
     }
 
-    public function consultation(Request $request){
+    public function consultation(Request $request)
+    {
         // dd($request->all());
         ContactUs::create([
-            'phone'=>$request->phone,
-            'type'=>'консультация',
+            'phone' => $request->phone,
+            'type' => 'консультация',
         ]);
-        return redirect()->back()->with(['contact'=> 'contact']);
+        return redirect()->back()->with(['contact' => 'contact']);
     }
 }
