@@ -6434,6 +6434,10 @@ input[type="number"] {
   transition: 0.3s;
 }
 @media (min-width: 1250px) and (max-width: 1400px) {
+  .system__wrapper .swiper-wrapper {
+    margin-top: 40px;
+  }
+
   .news__wrapper-item_next {
     padding-right: 0;
   }
