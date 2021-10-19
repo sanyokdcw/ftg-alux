@@ -5545,6 +5545,12 @@ button {
     height: 45px;
   }
 }
+@media (max-width: 420px) {
+  .system__bg img {
+    height: 125px !important;
+    object-fit: cover !important;
+  }
+}
 @media (max-width: 400px) {
   .sitebar__drowdown-item,
   .sitebar__btn {
@@ -5648,6 +5654,24 @@ button {
   }
   .cart__wrapper-right_input input {
     font-size: 12px;
+  }
+}
+@media (max-width: 375px) {
+  .system__bg img {
+    height: 115px !important;
+    object-fit: cover !important;
+  }
+}
+@media (max-width: 360px) {
+  .system__bg img {
+    height: 110px !important;
+    object-fit: cover !important;
+  }
+}
+@media (max-width: 320px) {
+  .system__bg img {
+    height: 97px !important;
+    object-fit: cover !important;
   }
 }
 .sitebar__fixed-close {
