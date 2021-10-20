@@ -6830,3 +6830,13 @@ input[type="number"] {
 .header__button {
   padding-right: 8px;
 }
+@media(max-width:768px) {
+  .pc-banner {
+    display: none;
+  }
+}
+@media(min-width:769px) {
+  .mobile-banner {
+    display: none;
+  }
+}

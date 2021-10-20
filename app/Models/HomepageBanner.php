@@ -9,5 +9,5 @@ class HomepageBanner extends Model
 {
     use HasFactory;
     protected $table = 'homepage_banner';
-    protected $fillable = ['image'];
+    protected $fillable = ['image', 'mobile'];
 }

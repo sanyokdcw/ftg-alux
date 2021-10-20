@@ -8,8 +8,11 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 <section class="system">
-    <div class="system__bg">
-        <img src="/storage/{{$main_banner[0]->image}}" style="width:100%; height:auto;" />
+    <div class="system__bg pc-banner">
+        <img src="/storage/{{$main_banner->image}}" style="width:100%; height:auto;" />
+    </div>
+    <div class="system__bg mobile-banner">
+        <img src="/storage/{{$mobile_banner->image}}" style="width:100%; height:auto;" />
     </div>
     <div class="system__wrapper swiper-container">
         <div class="swiper-wrapper">
