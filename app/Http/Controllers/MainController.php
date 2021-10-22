@@ -42,7 +42,8 @@ class MainController extends Controller
         $banner_images = BannerImage::all();
         return view('index', [
             'c' => AboutCompany::first()->translate(session('locale')),
-            'main_banner' => HomepageBanner::first()->get(),
+            'main_banner' => HomepageBanner::find(1),
+            'mobile_banner' => HomepageBanner::find(2),
             'banner' => $banner,
             'banner_images' => $banner_images,
             'advantages' => Advantage::all()->translate(session('locale')),
