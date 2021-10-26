@@ -5,7 +5,7 @@
     <meta name="msapplication-TileColor" content="#112468">
     <meta name="theme-color" content="#112468">
     <title>@yield('title')</title>
-	<meta name="description" content="Муниципальная и промышленная водоподготовка, очистка промышленных стоков, проектирование, монтаж, пусконаловодочные работы и сервис. +77082150492, +7 727 317 36 52,  г. Алматы, ул. Кабдолова дом 16, офис 12 (4-ый этаж), info@ftgco.kz">
+	<meta name="description" content="Муниципальная и промышленная водоподготовка, очистка промышленных стоков, проектирование, монтаж, пусконаладочные работы и сервис. +77082150492, +7 727 317 36 52,  г. Алматы, ул. Кабдолова дом 16, офис 12 (4-ый этаж), info@ftgco.kz">
     <link href="../css/hamburgers.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.min.css" />
     <link rel="icon" href="/favicon.png" type="image/png">
