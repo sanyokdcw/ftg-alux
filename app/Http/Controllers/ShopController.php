@@ -24,7 +24,7 @@ use App\Http\Requests\GuestOrderRequest;
 class ShopController extends Controller
 {
 
-    public function card($id, Request $request){
+    public function card($slug, Request $request){
         if(session()->has('locale')) {
             $locale = session('locale');
             App::setLocale($locale);
@@ -34,7 +34,7 @@ class ShopController extends Controller
             App::setLocale('ru');
         }
 
-        $subcategory = Subcategory::find($id)->translate(session('locale'));
+        $subcategory = Subcategory::where('slug', $slug)->first()->translate(session('locale'));
         $products = Product::where('available', 1)->where('subcategory_id', $subcategory->id)->orderBy('price_kz', 'asc')->get()->translate(session('locale'));
         if($request->has('sort')) {
             $sort = $request->sort;
@@ -49,7 +49,7 @@ class ShopController extends Controller
         return view('card', compact('subcategory', 'products', 'sort'));
     }
 
-    public function category_show($id, Request $request){
+    public function category_show($slug, Request $request){
         if(session()->has('locale')) {
             $locale = session('locale');
             App::setLocale($locale);
@@ -59,7 +59,7 @@ class ShopController extends Controller
             App::setLocale('ru');
         }
 
-        $category = Category::find($id);
+        $category = Category::where('slug', $slug)->first();
         $products = Product::where('available', 1)->where('category_id', $category->id)->orderBy('price_kz', 'asc')->get()->translate(session('locale'));
         if($request->has('sort')) {
             $sort = $request->sort;
@@ -75,7 +75,7 @@ class ShopController extends Controller
     }
 
 
-    public function card_detail($id){
+    public function card_detail($slug){
         if(session()->has('locale')) {
             $locale = session('locale');
             App::setLocale($locale);
@@ -84,8 +84,8 @@ class ShopController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        $product = Product::find($id)->translate(session('locale'));
-        $products = Product::where('available', 1)->where('id', '!=', $id)->inRandomOrder()->take(3)->get()->translate(session('locale'));
+        $product = Product::where('slug', $slug)->first()->translate(session('locale'));
+        $products = Product::where('available', 1)->where('slug', '!=', $slug)->inRandomOrder()->take(3)->get()->translate(session('locale'));
         return view('carddetail', compact('product', 'products'));
     }
 

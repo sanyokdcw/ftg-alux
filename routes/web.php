@@ -27,7 +27,7 @@ Route::get('/setlocale/{locale}', function($locale) {
 
 Route::middleware('checkCurrencies')->group(function () {
     Route::get('/cart', [ShopController::class, 'cart']);
-    Route::get('/category/{id}', [ShopController::class, 'category_show']);
+    Route::get('/category/{slug}', [ShopController::class, 'category_show']);
 
     Route::get('/contact', function () {
         if (session()->has('locale')) {
@@ -78,10 +78,10 @@ Route::middleware('checkCurrencies')->group(function () {
 
     Route::post('/consultation', [MainController::class, 'consultation']);
 
-    Route::get('/project/{id}', [MainController::class, 'pageproject']);
+    Route::get('/project/{slug}', [MainController::class, 'pageproject']);
 
     Route::get('/blog', [MainController::class, 'blog']);
-    Route::get('/blog/{id}', [MainController::class, 'blog_show']);
+    Route::get('/blog/{slug}', [MainController::class, 'blog_show']);
 
     Route::get('/', [MainController::class, 'index']);
 
@@ -93,9 +93,9 @@ Route::middleware('checkCurrencies')->group(function () {
 
     Route::get('/team', [MainController::class, 'team']);
 
-    Route::get('/subcategory/{id}', [ShopController::class, 'card']);
+    Route::get('/subcategory/{slug}', [ShopController::class, 'card']);
 
-    Route::get('/product/{id}', [ShopController::class, 'card_detail']);
+    Route::get('/product/{slug}', [ShopController::class, 'card_detail']);
 
     Route::post('/cart-add', [ShopController::class, 'cart_add']);
     Route::post('/cart-remove', [ShopController::class, 'cart_remove']);

@@ -60,7 +60,7 @@
   <div class="next__text">
     Следующая статья
   </div>
-  <a href="/blog/{{ $next_id }}">
+  <a href="/blog/{{ $next_id->slug }}">
     <img src="/images/Pajination.jpg" alt="">
   </a>
 </div>

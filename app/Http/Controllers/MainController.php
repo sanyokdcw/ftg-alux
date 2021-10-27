@@ -135,7 +135,7 @@ class MainController extends Controller
         return view('blog', ['blogs' => Blog::all()->sortByDesc('created_at')->translate(session('locale'))]);
     }
 
-    public function blog_show($id)
+    public function blog_show($slug)
     {
         if (session()->has('locale')) {
 
@@ -145,14 +145,14 @@ class MainController extends Controller
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-
-        if (Blog::find($id + 1) == null) {
-            $next_id = Blog::first()->id;
+        $blog = Blog::where('slug', $slug)->first()->translate(session('locale'));
+        if (Blog::find($blog->id + 1) == null) {
+            $next_id = Blog::first();
         } else {
-            $next_id = Blog::find($id + 1)->id;
+            $next_id = Blog::find($blog->id + 1);
         }
         return view('blog-show', [
-            'blog' => Blog::find($id)->translate(session('locale')),
+            'blog' => $blog,
             'products' => Product::where('available', 1)->inRandomOrder()->take(3)->get()->translate(session('locale')),
             'next_id' => $next_id
         ]);
@@ -192,7 +192,7 @@ class MainController extends Controller
         return view('project', ['projects' => $projects]);
     }
 
-    public function pageproject($id)
+    public function pageproject($slug)
     {
         if (session()->has('locale')) {
 
@@ -203,7 +203,7 @@ class MainController extends Controller
             App::setLocale('ru');
         }
 
-        $project = Project::find($id)->translate(session('locale'));
+        $project = Project::where('slug', $slug)->first()->translate(session('locale'));
 
         $deadline = explode(" ", $project->deadline);
         $project->deadline = $deadline;
