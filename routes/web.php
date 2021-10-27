@@ -8,6 +8,8 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
+
+use Spatie\Sitemap\SitemapGenerator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -158,5 +160,13 @@ Route::middleware('checkCurrencies')->group(function () {
         return view('dashboard');
     })->middleware(['auth'])->name('dashboard');
 });
+
+// Route::get('sitemap', function(){
+//     SitemapGenerator::create('https://ftg.kz/')->writeToFile('sitemap.xml');
+// });
+
+    Route::get('/sitemap', function() {
+        return view('.public.sitemap.xml');
+    });
 
 require __DIR__.'/auth.php';
