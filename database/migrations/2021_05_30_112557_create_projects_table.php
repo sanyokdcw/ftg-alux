@@ -24,6 +24,7 @@ class CreateProjectsTable extends Migration
             $table->string('price_rub');
             $table->string('price_uah');
             $table->string('price_kz');
+            $table->string('slug')->unique();
             $table->text('object_name');
             $table->text('task');
             $table->text('solution');

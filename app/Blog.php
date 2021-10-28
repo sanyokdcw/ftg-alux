@@ -9,5 +9,5 @@ class Blog extends Model
 {
     use Translatable;
     
-    protected $translatable = ['name', 'description', 'text'];
+    protected $translatable = ['name', 'description', 'text', 'slug'];
 }
