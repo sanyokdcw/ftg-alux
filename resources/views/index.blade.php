@@ -29,7 +29,7 @@
                     @if(count($category->subcategories) > 0)
                     <div class="system__wrapper-hover">
                         @foreach ($category->subcategories as $subcategory)
-                        <a href="/subcategory/{{ $subcategory->id }}">
+                        <a href="/subcategory/{{ $subcategory->slug }}">
                             <span>{{ $subcategory->name }}</span>
                         </a>
                         @endforeach
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="news__wrapper-item_button">
-                <a href="/blog/{{ $blog->id }}" class="news__wrapper-item_next">{{ __('index.read') }}</a>
+                <a href="/blog/{{ $blog->slug }}" class="news__wrapper-item_next">{{ __('index.read') }}</a>
                 <div class="news__wrapper-item_date">{{ $blog->created_at->format('d.m.Y') }}</div>
             </div>
         </div>

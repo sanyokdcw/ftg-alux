@@ -238,7 +238,7 @@
                                 @if ($category->subcategories->count() == 0)
 
                                     <div class="sitebar__drowdown-btn"
-                                        onclick="window.location.href='/category/{{ $category->id }}'">
+                                        onclick="window.location.href='/category/{{ $category->slug }}'">
 
                                         {!! $category->name !!}</div>
                                 @else
@@ -246,7 +246,7 @@
                                 @endif
                                 <div class="sitebar__drowdown-item_block">
                                     @foreach ($category->subcategories as $subcategory)
-                                        <a href="/subcategory/{{ $subcategory->id }}"
+                                        <a href="/subcategory/{{ $subcategory->slug }}"
                                             class="sitebar__drowdown-item_btn">
                                             <span>{{ $subcategory->name }}</span>
                                         </a>

@@ -127,7 +127,7 @@
           }
           @endphp
         <input type="hidden" name="products[]" value="{{ $product->id }}">
-        <a href="/product/{{$product->id}}" class="cart__wrapper-right_title title">
+        <a href="/product/{{$product->slug}}" class="cart__wrapper-right_title title">
           {{ $product->name }}
         </a>
         <div class="cart__wrapper-right_product">
@@ -248,7 +248,7 @@
             руб
         @endif
       </div>
-      <a class="card__wrapper-btn"  href="/product/{{ $p->id }}" style="color: #112468">{{__('index.more')}}</a>
+      <a class="card__wrapper-btn"  href="/product/{{ $p->slug }}" style="color: #112468">{{__('index.more')}}</a>
     </div>
 
     @endforeach

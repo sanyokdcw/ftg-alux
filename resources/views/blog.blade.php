@@ -25,7 +25,7 @@
           {!! $blog->description !!}
         </div>
         <div class="blog__button">
-          <a href="/blog/{{ $blog->id }}" class="blog__button-link">{{ __('index.read') }}</a>
+          <a href="/blog/{{ $blog->slug }}" class="blog__button-link">{{ __('index.read') }}</a>
           <div class="blog__button-time">{{ date('d.m.Y', strtotime($blog->created_at)) }}</div>
         </div>
       </div>

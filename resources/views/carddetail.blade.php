@@ -163,7 +163,7 @@
       @elseif($currency == 'RUB')
         <div class="card__wrapper-price"><span>{{ number_format($product->price_rub,0,","," ") }}</span> руб</div>
       @endif
-      <a href="/product/{{ $product->id }}" class="card__wrapper-btn">{{__('index.more')}}</a>
+      <a href="/product/{{ $product->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
     </div>
     @endforeach
   </div>
