@@ -19,7 +19,7 @@
             @foreach ($categories_menu as $category)
             @php
             if(App\Models\Subcategory::where('category_id', $category->id)->where('available', 1) ->first())
-            $sub_link = '/subcategory/' . App\Models\Subcategory::where('category_id', $category->id)->first()->id;
+            $sub_link = '/subcategory/' . App\Models\Subcategory::where('category_id', $category->id)->first()->slug;
             else
             $sub_link = '/category/'.$category->slug;
             @endphp
