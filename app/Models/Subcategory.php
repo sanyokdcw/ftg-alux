@@ -12,6 +12,7 @@ class Subcategory extends Model
 {
     use HasFactory;
     use Translatable;
+    protected $fillable = ['slug'];
     
     protected $translatable = ['name'];
     public function category(){

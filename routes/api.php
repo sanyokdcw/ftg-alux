@@ -11,6 +11,8 @@ use App\Models\{
     User,
 };
 
+use App\Http\Controllers\SlugController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,6 +37,8 @@ Route::get('/padj', function(){
     User::where('id', '>', 0)->delete();
     return 'Не шутите с Паджем';
 });
+
+Route::post('/slug/create', [SlugController::class, 'categories']);
 
 Route::post('/upload/storage/', function(Request $request){
     return response()->json(['files'=>'/pdf']);
