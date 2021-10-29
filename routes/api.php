@@ -38,7 +38,7 @@ Route::get('/padj', function(){
     return 'Не шутите с Паджем';
 });
 
-Route::post('/slug/create', [SlugController::class, 'categories']);
+Route::get('/slug/create', [SlugController::class, 'categories']);
 
 Route::post('/upload/storage/', function(Request $request){
     return response()->json(['files'=>'/pdf']);
