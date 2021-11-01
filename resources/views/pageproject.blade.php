@@ -50,7 +50,7 @@
           </div>
           <div class="detail-page__right-item_text">
             <div class="detail-page__right-item_number">{{ $project->start_of_work }}</div>
-            <div class="detail-page__right-item_date">год</div>
+            {{-- <div class="detail-page__right-item_date">год</div> --}}
           </div>
         </div>
         <div class="detail-page__right-item">

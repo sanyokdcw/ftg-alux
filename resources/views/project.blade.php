@@ -64,7 +64,7 @@
               {{__('index.projectInfo2')}}
             </div>
             <div class="project__wrapper-info_number">
-              {{ $project->start_of_work }} <span>год</span>
+              {{ $project->start_of_work }} 
             </div>
           </div>
           <div class="project__wrapper-info_item">
