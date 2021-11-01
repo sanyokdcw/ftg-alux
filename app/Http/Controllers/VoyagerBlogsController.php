@@ -12,7 +12,7 @@ use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
-class VoyagerCategoriesController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController{
+class VoyagerBlogsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController{
 
     public function update(Request $request, $id){
         $request->validate([

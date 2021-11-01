@@ -107,6 +107,7 @@ Route::middleware('checkCurrencies')->group(function () {
     Route::get('/calc', [MainController::class, 'calculator']);
     Route::post('/calculator/calculation', [MainController::class, 'calculation']);
 
+    Route::get('/test', [MainController::class, 'test']);
 
     Route::post('/request', [MailController::class, 'send']);
 
