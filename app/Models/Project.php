@@ -9,6 +9,7 @@ class Project extends Model
 {
     use HasFactory;
     use Translatable;
+    protected $fillable = ['slug'];
     
     protected $translatable = ['title', 'description', 'deadline', 'object_name', 'task', 'solution', 'result'];
     protected $casts = [

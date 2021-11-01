@@ -108,7 +108,7 @@
 <div class="project__wrapper-block_bg"></div>
         </div>
         <div class="blog__button">
-          <a href="/project/{{ $project->id }}" class="blog__button-link">{{__('index.read')}}</a>
+          <a href="/project/{{ $project->slug }}" class="blog__button-link">{{__('index.read')}}</a>
         </div>
       </div>
 

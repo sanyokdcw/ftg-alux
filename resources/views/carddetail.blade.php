@@ -14,9 +14,9 @@
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
   <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
   @if($product->subcategory_id != null)
-    <div class="url__text"><a href="/subcategory/{{ App\Models\Subcategory::find($product->subcategory_id)->id }}">{{ strip_tags(App\Models\Subcategory::find($product->subcategory_id)->name) }}</a></div>
+    <div class="url__text"><a href="/subcategory/{{ App\Models\Subcategory::find($product->subcategory_id)->slug }}">{{ strip_tags(App\Models\Subcategory::find($product->subcategory_id)->name) }}</a></div>
   @elseif($product->category_id != null)
-    <div class="url__text"><a href="/category/{{ App\Models\Category::find($product->category_id)->id }}">{{ strip_tags(App\Models\Category::find($product->category_id)->name) }}</a></div>
+    <div class="url__text"><a href="/category/{{ App\Models\Category::find($product->category_id)->slug }}">{{ strip_tags(App\Models\Category::find($product->category_id)->name) }}</a></div>
   @endif
   <div class="url__text">{{ $product->name }}</div>
 </section>
@@ -163,7 +163,7 @@
       @elseif($currency == 'RUB')
         <div class="card__wrapper-price"><span>{{ number_format($product->price_rub,0,","," ") }}</span> руб</div>
       @endif
-      <a href="/product/{{ $product->id }}" class="card__wrapper-btn">{{__('index.more')}}</a>
+      <a href="/product/{{ $product->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
     </div>
     @endforeach
   </div>

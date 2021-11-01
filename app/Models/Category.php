@@ -16,4 +16,6 @@ class Category extends Model
     use Translatable;
     
     protected $translatable = ['name'];
+
+    protected $fillable = ['slug'];
 }

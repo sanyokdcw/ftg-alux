@@ -140,7 +140,7 @@
 
             <div class="office__order-item_order">
               <div class="office__order-item_name">
-                <a href="/product/{{$product->id}}">
+                <a href="/product/{{$product->slug}}">
                   {{ \App\Models\Product::find($product->product_id)->name }} @if($product->quantity > 1)
                        - {{ $product->quantity }} ШТ
                   @endif
@@ -184,7 +184,7 @@
                 {{ number_format($p->price_ru) }}
                 </span> руб</div>
               @endif
-            <a href="/product/{{ $p->id }}" class="card__wrapper-btn">{{__('index.more')}}</a>
+            <a href="/product/{{ $p->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
           </div>
         @endforeach
       </div>

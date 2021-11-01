@@ -36,12 +36,12 @@
           <div class="dropdown-content">
             @if($sort == 'down')
             <p style="font-size: 14px;">
-              <a href="/category/{{ $category->id }}?sort=up">
+              <a href="/category/{{ $category->slug }}?sort=up">
                 По увеличению цены
             </a>
             @else
             <p style="font-size: 14px;">
-              <a href="/category/{{ $category->id }}?sort=down">
+              <a href="/category/{{ $category->slug }}?sort=down">
                 По уменьшению цены
             </a>
             @endif
@@ -52,7 +52,7 @@
     <div class="card__wrapper-bottom">
       @foreach ($products as $product)
       <div class="card__wrapper-item">
-        <a href="/product/{{ $product->id }}" class="card__wrapper-img" style="background-image: url(/storage/{{ $product->image }});"></a>
+        <a href="/product/{{ $product->slug }}" class="card__wrapper-img" style="background-image: url(/storage/{{ $product->image }});"></a>
         <div class="card__wrapper-text">
           {{ $product->name }}
         </div>
@@ -65,7 +65,7 @@
             {{ number_format($product->price_ru,0,","," ") }}</span> руб
           @endif
         </div>
-        <a href="/product/{{ $product->id }}" class="card__wrapper-btn">{{__('index.more')}}</a>
+        <a href="/product/{{ $product->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
       </div>
       @endforeach
     </div>

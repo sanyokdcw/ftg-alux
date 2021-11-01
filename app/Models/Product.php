@@ -12,5 +12,5 @@ class Product extends Model
 
     protected $translatable = ['name', 'existense', 'description', 'characteristics', 'documentation'];
 
-    protected $fillable = ['price_ru', 'price_uah'];
+    protected $fillable = ['price_ru', 'price_uah', 'slug'];
 }
