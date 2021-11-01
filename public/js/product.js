@@ -7,7 +7,7 @@ function changeTab(TabName, evt) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
-    console.log(TabName + 'link')
+    console.log(TabName + 'link' + evt)
 
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tab-content");

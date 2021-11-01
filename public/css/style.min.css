@@ -2064,7 +2064,7 @@ button {
   max-width: 742px;
 }
 .project__wrapper-block_bg {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -2775,7 +2775,7 @@ button {
   color: #112468;
   font-family: "MuseoSansCyrl-900";
   white-space: nowrap;
-  
+
 }
 .detail-page__right-item_date {
   font-size: 14px;
