@@ -251,4 +251,22 @@ class MainController extends Controller
         ]);
         return redirect()->back()->with(['contact' => 'contact']);
     }
+
+    public function test()
+    {
+        if (session()->has('locale')) {
+
+            $locale = session('locale');
+            App::setLocale($locale);
+        } else {
+            $locale = session(['locale' => 'ru']);
+            App::setLocale('ru');
+        }
+
+        $about = AboutCompany::first()->translate(session('locale'));
+
+        return view('test',compact(
+            'about'
+        ));
+    }
 }
