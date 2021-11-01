@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Database\Schema\SchemaManager;
@@ -16,8 +18,21 @@ class VoyagerCategoriesController extends \TCG\Voyager\Http\Controllers\VoyagerB
 
     public function update(Request $request, $id){
         $request->validate([
-            'slug' => 'required|string|unique:categories,slug'
+            'slug' => 'required|string'
         ]);
+
+        if($request->slug) {
+            $items = Category::where('slug', $request->slug)->get();
+    
+                foreach($items as $item) {
+                    if($item->id != $id){
+                        return redirect()->back()->with([
+                            'message' => 'Данная ссылка уже используется в объекте '.$item->name
+                        ]);
+                    }
+                }
+        }
+
         $slug = $this->getSlug($request);
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 

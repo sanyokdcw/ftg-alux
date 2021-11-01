@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subcategory;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Database\Schema\SchemaManager;
@@ -16,8 +18,21 @@ class VoyagerSubcategoriesController extends \TCG\Voyager\Http\Controllers\Voyag
 
     public function update(Request $request, $id){
         $request->validate([
-            'slug' => 'required|string|unique:subcategories,slug'
+            'slug' => 'required|string'
         ]);
+
+        if($request->slug) {
+            $items = Subcategory::where('slug', $request->slug)->get();
+    
+                foreach($items as $item) {
+                    if($item->id != $id){
+                        return redirect()->back()->with([
+                            'message' => 'Данная ссылка уже используется в объекте '.$item->name
+                        ]);
+                    }
+                }
+        }
+
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
