@@ -10,8 +10,8 @@ return [
     'rub' => 'rub',
     'more' => 'More',
 
-    'art' => 'Vendor Code',
-    'available' => 'Наличие',
+    'art' => 'Vendor',
+    'available' => 'Available',
 
     'order' => 'To order',
     'consultation' => 'Order a consultation',
