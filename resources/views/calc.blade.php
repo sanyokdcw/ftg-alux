@@ -7,19 +7,19 @@
     
     <section class="url">
         <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
-        <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
-        <div class="url__text">Калькулятор</div>
+        <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{__('blog-show.Catalog')}}</div>
+        <div class="url__text">{{__('calc.calc')}}</div>
     </section>
     <section class="blog">
     <form action="/request" method="POST">
     @csrf
-    <div class="blog__title subtitle">КАЛЬКУЛЯТОР ОБЪЕМА</div>
-    <div class="contact__wrapper-title" style="margin-bottom: 50px">ПОКАЗАТЕЛИ:</div>
+    <div class="blog__title subtitle">{{__('calc.volume')}}</div>
+    <div class="contact__wrapper-title" style="margin-bottom: 50px">{{__('calc.indicators')}}:</div>
     <section class="calc">
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    Дозировка товарного ингибитора (ваше значения):
+                    {{__('calc.dosage')}}
                 </div>
             </div>
             <div class="calc__right">
@@ -29,7 +29,7 @@
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    Расход воды в которую дозируется ингибитор (ваше значения), Q =
+                    {{__('calc.consumption')}}
                 </div>
             </div>
             <div class="calc__right">
@@ -39,7 +39,7 @@
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    Кількість товарного інгібатора, необхідне для потоку з витратою, Q:
+                    {{__('calc.quantity')}}
                 </div>
             </div>
             <div class="calc__right">
@@ -51,7 +51,7 @@
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    Объем реагентного бака с которого будет осуществляться дозирования (ваше значения):
+                    {{__('calc.reagent')}}
                 </div>
             </div>
             <div class="calc__right">
@@ -62,7 +62,7 @@
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    У баку готуємо розчин з розрахунку:
+                    {{__('calc.prepare')}}
                 </div>
             </div>
             <div class="calc__right">
@@ -76,7 +76,7 @@
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    Насос-дозатор OLB02-07 должен дозировать:
+                    {{__('calc.dose')}}
                 </div>
             </div>
             <div class="calc__right">
@@ -96,7 +96,7 @@
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    Через
+                    {{__('calc.accross')}}
                 </div>
             </div>
             <div class="calc__right">
@@ -106,7 +106,7 @@
         <div class="calc__row">
             <div class="calc__left">
                 <div class="calc__text">
-                    Ресурс растворимого бака составляет:
+                    {{__('calc.resource')}}
                 </div>
             </div>
             <div class="calc__right">

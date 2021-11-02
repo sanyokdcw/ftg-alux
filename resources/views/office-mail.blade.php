@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <div>Заявка на "ИЗМЕНИТЬ Email ИЛИ КОНТАКТНЫЙ НОМЕР"
-        <span style="display: block; color: #000000;">ФИО: {{ "{$data['name']} {$data['surname']} {$data['middle_name']}"  }};</span>
-        <span style="display: block; color: #000000;">Номер телефона: {{ $data['phone'] }};</span>
-        <span style="display: block; color: #000000;">Почта: {{ $data['email'] }};</span>
+    <div>{{__('calc.change')}}
+        <span style="display: block; color: #000000;"> {{__('calc.name')}}: {{ "{$data['name']} {$data['surname']} {$data['middle_name']}"  }};</span>
+        <span style="display: block; color: #000000;"> {{__('calc.number')}}: {{ $data['phone'] }};</span>
+        <span style="display: block; color: #000000;"> {{__('calc.email')}}: {{ $data['email'] }};</span>
     </div>
 </body>
 </html>

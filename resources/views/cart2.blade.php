@@ -12,40 +12,46 @@
 @endphp
 
 <section class="url">
-  <div class="url__text"><a href="/">Главная</a></div>
-  <div class="url__text">Корзина</div>
+  <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
+  <div class="url__text">{{__('index.basket')}}</div>
 </section>
 
 <section class="cart">
-  <div class="cart__title subtitle">КОРЗИНА</div>
+  <div class="cart__title subtitle">{{__('index.basket')}}</div>
   <div class="cart__wrapper">
     <div class="cart__wrapper-left">
-      <div class="cart__wrapper-left_title">ИНФОРМАЦИЯ ПОКУПАТЕЛЯ</div>
+      <div class="cart__wrapper-left_title">{{ __('card.info') }}</div>
       {{-- <button class="cart__wrapper-left_btn">Я новый покупатель</button> --}}
       <div class="cart__wrapper-form">
         <div class="cart__wrapper-form_input">
-          <input type="text" placeholder="Имя" value="{{ Auth::user()->name }}" required>
+          <input type="text" placeholder="{{ __('card.name') }}" value="{{ Auth::user()->name }}" required>
         </div>
         <div class="cart__wrapper-form_input">
-          <input type="text" placeholder="Фамилия" value="{{ Auth::user()->surname }}" required>
+          <input type="text" placeholder="{{ __('card.surname') }}" value="{{ Auth::user()->surname }}" required>
         </div>
         <div class="cart__wrapper-form_input">
-          <input type="phone" placeholder="Телефон" value="{{ Auth::user()->number }}" required >
+          <input type="phone" placeholder="{{ __('card.phone') }}" value="{{ Auth::user()->number }}" required >
         </div>
         <div class="cart__wrapper-form_input">
-          <input type="email" placeholder="Электронная почта" value="{{ Auth::user()->email }}" required>
+          <input type="email" placeholder="{{ __('card.email') }}" value="{{ Auth::user()->email }}" required>
         </div>
       </div>
-      <div class="cart__wrapper-left_title">СПОСОБ ДОСТАВКИ</div>
+      <div class="cart__wrapper-left_title">{{ __('card.delivery') }}</div>
       <div class="cart__wrapper-form">
-      <div class="cart__wrapper-left_select">
-          <select class="cart__wrapper-left_output">
-            <option value="">Город</option>
-            <option value="">Алматы</option>
-            <option value="">Алматы</option>
-            <option value="">Алматы</option>
-          </select>
-        </div>
+        @foreach ($deliveries as $delivery)
+          <div class="cart__wrapper-left_select">
+            <select name="delivery_{{ $loop->index }}" class="cart__wrapper-left_output" required>
+              <option value="{{ $delivery->name }}">{{ $delivery->name }}</option>
+              @foreach ($delivery->methods as $method)
+              <option value="{{ $method->name }}">{{ $method->name }}</option>
+              @endforeach
+            </select>
+              @error("delivery_{{ $loop->index }}")
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+          </div>
+        @endforeach
+      </div>
 
         <div class="cart__wrapper-left_select">
           <select class="cart__wrapper-left_output">

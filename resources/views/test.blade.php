@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>sry</title>
 </head>
 <body>
-    <h1>Test</h1>
+    <h1>100Gecs</h1>
     <br>
-    <h4>{{ $about->text }}</h4>
+    <h4>Этот Сайт делали три друга. Их зовут Саня, Рус и Амер :)</h4>
 </body>
 </html>

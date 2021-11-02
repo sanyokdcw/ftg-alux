@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <div>Заявка на "ОБРАТНЫЙ ЗВОНОК"
-        <span style="display: block; color: #000000;">ФИО: {{ $data['fullname'] }};</span>
-        <span style="display: block; color: #000000;">Номер телефона: {{ $data['phone'] }};</span>
-        <span style="display: block; color: #000000;">Почта: {{ $data['email'] }};</span>
-        <span style="display: block; color: #000000;">Вопрос: {{ $data['question'] }};</span>
+    <div>{{__('calc.callback')}}
+        <span style="display: block; color: #000000;">{{__('calc.name')}}: {{ $data['fullname'] }};</span>
+        <span style="display: block; color: #000000;">{{__('calc.phone')}}: {{ $data['phone'] }};</span>
+        <span style="display: block; color: #000000;">{{__('calc.email')}}: {{ $data['email'] }};</span>
+        <span style="display: block; color: #000000;">{{__('calc.question')}}: {{ $data['question'] }};</span>
     </div>
 </body>
 </html>

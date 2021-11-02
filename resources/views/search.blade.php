@@ -13,7 +13,7 @@
 
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog') }}</div>
   <div class="url__text">{{__('index.search')}}</div>
 </section>
 
@@ -29,9 +29,9 @@
 
   </form>
   @if($products->count() == 0)
-    <div class="project__title subtitle" style="font-size: 25px">По запросу {{ $q }} ничего не найдено</div>
+    <div class="project__title subtitle" style="font-size: 25px">{{ __('calc.q') }} {{ $q }} {{ __('calc.wha') }}</div>
   @elseif($q != null)
-  <div class="project__title subtitle" style="font-size: 25px">Товары по запросу: {{ $q }}</div>
+  <div class="project__title subtitle" style="font-size: 25px">{{ __('calc.search') }}: {{ $q }}</div>
 
   @else
   <div class="project__title subtitle">{{__('index.ourProducts')}}</div>
@@ -46,11 +46,11 @@
       </div>
       <div class="card__wrapper-price"><span>
         @if ($currency == 'KZT')
-          {{ number_format($product->price_kz,0,","," ") }}</span> тг
+          {{ number_format($product->price_kz,0,","," ") }}</span> {{ __('card.tg') }}
         @elseif($currency == 'USD')
-          {{ number_format($product->price_uah,0,","," ") }}</span> долл
+          {{ number_format($product->price_uah,0,","," ") }}</span> {{ __('card.dol') }}
         @elseif($currency == 'RUB')
-          {{ number_format($product->price_ru,0,","," ") }}</span> руб
+          {{ number_format($product->price_ru,0,","," ") }}</span> {{ __('card.rub') }}
         @endif
       </div>
       <a href="/product/{{ $product->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>

@@ -8,12 +8,12 @@
 
 <section class="url">
   <div class="url__text">{{ __('index.main')}}</div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
-  <div class="url__text">Личный кабинет</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{__('blog-show.Catalog')}}</div>
+  <div class="url__text">{{__('calc.office')}}</div>
 </section>
 
 <section class="office" style="margin-bottom: 260px;">
-  <div class="office__title subtitle">ЛИЧНЫЙ КАБИНЕТ</div>
+  <div class="office__title subtitle">{{__('calc.office')}}</div>
   <div class="office__wrapper">
     <div class="office__wrapper-item office__wrapper-item_active">
       <div class="office__wrapper-item_img">
@@ -23,7 +23,7 @@
             fill="#3C4D85" />
         </svg>
       </div>
-      <div class="office__wrapper-item_text">Личные данные</div>
+      <div class="office__wrapper-item_text">{{__('calc.data')}}</div>
     </div>
 
     <div class="office__wrapper-item">
@@ -34,7 +34,7 @@
             fill="#3C4D85" />
         </svg>
       </div>
-      <div class="office__wrapper-item_text">История</div>
+      <div class="office__wrapper-item_text">{{__('calc.history')}}</div>
     </div>
 
     <div class="office__wrapper-item">
@@ -45,75 +45,74 @@
             fill="#3C4D85" />
         </svg>
       </div>
-      <div class="office__wrapper-item_text">Специальные предложения</div>
+      <div class="office__wrapper-item_text">{{__('calc.special')}}</div>
     </div>
   </div>
 
   <div class="office__choice">
     <div class="office__order">
-      <div class="office__order-title title">Персональные данные</div>
+      <div class="office__order-title title">{{__('calc.data')}}</div>
       <form action="/office-mail" method="POST" class="office__order-form">
         <div class="office__order-form_input">
-          <input name="name" type="text" placeholder="Имя*"  value="{{ Auth::user()->name }}" required>
+          <input name="name" type="text" placeholder="{{__('calc.first_name')}}"  value="{{ Auth::user()->name }}" required>
         </div>
         <div class="office__order-form_input">
-          <input name="surname" type="text" placeholder="Фамилия*" value="{{ Auth::user()->surname }}" required>
+          <input name="surname" type="text" placeholder="{{__('calc.last_name')}}" value="{{ Auth::user()->surname }}" required>
         </div>
         <div class="office__order-form_input">
-          <input name="middle_name" type="text" placeholder="Отчество*" value="{{ Auth::user()->second_name }}" required>
+          <input name="middle_name" type="text" placeholder="{{__('calc.middle_name')}}" value="{{ Auth::user()->second_name }}" required>
         </div>
         <div class="office__order-form_input">
-          <input name="email" type="email" placeholder="Электронная почта*" value="{{ Auth::user()->email }}" required>
+          <input name="email" type="email" placeholder="{{__('calc.email')}}" value="{{ Auth::user()->email }}" required>
         </div>
         <div class="office__order-form_input">
-          <input name="phone" type="text" placeholder="Телефон*" required value="{{ Auth::user()->number }}">
+          <input name="phone" type="text" placeholder="{{__('calc.number')}}" required value="{{ Auth::user()->number }}">
         </div>
       <div class="office__order-text" style="width:100%">
-        Если Вы хотите изменить Email или контактный номер свяжитесь пожалуйста с Вашим
-        менеджером или оставьте запрос
+        {{__('calc.if')}}
       </div>
       <div class="btn-wrap" style="width:100%">
         @csrf
 
-        <button type="submit" class="office__order-btn">ОСТАВИТЬ ЗАЯВКУ</button>
+        <button type="submit" class="office__order-btn">{{__('calc.req')}}</button>
 </form>
 </div>
 
       <div class="office__order-password">
-        <div class="office__order-title title">Сменить пароль</div>
+        <div class="office__order-title title">{{__('calc.password')}}</div>
         <form action="/password_change" method="POST">
           @csrf
           <div class="office__order-password_wrapper">
             <div class="office__order-password_input">
-              <input type="password" name="password_old"  placeholder="Введите старый пароль" required>
+              <input type="password" name="password_old"  placeholder="{{__('calc.old')}}" required>
                          </div>
             <div class="office__order-password_input">
-              <input type="password" name="password" placeholder="Введите новый пароль" required>
+              <input type="password" name="password" placeholder="{{__('calc.new')}}" required>
             </div>
             <div class="office__order-password_input">
-              <input type="password" name="password_again" placeholder="Повторите новый пароль" required>
+              <input type="password" name="password_again" placeholder="{{__('calc.confirm')}}" required>
             </div>
           </div>
-        <button class="office__order-btn" type="submit">Сменить пароль</button>
+        <button class="office__order-btn" type="submit">{{__('calc.password')}}</button>
       </form>
       </div>
     </div>
 
     <div class="office__order">
-      <div class="office__order-title title">Мои заказы</div>
+      <div class="office__order-title title">{{__('calc.my')}}</div>
 
       <div class="office__order-item_row office__order-item_title">
         <div class="office__order-item_head">
-          Номер заказа
+          {{__('calc.order_number')}}
         </div>
         <div class="office__order-item_head">
-          Сумма
+          {{__('calc.amount')}}
         </div>
         <div class="office__order-item_head">
-          Статус заказа
+          {{__('calc.status')}}
         </div>
         <div class="office__order-item_head">
-          Дата
+          {{__('calc.date')}}
         </div>
       </div>
 
@@ -123,7 +122,7 @@
         <div class="office__order-item_row">
           <div class="office__order-item_top">
             <div class="office__order-item_tbody">
-              Заказ № {{ $order->id }}
+              {{__('calc.order')}} № {{ $order->id }}
             </div>
             <div class="office__order-item_tbody">
               {{number_format($order->sum,0,","," ")}}
@@ -163,7 +162,7 @@
       $currency = session('currency');
     @endphp
     <div class="office__order">
-      <div class="popular__title">На данные категории для Вас действуют такие скидки:</div>
+      <div class="popular__title">{{__('calc.for_u')}}</div>
       <div class="popular__wrapper">
         @foreach ($popular as $p)
           <div class="card__wrapper-item">
@@ -174,15 +173,15 @@
             <div class="card__wrapper-price"><span>
               @if ($currency == 'KZT')
                 {{ number_format($p->price_kz) }}
-                </span> тг</div>
+                </span> {{ __('card.tg') }}</div>
               @endif
               @if ($currency == 'USD')
                 {{ number_format($p->price_uah) }}
-                </span> долл</div>
+                </span> {{ __('card.dol') }}</div>
               @endif
               @if ($currency == 'RUB')
                 {{ number_format($p->price_ru) }}
-                </span> руб</div>
+                </span> {{ __('card.rub') }}</div>
               @endif
             <a href="/product/{{ $p->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
           </div>

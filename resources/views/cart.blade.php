@@ -188,7 +188,7 @@
       <input type="hidden" name="sum" id="sum_hidden" value="{{ $discountSum }}">
 
       <div class="cart__wrapper-right_text">
-        <div>Стоимость товаров:</div>
+        <div>{{__('calc.cost')}}:</div>
         <span> <span id=""> {{ number_format($discountSum,0,","," ") }} </span>
         @if ($currency == 'KZT')
         {{ __('card.tg') }}
