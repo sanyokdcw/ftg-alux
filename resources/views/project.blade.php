@@ -12,7 +12,7 @@
 @endphp
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog') }}</div>
   <div class="url__text">{{__('index.projects')}}</div>
 </section>
 
@@ -73,11 +73,11 @@
             </div>
             <div class="project__wrapper-info_number">
               @if ($currency == 'KZT')
-                {{ number_format($project->price_kz) }} <span>тг</span>
+                {{ number_format($project->price_kz) }} <span>{{ __('card.tg') }}</span>
               @elseif($currency == 'USD')
-                {{ number_format($project->price_uah) }} <span>долл</span>
+                {{ number_format($project->price_uah) }} <span>{{ __('card.dol') }}</span>
               @elseif($currency == 'RUB')
-                {{ number_format($project->price_rub) }} <span>руб</span>
+                {{ number_format($project->price_rub) }} <span>{{ __('card.rub') }}</span>
               @endif
             </div>
           </div>

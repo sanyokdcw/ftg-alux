@@ -5,4 +5,4 @@ return [
     'blog' => 'Blog',
     'read' => 'Read more',
     'show' => 'Show more',
-]
+];

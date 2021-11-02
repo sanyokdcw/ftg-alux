@@ -12,7 +12,8 @@
 @endphp
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{__('blog-show.Catalog')}}
+  </div>
   @if($product->subcategory_id != null)
     <div class="url__text"><a href="/subcategory/{{ App\Models\Subcategory::find($product->subcategory_id)->slug }}">{{ strip_tags(App\Models\Subcategory::find($product->subcategory_id)->name) }}</a></div>
   @elseif($product->category_id != null)
@@ -31,11 +32,11 @@
     <div class="card-detail__wrapper-right">
       <div class="card-detail__wrapper-right_info">
         <div class="card-detail__wrapper-right_text">
-          <div>Артикул:</div>
+          <div>{{__('card.art')}}:</div>
           <span>{{ $product->article }}</span>
         </div>
         <div class="card-detail__wrapper-right_text">
-          <div>Наличие:</div>
+          <div>{{__('card.available')}}:</div>
           <span>{{ $product->existence }}</span>
         </div>
       </div>
@@ -43,17 +44,17 @@
         @if ($currency == 'KZT')
        <span id="item_price">   {{  number_format($product->price_kz,0,","," ") }}
       </span>
-      тенге
+      {{__('card.tenge')}}
         @elseif($currency == 'USD')
 <span id="item_price">
           {{  number_format($product->price_uah,0,","," ") }}
 </span>
-долларов
+{{__('card.dollars')}}
         @elseif($currency == 'RUB')
 <span id="item_price">
    {{  number_format($product->price_ru,0,","," ") }}
 </span>
-рублей
+{{__('card.rubles')}}
       @endif
       </div>
       <div class="card-detail__wrapper-right_block">
@@ -68,17 +69,17 @@
 <span id="total_price">
  {{ number_format($product->price_kz,0,","," ") }}
 </span>
- тг
+{{__('card.tg')}}
           @elseif($currency == 'USD')
        <span id="total_price">
      {{ number_format($product->price_uah,0,","," ") }}
 </span>
-долл
+{{__('card.dol')}}
 @elseif($currency == 'RUB')
 <span id="total_price">
      {{  number_format($product->price_ru,0,","," ") }}
 </span>
-руб
+{{__('card.rub')}}
 @endif
 </span>
         </div>
@@ -86,7 +87,7 @@
           @csrf
           <input type="hidden" name="quantity" id="quantity" value="1">
           <input type="hidden" name="product_id" value="{{ $product->id }}">
-          <button class="card-detail__wrapper-right_btn" type="submit">Заказать</button>
+          <button class="card-detail__wrapper-right_btn" type="submit">{{__('card.order')}}</button>
         </form>
       </div>
     <form action="/consultation" method="POST" id="number-form">
@@ -95,7 +96,7 @@
           <input type="phone" name="phone" required="required" id="number">
         </div>
 	    @csrf
-      <button type="button" onclick="sendNumber()" class="card-detail__wrapper-right_order">Заказать консультацию</button>
+      <button type="button" onclick="sendNumber()" class="card-detail__wrapper-right_order">{{__('card.consultation')}}</button>
      </div>
     </form>
     </div>
@@ -105,13 +106,13 @@
 <section class="specifications">
   <div class="specifications__top">
     <div class="specifications__top-item" id="Link1"  onclick="changeTab(1)" style="cursor: pointer; color: rgb(120, 185, 235);">
-      <div onclick="remPdf()" >Описание</div>
+      <div onclick="remPdf()" >{{__('card.description')}}</div>
     </div>
     <div class="specifications__top-item" id="Link2"  onclick="changeTab(2)" style="cursor:pointer">
-      <div onclick="remPdf()" >Характеристики</div>
+      <div onclick="remPdf()" >{{__('card.specifications')}}</div>
     </div>
     <div class="specifications__top-item" id="Link3"  onclick="changeTab(3)" style="cursor:pointer">
-      <div onclick="addPdf()" >Документация</div>
+      <div onclick="addPdf()" >{{__('card.documentation')}}</div>
     </div>
   </div>
   <div class="specifications__bottom" style="word-wrap: break-word !important;">
@@ -129,7 +130,7 @@
     </div>
       {{-- @dd(json_decode($product->document) == null) --}}
       @if(json_decode($product->document) != null)
-        <a class="specifications__download" id="downloadPdf" href="/storage/{{ json_decode($product->document)[0]->download_link }}">Просмотреть документ</a>
+        <a class="specifications__download" id="downloadPdf" href="/storage/{{ json_decode($product->document)[0]->download_link }}">{{__('card.document')}}</a>
       @endif
   </div>
 </section>
@@ -157,11 +158,11 @@
         {{ $product->name }}
       </div>
       @if ($currency == 'KZT')
-        <div class="card__wrapper-price"><span>{{ number_format($product->price_kz,0,","," ") }}</span> тг</div>
+        <div class="card__wrapper-price"><span>{{ number_format($product->price_kz,0,","," ") }}</span> {{__('card.tg')}}</div>
       @elseif($currency == 'USD')
-        <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> долл</div>
+        <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> {{__('card.dol')}}</div>
       @elseif($currency == 'RUB')
-        <div class="card__wrapper-price"><span>{{ number_format($product->price_rub,0,","," ") }}</span> руб</div>
+        <div class="card__wrapper-price"><span>{{ number_format($product->price_rub,0,","," ") }}</span> {{__('card.rub')}}</div>
       @endif
       <a href="/product/{{ $product->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
     </div>

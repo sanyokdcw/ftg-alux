@@ -13,7 +13,7 @@
 
 <section class="url">
   <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog') }}</div>
   <div class="url__text">{{__('index.basket')}}</div>
 </section>
 
@@ -27,31 +27,31 @@
   @endif
   <div class="cart__wrapper">
     <div class="cart__wrapper-left">
-      <div class="cart__wrapper-left_title">ИНФОРМАЦИЯ ПОКУПАТЕЛЯ</div>
+      <div class="cart__wrapper-left_title">{{ __('card.info') }}</div>
       {{-- <button class="cart__wrapper-left_btn">Я новый покупатель</button> --}}
       @if (!Auth::check())
       <form action="/add-guest-order" method="POST">
       <div class="cart__wrapper-form">
           <div class="cart__wrapper-form_input">
-            <input type="text" placeholder="Имя" name="name" value="" required>
+            <input type="text" placeholder="{{ __('card.name') }}" name="name" value="" required>
           </div>
           @error('name')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
           <div class="cart__wrapper-form_input">
-            <input type="text" placeholder="Фамилия" name="surname" value="" required>
+            <input type="text" placeholder="{{ __('card.surname') }}" name="surname" value="" required>
           </div>
           @error('surname')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
           <div class="cart__wrapper-form_input">
-            <input type="phone" placeholder="Телефон" name="telephone" value="" required >
+            <input type="phone" placeholder="{{ __('card.phone') }}" name="telephone" value="" required >
           </div>
           @error('telephone')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
           <div class="cart__wrapper-form_input">
-            <input type="email" placeholder="Электронная почта" name="mail">
+            <input type="email" placeholder="{{ __('card.email') }}" name="mail">
           </div>
           @error('mail')
           <div class="alert alert-danger">{{ $message }}</div>
@@ -60,20 +60,20 @@
         <form action="/add-order" method="POST">
         <div class="cart__wrapper-form">
           <div class="cart__wrapper-form_input">
-            <input type="text" placeholder="Имя" name="name" value="{{ Auth::user()->name}}" required>
+            <input type="text" placeholder="{{ __('card.name') }}" name="name" value="{{ Auth::user()->name}}" required>
           </div>
           <div class="cart__wrapper-form_input">
-            <input type="text" placeholder="Фамилия" name="surname" value="{{ Auth::user()->surname }}" required>
+            <input type="text" placeholder="{{ __('card.surname') }}" name="surname" value="{{ Auth::user()->surname }}" required>
           </div>
           <div class="cart__wrapper-form_input">
-            <input type="phone" placeholder="Телефон" name="telephone" value="{{ Auth::user()->number }}" required >
+            <input type="phone" placeholder="{{ __('card.phone') }}" name="telephone" value="{{ Auth::user()->number }}" required >
           </div>
           <div class="cart__wrapper-form_input">
-            <input type="email" placeholder="Электронная почта" name="mail" value="{{ Auth::user()->email }}" required>
+            <input type="email" placeholder="{{ __('card.email') }}" name="mail" value="{{ Auth::user()->email }}" required>
           </div>
         @endif
       </div>
-      <div class="cart__wrapper-left_title">СПОСОБ ДОСТАВКИ</div>
+      <div class="cart__wrapper-left_title">{{ __('card.delivery') }}</div>
       <div class="cart__wrapper-form">
         @foreach ($deliveries as $delivery)
           <div class="cart__wrapper-left_select">
@@ -91,17 +91,17 @@
       </div>
 
 
-      <div class="cart__wrapper-left_title">СПОСОБ оплаты</div>
+      <div class="cart__wrapper-left_title">{{ __('card.payment') }}</div>
       <div class="cart__wrapper-left_select">
           <select class="cart__wrapper-left_output" name="payment" required>
-            <option value="cash">Наличными</option>
-            <option value="card">Картой</option>
+            <option value="cash">{{ __('card.cash') }}</option>
+            <option value="card">{{ __('card.card') }}</option>
           </select>
           @error('payment')
           <div class="alert alert-danger">{{ $message }}</div>
           @enderror
         </div>
-      <textarea style="width:500px" class="cart__wrapper-left_textarea" name="comment" placeholder="Комментировать"></textarea>
+      <textarea style="width:500px" class="cart__wrapper-left_textarea" name="comment" placeholder="{{ __('card.comment') }}"></textarea>
     </div>
 
     <div class="cart__wrapper-right">
@@ -155,21 +155,21 @@
           @else
           {{ number_format(($product->price_kz) * $item->quantity,0,","," ") }}</span>
           @endif
-          тг
+          {{ __('card.tg') }}
         @elseif($currency == 'USD')
         @if (!Auth::check())
           <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_uah * $item['quantity'],0,","," ") }}</span>
         @else
           <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_uah * $item->quantity,0,","," ") }}</span>
         @endif
-          долл
+        {{ __('card.dol') }}
         @elseif($currency == 'RUB')
         @if (!Auth::check())
           <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_ru * $item['quantity'],0,","," ") }}</span>
         @else
           <div class="cart__wrapper-right_subprice title"><span class="item_sum" id="item_sum{{ $loop->index }}">{{ number_format($product->price_ru * $item->quantity,0,","," ") }}</span>
         @endif
-          руб
+        {{ __('card.rub') }}
           @endif
           </div>
         <div class="remove-form" style="margin-bottom: auto">
@@ -179,7 +179,7 @@
       </div>
       @if($product->sale != 0)
       <div class="cart__wrapper-right_text">
-        <div>Скидка:</div>
+        <div>{{ __('card.sale') }}:</div>
         <span>{{ $product->sale }}%</span>
       </div>
       @endif
@@ -191,28 +191,28 @@
         <div>Стоимость товаров:</div>
         <span> <span id=""> {{ number_format($discountSum,0,","," ") }} </span>
         @if ($currency == 'KZT')
-            тг
+        {{ __('card.tg') }}
         @elseif($currency == 'USD')
-            долл
+        {{ __('card.dol') }}
         @elseif($currency == 'RUB')
-            руб
+        {{ __('card.rub') }}
         @endif
         </span>
       </div>
 
       <div class="cart__wrapper-right_text cart__wrapper-right_result">
-        <div>ИТОГО К ОПЛАТЕ:</div>
+        <div>{{ __('card.total') }}:</div>
         <span> <span id="sum"> {{ number_format($discountSum,0,","," ") }} </span>
           @if ($currency == 'KZT')
-            тг
+        {{ __('card.tg') }}
           @elseif($currency == 'USD')
-            долл
+        {{ __('card.dol') }}
           @elseif($currency == 'RUB')
-            руб
+        {{ __('card.rub') }}
           @endif
         </span>
       </div>
-      <button type="submit" class="cart__wrapper-right_btn">ОФОРМИТЬ ЗАКАЗ</button>
+      <button type="submit" class="cart__wrapper-right_btn">{{ __('card.order') }}</button>
     </form>
 
     <form action="/consultation" method="POST" id="number-form">
@@ -221,7 +221,7 @@
         <div class="cart__wrapper-right_input">
           <input type="text" name="phone" id="number">
         </div>
-        <button type="button"  onclick="sendNumber()" class="card-detail__wrapper-right_order">Заказать консультацию</button>
+        <button type="button"  onclick="sendNumber()" class="card-detail__wrapper-right_order">{{ __('card.consultation') }}</button>
       </div>
     </form>
 
@@ -241,11 +241,11 @@
       </div>
       <div class="card__wrapper-price"><span>{{ number_format($p->price_kz,0,","," ") }}</span>
         @if ($currency == 'KZT')
-            тг
+        {{ __('card.tg') }}
         @elseif($currency == 'USD')
-            долл
+        {{ __('card.dol') }}
         @elseif($currency == 'RUB')
-            руб
+        {{ __('card.rub') }}
         @endif
       </div>
       <a class="card__wrapper-btn"  href="/product/{{ $p->slug }}" style="color: #112468">{{__('index.more')}}</a>

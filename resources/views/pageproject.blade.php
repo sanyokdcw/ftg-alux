@@ -13,7 +13,7 @@
 
 <section class="url">
   <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog') }}</div>
   <div class="url__text"><a href="/projects">{{__('index.projects')}}</a></div>
   <div class="url__text">{{ $project->title }}</div>
 </section>
@@ -29,14 +29,13 @@
         <img src="/storage/{{ $project->company_image }}" alt="">
       </div>
       <div class="detail-page__right-text">
-        <div>Объект:</div>
+        <div>{{ __('card.object') }}:</div>
         <span>{{ $project->object_name }}</span>
       </div>
       <div class="detail-page__right-info">
         <div class="detail-page__right-item">
           <div class="detail-page__right-item_title">
-            Срок
-            выполнения
+            {{ __('card.term') }}
           </div>
           <div class="detail-page__right-item_text">
             <div class="detail-page__right-item_number">{{ $project->deadline[0] ?? '' }}</div>
@@ -45,8 +44,7 @@
         </div>
         <div class="detail-page__right-item">
           <div class="detail-page__right-item_title">
-            Начало
-            работы
+            {{ __('card.start') }}
           </div>
           <div class="detail-page__right-item_text">
             <div class="detail-page__right-item_number">{{ $project->start_of_work }}</div>
@@ -55,19 +53,18 @@
         </div>
         <div class="detail-page__right-item">
           <div class="detail-page__right-item_title">
-            Стоимость
-            выполнения
+            {{ __('card.price') }}
           </div>
           <div class="detail-page__right-item_text">
             @if ($currency == 'KZT')
               <div class="detail-page__right-item_number">{{ number_format($project->price_kz) }}</div>
-              <div class="detail-page__right-item_date">тг</div>
+              <div class="detail-page__right-item_date">{{ __('card.tg') }}</div>
             @elseif($currency == 'USD')
               <div class="detail-page__right-item_number">{{ number_format($project->price_uah) }}</div>
-              <div class="detail-page__right-item_date">долл</div>
+              <div class="detail-page__right-item_date">{{ __('card.dol') }}</div>
             @elseif($currency == 'RUB')
               <div class="detail-page__right-item_number">{{ number_format($project->price_rub) }}</div>
-              <div class="detail-page__right-item_date">руб</div>
+              <div class="detail-page__right-item_date">{{ __('card.rub') }}</div>
             @endif
 
 

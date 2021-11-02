@@ -14,8 +14,8 @@
 
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
-  <div class="url__text"><a href="/blog">Блог</a></div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog')}}</div>
+  <div class="url__text"><a href="/blog">{{__('blog-show.blog')}}</a></div>
   <div class="url__text">{{ $blog->name }}</div>
 </section>
 
@@ -58,7 +58,7 @@
 
 <div class="next">
   <div class="next__text">
-    Следующая статья
+    {{__('blog-show.next')}}
   </div>
   <a href="/blog/{{ $next_id->slug }}">
     <img src="/images/Pajination.jpg" alt="">
@@ -75,11 +75,11 @@
           {{ $product->name }}
         </div>
         @if ($currency == 'KZT')
-          <div class="card__wrapper-price"><span>{{ number_format($product->price_kz,0,","," ") }}</span> тг</div>
+          <div class="card__wrapper-price"><span>{{ number_format($product->price_kz,0,","," ") }}</span> {{__('blog-show.tg')}}</div>
         @elseif($currency == 'USD')
-          <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> долл</div>
+          <div class="card__wrapper-price"><span>{{ number_format($product->price_uah,0,","," ") }}</span> {{__('blog-show.dol')}}</div>
         @elseif($currency == 'RUB')
-          <div class="card__wrapper-price"><span>{{ number_format($product->price_ru,0,","," ") }}</span> руб</div>
+          <div class="card__wrapper-price"><span>{{ number_format($product->price_ru,0,","," ") }}</span> {{__('blog-show.rub')}}</div>
         @endif
         <a href="/product/{{ $product->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
       </div>

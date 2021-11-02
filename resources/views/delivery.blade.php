@@ -8,7 +8,7 @@
         
 <section class="url">
   <div class="url__text"><a href="/">{{__('index.main')}}</a></div>
-  <div style="cursor: pointer;" class="url__text" onclick="opensb()">Каталог</div>
+  <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog') }}</div>
   <div class="url__text">{{__('index.del')}} {{__('index.and')}} {{__('index.payment')}}</div>
 </section>
 
