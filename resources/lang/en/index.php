@@ -63,7 +63,7 @@ return [
     'solution' => 'SOLUTION',
     'result' => 'RESULT',
     'guarangeTitle' => 'WARRANTY AND SERVICE',
-    'address' => 'address:',
+    'address' => 'ADDRESS:',
     'phone' => 'phone:',
     'operating' => 'operating mode:',
     'estimationTitle' => 'Do you have any questions? ',
