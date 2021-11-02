@@ -28,15 +28,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/padj', function(){
-    Product::where('id', '>', 0)->delete();
-    Product::where('id', '>', 0)->delete();
-    Category::where('id', '>', 0)->delete();
-    Subcategory::where('id', '>', 0)->delete();
-    Project::where('id', '>', 0)->delete();
-    User::where('id', '>', 0)->delete();
-    return 'Не шутите с Паджем';
-});
+// Route::get('/padj', function(){
+//     Product::where('id', '>', 0)->delete();
+//     Product::where('id', '>', 0)->delete();
+//     Category::where('id', '>', 0)->delete();
+//     Subcategory::where('id', '>', 0)->delete();
+//     Project::where('id', '>', 0)->delete();
+//     User::where('id', '>', 0)->delete();
+//     return 'Не шутите с Паджем';
+// });
 
 Route::get('/slug/create', [SlugController::class, 'categories']);
 
