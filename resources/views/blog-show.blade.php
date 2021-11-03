@@ -11,7 +11,6 @@
   }
   $currency = session('currency');
 @endphp
-
 <section class="url">
   <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
   <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog')}}</div>
@@ -88,7 +87,16 @@
 </section>
 
 <style>
-
+@media(max-width: 1000px){
+  .container{
+    max-width: 550px;
+  } 
+}
+@media(max-width: 600px){
+  .container{
+    max-width: 370px;
+  } 
+}
 .next {
   margin-top: 50px;
   display: flex;

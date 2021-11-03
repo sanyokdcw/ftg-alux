@@ -4453,6 +4453,7 @@ button {
   }
 }
 @media (max-width: 1000px) {
+
   .footer__wrapper-item:nth-child(1) .footer__wrapper-text {
     width: 100% !important;
   }
@@ -4944,6 +4945,7 @@ button {
     width: 100% !important;
   }
 }
+
 @media (max-width: 600px) {
   .product__wrapper-right_column {
     font-size: 12px;
@@ -6820,7 +6822,6 @@ input[type="number"] {
     background-position: top;
   }
 }
-
 @media (min-width: 1001px) {
   .header__button {
     display: flex;
