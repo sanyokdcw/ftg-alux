@@ -75,7 +75,7 @@
   </div>
 </section>
 
-<section class="specifications" style=">
+<section class="specifications">
   <div class="specifications__top">
     <div class="specifications__top-item" style="cursor:pointer; color: #78b9eb;" id="Link1" onclick="changeTab(1)">
       {{__('index.task')}}
