@@ -94,7 +94,7 @@
 }
 @media(max-width: 600px){
   .container{
-    max-width: 370px;
+    max-width: 400px;
   } 
 }
 .next {
