@@ -6841,3 +6841,8 @@ input[type="number"] {
     display: none;
   }
 }
+@media(max-width:400px) {
+  .logo_adaptive img{
+    width:70%;
+  }
+}
