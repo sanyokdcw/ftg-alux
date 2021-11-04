@@ -11,7 +11,7 @@
   <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{ __('blog-show.Catalog') }}</div>
   <div class="url__text">{{__('index.guarangeTitle')}}</div>
 </section>
-<section style="    min-height: 1194px;">
+<section>
 <div class="guarange">
   <div class="guarange__title subtitle">{{__('index.guarangeTitle')}}</div>
   <div class="guarange__wrapper">
