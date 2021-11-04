@@ -5066,7 +5066,6 @@ button {
   .detail-page__left img {
     width: 100%;
     height: 100%;
-    object-fit: cover !important;
   }
   .detail-page__right-item_title {
     margin-bottom: 0;
