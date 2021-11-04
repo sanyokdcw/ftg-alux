@@ -6841,8 +6841,3 @@ input[type="number"] {
     display: none;
   }
 }
-@media(max-width:700px){
-  .guarange__wrapper-item {
-    width: 100%;
-  }
-}

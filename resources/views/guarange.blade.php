@@ -38,3 +38,11 @@
 </section>
 @include('layouts.footer')
 </html>
+<style>
+  @media(max-width:700px){
+  .guarange__wrapper-item {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+</style>
