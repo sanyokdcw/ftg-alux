@@ -7,9 +7,8 @@
 
 
 <section class="url">
-  <a href="/">
-    <div class="url__text">{{ __('index.main')}}</div>
-  </a>
+ 
+    <div class="url__text"><a href="/">{{ __('index.main')}}</a></div>
   <div style="cursor: pointer;" class="url__text" onclick="opensb()">{{__('blog-show.Catalog')}}</div>
   <div class="url__text">{{__('calc.office')}}</div>
 </section>
