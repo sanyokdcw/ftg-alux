@@ -93,6 +93,10 @@
   } 
 }
 @media(max-width: 600px){
+  .text{
+    max-width: 340px;
+    margin: 0 auto;
+  }
   .container{
     max-width: 400px;
   } 
