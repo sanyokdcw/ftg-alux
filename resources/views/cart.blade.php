@@ -346,5 +346,13 @@ function sendNumber() {
 
 
 </script>
+<style>
+  @media(min-width: 1200px){
+  .title{
+    margin-left:0.5rem;
+      white-space: nowrap;
+  }
+}
+</style>
 @include('layouts.footer')
 </html>
