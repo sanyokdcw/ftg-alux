@@ -8,7 +8,7 @@
           <div class="footer__wrapper-text footer__exchange">
            {{-- {{ setting('index.footer_description') }} --}}
            <p>{{ __('index.exchangeRates')}}</p>
-           <div>&#8376</div>
+           <div>TG: 429,66</div>
            <div>USD: {{$usd}}</div>
            <div>RUB: {{$rub}}</div>
           </div>

@@ -60,9 +60,9 @@
           @if ($currency == 'KZT')
             {{ number_format($product->price_kz,0,","," ") }}</span> {{ __('card.tg') }}
           @elseif($currency == 'USD')
-            {{ number_format($product->price_uah,0,","," ") }}</span> {{ __('card.rub') }}
+            {{ number_format($product->price_uah,0,","," ") }}</span> {{ __('card.dol') }}
           @elseif($currency == 'RUB')
-            {{ number_format($product->price_ru,0,","," ") }}</span> {{ __('card.dol') }}
+            {{ number_format($product->price_ru,0,","," ") }}</span> {{ __('card.rub') }}
           @endif
         </div>
         <a href="/product/{{ $product->slug }}" class="card__wrapper-btn">{{__('index.more')}}</a>
