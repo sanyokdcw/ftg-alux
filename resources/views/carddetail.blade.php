@@ -170,7 +170,13 @@
   </div>
 </section>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+<style>
+  @media(min-width: 1200px){
+    .title{
+        white-space: nowrap;
+    }
+  }
+</style>
 <script>
   function countIncrement() {
     let count = document.getElementById("counter")
@@ -263,7 +269,6 @@ Swal.fire(
 
 @endif
 </script>
-
 
 
 @include('layouts.footer')

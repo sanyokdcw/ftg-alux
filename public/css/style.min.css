@@ -6677,7 +6677,6 @@ input[type="number"] {
 .specifications__bottom {
   width: 100%;
   overflow: hidden;
-  overflow-x: scroll;
 }
 
 .specifications__bottom #Tab1 {
@@ -6802,9 +6801,9 @@ input[type="number"] {
   border: none !important;
 }
 
-.project__wrapper .mySwiper {
+/* .project__wrapper .mySwiper {
   overflow: scroll !important;
-}
+} */
 
 .form {
   z-index: 2121212121212 !important;

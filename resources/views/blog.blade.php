@@ -11,7 +11,7 @@
   <div class="url__text">{{ __('index.blog')}}</div>
 </section>
 
-<section class="blog" style="min-height: 1195px;">
+<section class="blog">
   <div class="blog__title subtitle">{{ __('index.blog')}}</div>
   <div class="blog__wrapper">
     @foreach ($blogs as $blog)
@@ -33,15 +33,36 @@
     @endforeach
   </div>
 
-  <button class="blog__btn" onclick="showBlocks()" id="btn-more">{{__('index.showMore')}}</button>
+  <button class="blog__btn" onclick="toggle()" id="btn-more">{{__('index.showMore')}}</button>
 </section>
-
+<style>
+  .not-visible{
+    display:none
+  }
+  .visible{
+    display:block
+  }
+</style>
 <script>
-function showBlocks() {
   let blocks = Array.from(document.querySelectorAll('.blog__wrapper-card'))
-  blocks.forEach(element => element.style.display="block")
-  document.getElementById('btn-more').style.display = "none"
-}
+  let btn = document.querySelector('#btn-more')
+  function toggle(){
+      blocks.forEach((block,index) => {
+        if(index >= 1){
+          if(block.style.display == 'none'){
+            block.style.display = 'block'
+          }else if(block.style.display == 'block'){
+            block.style.display = 'none'
+          }
+        }
+    })
+  }
+  
+    
+  if(blocks.length<=2){
+    document.getElementById('btn-more').style.display = "none"
+  }
+
 </script>
 @include('layouts.footer')
 </html>
