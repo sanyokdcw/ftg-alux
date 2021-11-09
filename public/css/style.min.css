@@ -6751,6 +6751,7 @@ input[type="number"] {
 }
 
 .news__wrapper-item {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
