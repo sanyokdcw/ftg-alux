@@ -128,6 +128,12 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
+    let allCards = document.querySelectorAll('.news__wrapper-item')
+    if(allCards.length == 1){
+        document.querySelector('.news_wrapper').style.justifyContent = 'flex-start'    
+    }else if(allCards.length == 1){
+        allCards.forEach(card=>card.style.width = '100%')
+    }
     $(".slider-banner").slick({
         // dots:false,
         adaptiveHeight: true,

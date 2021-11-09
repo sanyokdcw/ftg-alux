@@ -6752,7 +6752,6 @@ input[type="number"] {
 
 .news__wrapper-item {
   margin: 10px;
-  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
