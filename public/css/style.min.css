@@ -1103,7 +1103,7 @@ button {
   height: 16px;
   position: absolute;
   top: 4px;
-  right: 0;
+  right: -20px;
   background-size: cover;
 }
 .sitebar__drowdown-item_block {
@@ -6751,7 +6751,8 @@ input[type="number"] {
 }
 
 .news__wrapper-item {
-  width: 100%;
+  margin: 10px;
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
