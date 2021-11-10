@@ -131,7 +131,7 @@
     let allCards = document.querySelectorAll('.news__wrapper-item')
     if(allCards.length == 1){
         document.querySelector('.news_wrapper').style.justifyContent = 'flex-start'    
-    }else if(allCards.length == 1){
+    }else if(allCards.length == 2){
         allCards.forEach(card=>card.style.width = '100%')
     }
     $(".slider-banner").slick({
