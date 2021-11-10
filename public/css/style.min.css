@@ -6842,6 +6842,12 @@ input[type="number"] {
   padding-right: 8px;
 }
 @media(max-width:768px) {
+  .news__wrapper-item_top img{
+    height:250px;
+  }
+  .news__wrapper-item_top{
+    width: 80% !important;
+  }
   .pc-banner {
     display: none;
   }
