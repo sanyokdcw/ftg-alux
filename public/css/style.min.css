@@ -1640,6 +1640,7 @@ button {
   width: 100%;
   height: 310px;
   border-radius: 5px;
+  object-fit: initial !important;
 }
 .blog__wrapper-bottom {
   padding: 50px 40px 35px;
@@ -1650,6 +1651,10 @@ button {
   color: #474747;
   font-family: "MuseoSansCyrl-900";
   margin-bottom: 40px;
+}
+.blog__wrapper-top{
+  width: 90%;
+  margin: 2rem auto;
 }
 .blog__wrapper-text {
   line-height: 25px;
@@ -6617,10 +6622,15 @@ input[type="number"] {
   object-fit: contain;
   object-position: center;
 }
-
+.news__wrapper-item_top{
+  width: 90% !important;
+  margin: 2rem auto;
+}
 .news__wrapper-item_top img {
-  height: 197px;
-  object-fit: contain !important;
+  width: 100%;
+  height: 310px;
+  border-radius: 5px;
+  object-fit: initial !important;
 }
 
 .card-detail__wrapper-left_img img {
