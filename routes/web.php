@@ -136,7 +136,7 @@ Route::middleware('checkCurrencies')->group(function () {
         }
 
         $q = $request->q;
-        $products = Product::where('name', 'like', '%' . $q . '%')->get()->translate(session('locale'));
+        $products = Product::where('available', 1)->where('name', 'like', '%' . $q . '%')->get()->translate(session('locale'));
         return view('search', compact('products', 'q'));
     });
 
