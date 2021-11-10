@@ -120,7 +120,7 @@ Route::middleware('checkCurrencies')->group(function () {
             $locale = session(['locale' => 'ru']);
             App::setLocale('ru');
         }
-        $products = Product::where('available', 1)->translate(session('locale'));
+        $products = Product::where('available', 1)->get()->translate(session('locale'));
         $q = null;
         return view('search', compact('products', 'q'));
     });
