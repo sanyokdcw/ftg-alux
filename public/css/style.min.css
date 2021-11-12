@@ -1637,8 +1637,12 @@ button {
   margin-bottom: 40px;
 }
 .blog__wrapper-card img {
-  width: 100%;
-  height: 310px;
+  width: 300px;
+  height:300px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
   object-fit: initial !important;
 }
