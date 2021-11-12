@@ -6625,10 +6625,12 @@ input[type="number"] {
 .news__wrapper-item_top{
   width: 90% !important;
   margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .news__wrapper-item_top img {
-  width: 100%;
-  height: 310px;
+
   border-radius: 5px;
   object-fit: initial !important;
 }

@@ -84,8 +84,8 @@
         @foreach ($blogs as $blog)
         <div class="news__wrapper-item">
             <div>
-                <div class="news__wrapper-item_top" style="width:100%">
-                    <img src="/storage/{{ $blog->image }}" alt="" style="width:100%">
+                <div class="news__wrapper-item_top">
+                    <img src="/storage/{{ $blog->image }}" alt="" style="width:300px; height:300px">
                 </div>
                 <div class="news__wrapper-item_bottom">
                     <div class="news__wrapper-item_title">
@@ -129,10 +129,8 @@
 
 <script>
     let allCards = document.querySelectorAll('.news__wrapper-item')
-    if(allCards.length == 1){
-        document.querySelector('.news_wrapper').style.justifyContent = 'flex-start'    
-    }else if(allCards.length == 2){
-        allCards.forEach(card=>card.style.width = '100%')
+    if(allCards.length <= 2){
+        document.querySelector('.news__wrapper').style.justifyContent= 'flex-start'
     }
     $(".slider-banner").slick({
         // dots:false,
